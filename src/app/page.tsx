@@ -710,12 +710,12 @@ export default function Home() {
             <div className="grid gap-3 text-xs text-slate-600">
               <div>
                 <p className="text-slate-500">Телефон</p>
-                <p className="font-medium text-slate-900">+38 (0__) ___ __ __</p>
+                <p className="font-medium text-slate-900">+38 (068) 947 87 23</p>
               </div>
               <div>
                 <p className="text-slate-500">Email</p>
                 <p className="font-medium text-slate-900">
-                  info@webmisto.com
+                  webmisto@gmail.com
                 </p>
               </div>
               <div>
