@@ -5,14 +5,26 @@ const TELEGRAM_BOT_TOKEN = "8555898660:AAGACcEFsN5akhBXgtBUowjscQpZl28CMJ8";
 // Функція для отримання chat_id з getUpdates
 async function getChatId(): Promise<number | null> {
   try {
-    const updatesUrl = `https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/getUpdates`;
+    const updatesUrl = `https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/getUpdates?offset=-10&limit=10`;
     const response = await fetch(updatesUrl);
     const data = await response.json();
 
     if (data.ok && data.result && data.result.length > 0) {
-      // Отримуємо останній chat_id
-      const lastUpdate = data.result[data.result.length - 1];
-      return lastUpdate.message?.chat?.id || null;
+      // Шукаємо chat_id в усіх типах повідомлень
+      for (let i = data.result.length - 1; i >= 0; i--) {
+        const update = data.result[i];
+        // Перевіряємо різні типи повідомлень
+        const chatId = 
+          update.message?.chat?.id ||
+          update.edited_message?.chat?.id ||
+          update.channel_post?.chat?.id ||
+          update.edited_channel_post?.chat?.id ||
+          update.callback_query?.message?.chat?.id;
+        
+        if (chatId) {
+          return chatId;
+        }
+      }
     }
     return null;
   } catch (error) {
@@ -41,11 +53,12 @@ export async function POST(request: NextRequest) {
       const autoChatId = await getChatId();
       if (autoChatId) {
         chatId = autoChatId.toString();
+        console.log(`Auto-detected chat_id: ${chatId}`);
       } else {
         return NextResponse.json(
           { 
-            error: "Chat ID не знайдено. Будь ласка, напишіть боту будь-яке повідомлення в Telegram, або додайте TELEGRAM_CHAT_ID в .env.local файл.",
-            hint: "Відкрийте /api/get-chat-id для отримання вашого chat_id"
+            error: "Chat ID не знайдено. Для налаштування виконайте один з кроків:\n\n1. Напишіть будь-яке повідомлення вашому боту в Telegram\n2. Відкрийте http://localhost:3000/api/get-chat-id для отримання вашого chat_id\n3. Додайте TELEGRAM_CHAT_ID=ваш_chat_id в файл .env.local в корені проекту",
+            hint: "Після налаштування перезапустіть сервер розробки"
           },
           { status: 400 }
         );

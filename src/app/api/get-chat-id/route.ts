@@ -17,13 +17,21 @@ export async function GET() {
       );
     }
 
-    // Знаходимо останній chat_id з повідомлень
+    // Знаходимо всі chat_id з різних типів повідомлень
     const updates = data.result || [];
     const chatIds = new Set<number>();
     
     updates.forEach((update: any) => {
-      if (update.message?.chat?.id) {
-        chatIds.add(update.message.chat.id);
+      // Перевіряємо різні типи повідомлень
+      const chatId = 
+        update.message?.chat?.id ||
+        update.edited_message?.chat?.id ||
+        update.channel_post?.chat?.id ||
+        update.edited_channel_post?.chat?.id ||
+        update.callback_query?.message?.chat?.id;
+      
+      if (chatId) {
+        chatIds.add(chatId);
       }
     });
 
@@ -32,10 +40,16 @@ export async function GET() {
     return NextResponse.json({
       success: true,
       chatIds: chatIdsArray,
+      recommendedChatId: chatIdsArray.length > 0 ? chatIdsArray[0] : null,
       message: chatIdsArray.length > 0
-        ? `Знайдено ${chatIdsArray.length} chat_id. Використовуйте перший для отримання повідомлень.`
-        : "Chat ID не знайдено. Напишіть боту будь-яке повідомлення і оновіть цю сторінку.",
-      instructions: "Додайте TELEGRAM_CHAT_ID в .env.local файл або використовуйте перший chat_id зі списку",
+        ? `✅ Знайдено ${chatIdsArray.length} chat_id. Рекомендований: ${chatIdsArray[0]}`
+        : "❌ Chat ID не знайдено. Напишіть боту будь-яке повідомлення в Telegram і оновіть цю сторінку.",
+      instructions: chatIdsArray.length > 0
+        ? `Додайте в .env.local файл:\nTELEGRAM_CHAT_ID=${chatIdsArray[0]}\n\nАбо система автоматично використає перший знайдений chat_id.`
+        : "1. Відкрийте вашого бота в Telegram\n2. Напишіть будь-яке повідомлення (наприклад: 'Привіт')\n3. Оновіть цю сторінку",
+      envExample: chatIdsArray.length > 0
+        ? `TELEGRAM_CHAT_ID=${chatIdsArray[0]}`
+        : null,
     });
   } catch (error) {
     console.error("Error getting chat ID:", error);
