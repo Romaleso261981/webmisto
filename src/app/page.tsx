@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import NotificationPopup from "./components/NotificationPopup";
 
 export default function Home() {
   const [formData, setFormData] = useState({
@@ -11,6 +12,15 @@ export default function Home() {
   });
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [notification, setNotification] = useState<{
+    type: "success" | "error" | "info";
+    message: string;
+    isVisible: boolean;
+  }>({
+    type: "info",
+    message: "",
+    isVisible: false,
+  });
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
@@ -83,19 +93,32 @@ export default function Home() {
       }
 
       // Успішна відправка
-      alert("Дякуємо! Ваша заявка відправлена. Ми зв'яжемося з вами найближчим часом.");
+      setNotification({
+        type: "success",
+        message: "Дякуємо! Ваша заявка відправлена. Ми зв'яжемося з вами найближчим часом.",
+        isVisible: true,
+      });
       setFormData({ name: "", phone: "", niche: "", budget: "" });
       setErrors({});
     } catch (error) {
       console.error("Error submitting form:", error);
-      alert(
+      const errorMessage =
         error instanceof Error
-          ? `Помилка: ${error.message}`
-          : "Сталася помилка при відправці заявки. Будь ласка, спробуйте ще раз або зв'яжіться з нами безпосередньо."
-      );
+          ? error.message
+          : "Сталася помилка при відправці заявки. Будь ласка, спробуйте ще раз або зв'яжіться з нами безпосередньо.";
+      
+      setNotification({
+        type: "error",
+        message: errorMessage,
+        isVisible: true,
+      });
     } finally {
       setIsSubmitting(false);
     }
+  };
+
+  const closeNotification = () => {
+    setNotification((prev) => ({ ...prev, isVisible: false }));
   };
 
   return (
@@ -724,6 +747,14 @@ export default function Home() {
           </div>
         </div>
       </footer>
+
+      <NotificationPopup
+        type={notification.type}
+        message={notification.message}
+        isVisible={notification.isVisible}
+        onClose={closeNotification}
+        duration={notification.type === "success" ? 5000 : 7000}
+      />
     </div>
   );
 }
