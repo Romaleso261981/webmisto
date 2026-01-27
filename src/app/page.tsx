@@ -46,32 +46,32 @@ export default function Home() {
         <section className="grid gap-10 pb-16 md:grid-cols-[minmax(0,1.35fr)_minmax(0,1fr)] md:items-center md:pb-24">
           <div>
             <p className="mb-4 inline-flex items-center gap-2 rounded-full border border-sky-200 bg-sky-50 px-3 py-1 text-xs font-medium uppercase tracking-[0.2em] text-sky-700">
-              Таргетована реклама у Львові
+              Розробка сайтів та онлайн‑платформ
             </p>
             <h1 className="mb-4 text-3xl font-semibold leading-tight md:text-4xl lg:text-5xl">
-              Таргетована реклама в{" "}
+              Сучасна розробка{" "}
               <span className="bg-gradient-to-r from-sky-600 to-cyan-500 bg-clip-text text-transparent">
-                Instagram, Facebook, TikTok
+                сайтів, інтернет‑магазинів, навчальних платформ
               </span>
             </h1>
             <p className="mb-6 max-w-xl text-sm text-slate-600 md:text-base">
-              Запускаємо ефективні рекламні кампанії, що приводять реальних
-              клієнтів вже в перші дні. Аналіз конкурентів, чіткі сегменти
-              аудиторії та креативи, які виділяють ваш бізнес серед інших.
+              Створюємо швидкі, адаптивні та зручні веб‑рішення для бізнесу:
+              корпоративні сайти, інтернет‑магазини та навчальні платформи.
+              Допомагаємо перетворити ідею в працюючий онлайн‑проєкт.
             </p>
 
             <div className="mb-6 flex flex-col gap-3 text-xs text-slate-600 md:flex-row md:items-center md:text-sm">
               <div className="flex items-center gap-2">
                 <span className="inline-flex h-6 w-6 items-center justify-center rounded-full bg-emerald-100 text-xs text-emerald-700">
-                  5+
+                  30+
                 </span>
-                <span>років досвіду в таргеті</span>
+                <span>реалізованих веб‑проєктів</span>
               </div>
               <div className="flex items-center gap-2">
                 <span className="inline-flex h-6 w-6 items-center justify-center rounded-full bg-sky-100 text-xs text-sky-700">
-                  UA
+                  UX
                 </span>
-                <span>працюємо з бізнесами по всій Україні</span>
+                <span>фокус на зручності та конверсії</span>
               </div>
             </div>
 
@@ -80,7 +80,7 @@ export default function Home() {
                 href="#lead-form"
                 className="inline-flex items-center justify-center rounded-full bg-sky-500 px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-sky-500/30 transition hover:bg-sky-600"
               >
-                Замовити таргет
+                Замовити розробку
               </a>
               <a
                 href="#pricing"
@@ -91,8 +91,8 @@ export default function Home() {
             </div>
 
             <p className="mt-4 text-xs text-slate-500">
-              Перші результати ви побачите вже через кілька днів після запуску
-              кампанії.
+              Допоможемо обрати оптимальний формат: сайт‑візитка, інтернет‑магазин
+              чи повноцінна освітня платформа.
             </p>
           </div>
 
@@ -102,10 +102,10 @@ export default function Home() {
               <div className="mb-4 flex items-center justify-between">
                 <div>
                   <p className="text-xs uppercase tracking-[0.2em] text-slate-500">
-                    Рекламний кабінет
+                    Аналітика проєктів
                   </p>
                   <p className="text-sm font-semibold text-slate-900">
-                    Результати за 30 днів
+                    Результати за 3 місяці
                   </p>
                 </div>
                 <span className="rounded-full bg-emerald-100 px-3 py-1 text-xs font-medium text-emerald-700">
@@ -115,38 +115,38 @@ export default function Home() {
 
               <div className="mb-4 grid grid-cols-3 gap-3 text-xs">
                 <div className="rounded-2xl bg-slate-50 p-3">
-                  <p className="text-slate-500">Бюджет</p>
+                  <p className="text-slate-500">Інвестиції</p>
                   <p className="mt-1 text-sm font-semibold text-slate-900">
                     $1 200
                   </p>
                   <p className="mt-1 text-[11px] text-emerald-600">
-                    Оптимізовано витрати
+                    Оптимізовано структуру
                   </p>
                 </div>
                 <div className="rounded-2xl bg-slate-50 p-3">
-                  <p className="text-slate-500">Ліди</p>
+                  <p className="text-slate-500">Проєкти</p>
                   <p className="mt-1 text-sm font-semibold text-slate-900">
                     486
                   </p>
                   <p className="mt-1 text-[11px] text-emerald-600">
-                    ~2.5$ за ліда
+                    12 запущених рішень
                   </p>
                 </div>
                 <div className="rounded-2xl bg-slate-50 p-3">
-                  <p className="text-slate-500">CTR</p>
+                  <p className="text-slate-500">Швидкість</p>
                   <p className="mt-1 text-sm font-semibold text-slate-900">
                     4.3%
                   </p>
                   <p className="mt-1 text-[11px] text-sky-700">
-                    Завдяки сильним креативам
+                    Завдяки сучасному стеку
                   </p>
                 </div>
               </div>
 
               <div className="rounded-2xl border border-slate-200 bg-gradient-to-r from-slate-50 to-white p-3">
                 <p className="text-xs text-slate-600">
-                  «Після налаштування таргету стабільно отримуємо нові заявки
-                  щодня. Команда чітко пояснює, що ми робимо та навіщо».
+                  «Отримали сучасний сайт та зручну адмін‑панель. Команда
+                  запропонувала структуру, дизайн і реалізувала усе під ключ».
                 </p>
                 <p className="mt-2 text-xs font-medium text-slate-500">
                   — Власник локального бізнесу у Львові
@@ -164,11 +164,11 @@ export default function Home() {
           <div className="grid gap-10 md:grid-cols-[minmax(0,1.1fr)_minmax(0,1.1fr)]">
             <div>
               <h2 className="mb-3 text-2xl font-semibold md:text-3xl">
-                Чому варто довірити таргет нам
+                Чому варто довірити нам розробку
               </h2>
               <p className="mb-6 text-sm text-slate-600 md:text-base">
-                Ми поєднуємо глибоку аналітику з креативним підходом. Запускаємо
-                кампанії, які не просто «крутяться», а приносять продажі.
+                Працюємо як технічний партнер: від прототипу та дизайну до
+                розробки, інтеграцій і підтримки проєкту.
               </p>
               <ul className="space-y-4 text-sm text-slate-800">
                 <li className="flex gap-3">
@@ -176,11 +176,10 @@ export default function Home() {
                     01
                   </span>
                   <div>
-                    <p className="font-medium">Кваліфікований підхід</p>
+                    <p className="font-medium">Продумана архітектура</p>
                     <p className="text-xs text-slate-500 md:text-sm">
-                      Аналізуємо нішу, конкурентів та аудиторію, формуємо
-                      гіпотези й тестуємо зв&apos;язки «аудиторія + офер +
-                      креатив».
+                      Аналізуємо бізнес‑процеси, будуємо логіку сайту чи платформи
+                      так, щоб її було легко масштабувати та допрацьовувати.
                     </p>
                   </div>
                 </li>
@@ -189,10 +188,10 @@ export default function Home() {
                     02
                   </span>
                   <div>
-                    <p className="font-medium">Фокус на результаті</p>
+                    <p className="font-medium">Фокус на конверсії</p>
                     <p className="text-xs text-slate-500 md:text-sm">
-                      Не женемося за «лайками» — рахуємо заявки, вартість
-                      ліда, повернення інвестицій та оптимізуємо кампанії.
+                      Проєктуємо зрозумілу структуру, форми, кошики та особисті
+                      кабінети, щоб користувачі швидко доходили до цільової дії.
                     </p>
                   </div>
                 </li>
@@ -201,10 +200,11 @@ export default function Home() {
                     03
                   </span>
                   <div>
-                    <p className="font-medium">5 років у таргетингу</p>
+                    <p className="font-medium">Сучасний стек</p>
                     <p className="text-xs text-slate-500 md:text-sm">
-                      Працюємо з 2019 року, постійно оновлюємо стратегії під
-                      зміни алгоритмів Facebook та Instagram.
+                      Використовуємо Next.js, React, headless‑CMS, платіжні
+                      інтеграції та інші актуальні технології для стабільної
+                      роботи.
                     </p>
                   </div>
                 </li>
@@ -213,10 +213,10 @@ export default function Home() {
                     04
                   </span>
                   <div>
-                    <p className="font-medium">Адекватна вартість</p>
+                    <p className="font-medium">Прозора вартість</p>
                     <p className="text-xs text-slate-500 md:text-sm">
-                      Формуємо прозорий прайс, допомагаємо оптимально
-                      розподілити рекламний бюджет і не «зливати» гроші дарма.
+                      Фіксуємо обсяг робіт, етапи та дедлайни. Допомагаємо
+                      обрати рішення під ваш бюджет — від MVP до повної версії.
                     </p>
                   </div>
                 </li>
@@ -226,38 +226,38 @@ export default function Home() {
             <div className="grid gap-4 text-sm md:grid-cols-2">
               <div className="rounded-2xl border border-slate-200 bg-slate-50 p-4">
                 <p className="text-xs font-medium uppercase tracking-[0.18em] text-slate-500">
-                  Формати
+                  Типи рішень
                 </p>
                 <p className="mt-2 text-sm font-semibold text-slate-900">
-                  Facebook, Instagram, TikTok
+                  Корпоративні сайти та лендінги
                 </p>
                 <p className="mt-2 text-xs text-slate-600">
-                  Запускаємо кампанії під різні цілі: охоплення, трафік, ліди,
-                  продажі, повідомлення, залучення.
+                  Сайти‑візитки, посадкові сторінки, багатосторінкові сайти з
+                  блогом, портфоліо та сторінками послуг.
                 </p>
               </div>
               <div className="rounded-2xl border border-slate-200 bg-slate-50 p-4">
                 <p className="text-xs font-medium uppercase tracking-[0.18em] text-slate-500">
-                  Аналітика
+                  Інтернет‑магазини
                 </p>
                 <p className="mt-2 text-sm font-semibold text-slate-900">
-                  Facebook Pixel та Google Analytics
+                  Каталоги, кошики, оплати
                 </p>
                 <p className="mt-2 text-xs text-slate-600">
-                  Налаштовуємо відстеження подій на сайті, щоб бачити повну
-                  воронку: від показу оголошення до заявки.
+                  Імпорт товарів, категорії, фільтри, інтеграції з платіжними
+                  системами та службами доставки.
                 </p>
               </div>
               <div className="rounded-2xl border border-slate-200 bg-slate-50 p-4">
                 <p className="text-xs font-medium uppercase tracking-[0.18em] text-slate-500">
-                  Комунікація
+                  Навчальні платформи
                 </p>
                 <p className="mt-2 text-sm font-semibold text-slate-900">
-                  Звітність та підтримка
+                  Онлайн‑курси та кабінети студентів
                 </p>
                 <p className="mt-2 text-xs text-slate-600">
-                  Регулярні звіти по результатах, рекомендації щодо покращень,
-                  швидкий зворотний зв&apos;язок.
+                  Особисті кабінети, уроки, модулі, прогрес, домашні завдання,
+                  оплати й доступи до курсів.
                 </p>
               </div>
               <div className="rounded-2xl border border-slate-200 bg-slate-50 p-4">
@@ -265,11 +265,11 @@ export default function Home() {
                   Додатково
                 </p>
                 <p className="mt-2 text-sm font-semibold text-slate-900">
-                  Розробка лендінгу під запуск
+                  Підключення сервісів та підтримка
                 </p>
                 <p className="mt-2 text-xs text-slate-600">
-                  За потреби створюємо сайт або лендінг, який максимально
-                  розкриває вашу пропозицію та конвертує трафік у лідів.
+                  Інтеграції з CRM, email‑розсилками, чат‑ботами, аналітикою,
+                  технічна підтримка та доробки.
                 </p>
               </div>
             </div>
@@ -280,33 +280,31 @@ export default function Home() {
         <section id="pricing" className="bg-slate-50 py-14 md:py-20">
           <div className="mb-8 text-center md:mb-10">
             <h2 className="text-2xl font-semibold md:text-3xl">
-              Тарифи на налаштування таргетованої реклами
+              Тарифи на розробку сайтів та платформ
             </h2>
             <p className="mt-3 text-sm text-slate-600 md:text-base">
-              Оберіть формат співпраці під ваші цілі та бюджет. У кожен тариф
-              входить повна підготовка та супровід кампаній.
+              Оберіть формат співпраці під ваші задачі: від простого сайту до
+              інтернет‑магазину чи навчальної платформи.
             </p>
           </div>
 
           <div className="grid gap-6 md:grid-cols-3">
             <div className="flex flex-col rounded-3xl border border-slate-200 bg-white p-6">
               <p className="text-xs font-medium uppercase tracking-[0.2em] text-slate-500">
-                Економ
+                Старт
               </p>
               <p className="mt-3 text-2xl font-semibold text-slate-900">
                 $320
               </p>
               <p className="mt-1 text-xs text-slate-500">
-                Оптимальний для старту з нуля
+                Оптимальний для невеликого сайту‑візитки або лендінгу
               </p>
               <ul className="mt-5 flex-1 space-y-2 text-sm text-slate-700">
-                <li>• Аналіз цільової аудиторії</li>
-                <li>• Налаштування рекламних кампаній</li>
-                <li>• Створення рекламних оголошень</li>
-                <li>• Оптимізація під мобільні пристрої</li>
-                <li>• Базові звіти по ефективності</li>
-                <li>• Налаштування Facebook Pixel</li>
-                <li>• Інтеграція з Google Analytics</li>
+                <li>• Аналіз ніші та структури майбутнього сайту</li>
+                <li>• Розробка лендінгу або сайту‑візитки до 5 сторінок</li>
+                <li>• Базовий адаптив під мобільні пристрої</li>
+                <li>• Підключення форм заявок та контактів</li>
+                <li>• Базова SEO‑структура (title, опис, заголовки)</li>
               </ul>
               <a
                 href="#lead-form"
@@ -321,48 +319,45 @@ export default function Home() {
                 Популярний
               </div>
               <p className="text-xs font-medium uppercase tracking-[0.2em] text-sky-700">
-                Базовий
+                Бізнес
               </p>
               <p className="mt-3 text-2xl font-semibold text-slate-900">
                 $450
               </p>
               <p className="mt-1 text-xs text-slate-600">
-                Фокус на продажах та нових лідах
+                Для малого та середнього бізнесу
               </p>
               <ul className="mt-5 flex-1 space-y-2 text-sm text-slate-800">
-                <li>• Усе з тарифу «Економ»</li>
-                <li>• Поглиблений аналіз аудиторії та конкурентів</li>
-                <li>• Підтримка відеооголошень</li>
-                <li>• Автоматизовані нагадування та сповіщення</li>
-                <li>• Динамічний ремаркетинг</li>
-                <li>• Кастомізація реклами під різні платформи</li>
-                <li>• Модерація коментарів та повідомлень</li>
+                <li>• Усе з тарифу «Старт»</li>
+                <li>• Розробка багатосторінкового сайту або невеликого магазину</li>
+                <li>• Налаштування каталогу, кошика та замовлень</li>
+                <li>• Підключення платіжних систем та доставки</li>
+                <li>• Стандартна адмін‑частина для керування контентом</li>
               </ul>
               <a
                 href="#lead-form"
                 className="mt-5 inline-flex items-center justify-center rounded-full bg-sky-500 px-5 py-2.5 text-sm font-semibold text-white shadow-lg shadow-sky-300 transition hover:bg-sky-600"
               >
-                Замовити таргет
+                Замовити розробку
               </a>
             </div>
 
             <div className="flex flex-col rounded-3xl border border-slate-200 bg-white p-6">
               <p className="text-xs font-medium uppercase tracking-[0.2em] text-slate-500">
-                Бізнес-план
+                Платформа
               </p>
               <p className="mt-3 text-2xl font-semibold text-slate-900">
                 $720
               </p>
               <p className="mt-1 text-xs text-slate-500">
-                Розвиток бізнесу в соцмережах та Google
+                Для масштабних магазинів чи навчальних платформ
               </p>
               <ul className="mt-5 flex-1 space-y-2 text-sm text-slate-700">
-                <li>• Усі пункти з тарифу «Базовий»</li>
-                <li>• Налаштування реклами Google Ads</li>
-                <li>• Побудова воронки продажів</li>
-                <li>• Індивідуальні консультації по розвитку бізнесу</li>
-                <li>• Оптимізація витрат на рекламу</li>
-                <li>• Періодичні стратегічні сесії</li>
+                <li>• Усі пункти з тарифу «Бізнес»</li>
+                <li>• Розробка інтернет‑магазину або навчальної платформи</li>
+                <li>• Особисті кабінети, ролі користувачів, аналітика</li>
+                <li>• Індивідуальні інтеграції з CRM та сервісами</li>
+                <li>• Резервне копіювання та базова підтримка</li>
               </ul>
               <a
                 href="#lead-form"
@@ -375,26 +370,27 @@ export default function Home() {
 
           <div className="mt-8 grid gap-4 text-xs text-slate-600 md:grid-cols-[minmax(0,1.1fr)_minmax(0,1fr)] md:text-sm">
             <p>
-              Наші клієнти отримують максимум результату з кожної вкладеної
-              гривні. Вартість наших послуг окупається за рахунок правильно
-              налаштованих кампаній та постійної оптимізації.
+              Ми допомагаємо обрати рішення під ваш етап розвитку: спочатку
+              можна запустити простий сайт, а з часом розширити його до магазину
+              чи навчальної платформи.
             </p>
             <div className="grid gap-3 rounded-2xl border border-slate-200 bg-white p-4 text-xs text-slate-700">
               <p className="font-medium text-slate-900">
-                Орієнтовні ціни на послуги
+                Орієнтовні ціни на розробку
               </p>
               <div className="grid grid-cols-2 gap-x-4 gap-y-2 text-[11px] text-slate-600 md:text-xs">
-                <span>Таргетована реклама Facebook</span>
-                <span className="text-right text-slate-700">від $320 / міс</span>
-                <span>Реклама в Instagram</span>
-                <span className="text-right text-slate-700">$250 / міс</span>
-                <span>Ведення сторінки в Instagram</span>
-                <span className="text-right text-slate-700">$230 / міс</span>
-                <span>Розробка сайту під запуск</span>
-                <span className="text-right text-slate-700">від $400</span>
+                <span>Розробка лендінгу</span>
+                <span className="text-right text-slate-700">від $320</span>
+                <span>Корпоративний сайт</span>
+                <span className="text-right text-slate-700">від $450</span>
+                <span>Інтернет‑магазин</span>
+                <span className="text-right text-slate-700">від $720</span>
+                <span>Навчальна платформа</span>
+                <span className="text-right text-slate-700">індивідуально</span>
               </div>
               <p className="mt-1 text-[11px] text-slate-500">
-                Бюджет на рекламу обговорюємо окремо, виходячи з ніші та цілей.
+                Точну вартість розраховуємо після короткого брифу та уточнення
+                функціоналу.
               </p>
             </div>
           </div>
@@ -407,59 +403,57 @@ export default function Home() {
         >
           <div className="mb-8 text-center">
             <h2 className="text-2xl font-semibold md:text-3xl">
-              Питання про таргетовану рекламу
+              Популярні питання про розробку
             </h2>
             <p className="mt-3 text-sm text-slate-600 md:text-base">
-              Дізнайтеся, як ми використовуємо рекламу Facebook та Instagram для
-              просування вашого бізнесу в Україні.
+              Дізнайтеся, як відбувається процес створення сайту, магазину чи
+              навчальної платформи та з чого почати.
             </p>
           </div>
 
           <div className="mx-auto max-w-3xl space-y-4 text-sm text-slate-800 md:text-base">
             <div className="rounded-2xl border border-slate-200 bg-white p-4 md:p-5">
               <p className="text-sm font-semibold text-slate-900 md:text-base">
-                Скільки коштує реклама у Facebook?
+                Скільки коштує розробка сайту?
               </p>
               <p className="mt-2 text-xs text-slate-600 md:text-sm">
-                При бюджеті до $5 на день вартість за 1000 показів реклами
-                зазвичай становить від $0.5 до $2 на попередньо зібрану цільову
-                аудиторію. Остаточна ціна залежить від ніші, конкуренції та
-                креативів.
+                Вартість залежить від типу проєкту: простий лендінг, корпоративний
+                сайт, інтернет‑магазин чи навчальна платформа. Після короткої
+                консультації ми зможемо зорієнтувати вас по бюджету та етапах.
               </p>
             </div>
 
             <div className="rounded-2xl border border-slate-200 bg-white p-4 md:p-5">
               <p className="text-sm font-semibold text-slate-900 md:text-base">
-                Скільки часу займає налаштування таргету?
+                Скільки часу займає розробка?
               </p>
               <p className="mt-2 text-xs text-slate-600 md:text-sm">
-                Повна підготовка кампанії (бріф, аналіз, підбір аудиторій,
-                креативи, технічні налаштування та тестові запуски) займає до
-                двох діб. Після цього ми виходимо в етап оптимізації.
+                Базовий лендінг можна запустити за 2–3 тижні. Більш складні
+                проєкти — інтернет‑магазини та освітні платформи — зазвичай
+                займають від 4 до 8 тижнів залежно від обсягу.
               </p>
             </div>
 
             <div className="rounded-2xl border border-slate-200 bg-white p-4 md:p-5">
               <p className="text-sm font-semibold text-slate-900 md:text-base">
-                Які основні цілі таргетованої реклами?
+                Чим відрізняється інтернет‑магазин від звичайного сайту?
               </p>
               <p className="mt-2 text-xs text-slate-600 md:text-sm">
-                Головна ціль — отримати для вас заявки та продажі через показ
-                релевантних комерційних оголошень. Система сама обирає
-                користувачів за поведінкою, інтересами та активністю, щоб
-                показувати рекламу тим, хто найбільш схильний до цільової дії.
+                Інтернет‑магазин має каталог товарів, кошик, оформлення замовлення
+                та оплати. Звичайний корпоративний сайт більше про представлення
+                компанії, послуг і збір заявок.
               </p>
             </div>
 
             <div className="rounded-2xl border border-slate-200 bg-white p-4 md:p-5">
               <p className="text-sm font-semibold text-slate-900 md:text-base">
-                Скільки потрібно платити за рекламу в Instagram?
+                З чого почати, якщо хочу навчальну платформу?
               </p>
               <p className="mt-2 text-xs text-slate-600 md:text-sm">
-                Орієнтовно це близько $1 за 1000 показів. На фактичну вартість
-                впливають якість креативів, стратегія, аудиторія та сезонність.
-                Ми допомагаємо обрати оптимальний бюджет, щоб отримати максимум
-                результату.
+                На старті достатньо описати формат курсів, типи контенту
+                (відео, тести, домашні завдання), ролі користувачів та спосіб
+                монетизації. Ми допоможемо зібрати це в технічне завдання та
+                запропонуємо рішення.
               </p>
             </div>
           </div>
@@ -472,12 +466,11 @@ export default function Home() {
         >
           <div>
             <h2 className="text-2xl font-semibold md:text-3xl">
-              Отримайте безкоштовну консультацію таргетолога
+              Отримайте безкоштовну консультацію по вашому проєкту
             </h2>
             <p className="mt-3 text-sm text-slate-600 md:text-base">
-              Залиште контакти — ми проаналізуємо ваш бізнес, підкажемо, який
-              бюджет буде оптимальним, та запропонуємо стратегію запуску
-              реклами.
+              Залиште контакти — ми проаналізуємо вашу ідею або поточний сайт,
+              підкажемо оптимальний формат та орієнтовний бюджет розробки.
             </p>
 
             <form className="mt-6 space-y-4">
@@ -513,11 +506,11 @@ export default function Home() {
               </div>
               <div>
                 <label className="mb-1 block text-xs font-medium text-slate-700">
-                  Орієнтовний рекламний бюджет / міс
+                  Орієнтовний бюджет на розробку
                 </label>
                 <input
                   type="text"
-                  placeholder="Наприклад: $300–$1000"
+                  placeholder="Наприклад: $500–$2000"
                   className="w-full rounded-xl border border-slate-300 bg-white px-3 py-2 text-sm text-slate-900 outline-none ring-sky-500/0 transition focus:border-sky-500/70 focus:ring-2 focus:ring-sky-500/40"
                 />
               </div>
@@ -545,10 +538,10 @@ export default function Home() {
                 Контакти
               </p>
               <p className="mt-2 text-sm font-semibold text-slate-900">
-                WebMisto — веб студія у Львові
+                WebMisto — веб‑студія у Львові
               </p>
               <p className="mt-1 text-xs text-slate-600">
-                Львів, Україна (онлайн по всій країні)
+                Львів, Україна (працюємо онлайн по всій країні та за кордоном)
               </p>
             </div>
             <div className="grid gap-3 text-xs text-slate-600">
@@ -571,10 +564,10 @@ export default function Home() {
             </div>
             <div className="grid gap-2 text-xs text-slate-600">
               <p className="text-slate-500">Послуги</p>
-              <p>• Розробка сайтів</p>
-              <p>• Таргетована реклама</p>
-              <p>• SEO-просування</p>
-              <p>• Дизайн лендінгів</p>
+              <p>• Розробка сайтів та лендінгів</p>
+              <p>• Створення інтернет‑магазинів</p>
+              <p>• Розробка навчальних платформ</p>
+              <p>• Підтримка та розвиток проєктів</p>
             </div>
           </div>
         </section>
