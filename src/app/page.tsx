@@ -48,7 +48,7 @@ export default function Home() {
     return { isValid: Object.keys(newErrors).length === 0, errors: newErrors };
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
     const { isValid, errors: validationErrors } = validateForm();
@@ -66,16 +66,36 @@ export default function Home() {
     }
 
     setIsSubmitting(true);
-    // Тут буде логіка відправки форми
-    console.log("Form submitted:", formData);
-    
-    // Симуляція відправки
-    setTimeout(() => {
-      setIsSubmitting(false);
+
+    try {
+      const response = await fetch("/api/send-telegram", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        throw new Error(data.error || "Помилка відправки заявки");
+      }
+
+      // Успішна відправка
       alert("Дякуємо! Ваша заявка відправлена. Ми зв'яжемося з вами найближчим часом.");
       setFormData({ name: "", phone: "", niche: "", budget: "" });
       setErrors({});
-    }, 1000);
+    } catch (error) {
+      console.error("Error submitting form:", error);
+      alert(
+        error instanceof Error
+          ? `Помилка: ${error.message}`
+          : "Сталася помилка при відправці заявки. Будь ласка, спробуйте ще раз або зв'яжіться з нами безпосередньо."
+      );
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
