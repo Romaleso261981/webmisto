@@ -1,4 +1,83 @@
+"use client";
+
+import { useState } from "react";
+
 export default function Home() {
+  const [formData, setFormData] = useState({
+    name: "",
+    phone: "",
+    niche: "",
+    budget: "",
+  });
+  const [errors, setErrors] = useState<Record<string, string>>({});
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({ ...prev, [name]: value }));
+    // Очищаємо помилку для поля, коли користувач починає вводити
+    if (errors[name]) {
+      setErrors((prev) => {
+        const newErrors = { ...prev };
+        delete newErrors[name];
+        return newErrors;
+      });
+    }
+  };
+
+  const validateForm = () => {
+    const newErrors: Record<string, string> = {};
+
+    if (!formData.name.trim()) {
+      newErrors.name = "Будь ласка, введіть ваше ім'я";
+    }
+
+    if (!formData.phone.trim()) {
+      newErrors.phone = "Будь ласка, введіть телефон або Telegram";
+    }
+
+    if (!formData.niche.trim()) {
+      newErrors.niche = "Будь ласка, вкажіть нішу або послугу";
+    }
+
+    if (!formData.budget.trim()) {
+      newErrors.budget = "Будь ласка, вкажіть орієнтовний бюджет";
+    }
+
+    setErrors(newErrors);
+    return { isValid: Object.keys(newErrors).length === 0, errors: newErrors };
+  };
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    
+    const { isValid, errors: validationErrors } = validateForm();
+    if (!isValid) {
+      // Прокручуємо до першого поля з помилкою
+      const firstErrorField = Object.keys(validationErrors)[0];
+      if (firstErrorField) {
+        setTimeout(() => {
+          const element = document.querySelector(`[name="${firstErrorField}"]`);
+          element?.scrollIntoView({ behavior: "smooth", block: "center" });
+          (element as HTMLInputElement)?.focus();
+        }, 100);
+      }
+      return;
+    }
+
+    setIsSubmitting(true);
+    // Тут буде логіка відправки форми
+    console.log("Form submitted:", formData);
+    
+    // Симуляція відправки
+    setTimeout(() => {
+      setIsSubmitting(false);
+      alert("Дякуємо! Ваша заявка відправлена. Ми зв'яжемося з вами найближчим часом.");
+      setFormData({ name: "", phone: "", niche: "", budget: "" });
+      setErrors({});
+    }, 1000);
+  };
+
   return (
     <div className="min-h-screen bg-slate-50 text-slate-900">
       <header className="border-b border-slate-200 bg-white/90 backdrop-blur">
@@ -473,16 +552,26 @@ export default function Home() {
               підкажемо оптимальний формат та орієнтовний бюджет розробки.
             </p>
 
-            <form className="mt-6 space-y-4">
+            <form onSubmit={handleSubmit} className="mt-6 space-y-4">
               <div>
                 <label className="mb-1 block text-xs font-medium text-slate-700">
                   Ім&apos;я
                 </label>
                 <input
                   type="text"
+                  name="name"
+                  value={formData.name}
+                  onChange={handleInputChange}
                   placeholder="Як до вас звертатись?"
-                  className="w-full rounded-xl border border-slate-300 bg-white px-3 py-2 text-sm text-slate-900 outline-none ring-sky-500/0 transition focus:border-sky-500/70 focus:ring-2 focus:ring-sky-500/40"
+                  className={`w-full rounded-xl border bg-white px-3 py-2 text-sm text-slate-900 outline-none transition ${
+                    errors.name
+                      ? "border-red-400 focus:border-red-500 focus:ring-2 focus:ring-red-500/40"
+                      : "border-slate-300 ring-sky-500/0 focus:border-sky-500/70 focus:ring-2 focus:ring-sky-500/40"
+                  }`}
                 />
+                {errors.name && (
+                  <p className="mt-1 text-xs text-red-600">{errors.name}</p>
+                )}
               </div>
               <div>
                 <label className="mb-1 block text-xs font-medium text-slate-700">
@@ -490,9 +579,19 @@ export default function Home() {
                 </label>
                 <input
                   type="text"
+                  name="phone"
+                  value={formData.phone}
+                  onChange={handleInputChange}
                   placeholder="+38 (0__) ___ __ __"
-                  className="w-full rounded-xl border border-slate-300 bg-white px-3 py-2 text-sm text-slate-900 outline-none ring-sky-500/0 transition focus:border-sky-500/70 focus:ring-2 focus:ring-sky-500/40"
+                  className={`w-full rounded-xl border bg-white px-3 py-2 text-sm text-slate-900 outline-none transition ${
+                    errors.phone
+                      ? "border-red-400 focus:border-red-500 focus:ring-2 focus:ring-red-500/40"
+                      : "border-slate-300 ring-sky-500/0 focus:border-sky-500/70 focus:ring-2 focus:ring-sky-500/40"
+                  }`}
                 />
+                {errors.phone && (
+                  <p className="mt-1 text-xs text-red-600">{errors.phone}</p>
+                )}
               </div>
               <div>
                 <label className="mb-1 block text-xs font-medium text-slate-700">
@@ -500,9 +599,19 @@ export default function Home() {
                 </label>
                 <input
                   type="text"
+                  name="niche"
+                  value={formData.niche}
+                  onChange={handleInputChange}
                   placeholder="Наприклад: салон краси, онлайн-курс, клініка тощо"
-                  className="w-full rounded-xl border border-slate-300 bg-white px-3 py-2 text-sm text-slate-900 outline-none ring-sky-500/0 transition focus:border-sky-500/70 focus:ring-2 focus:ring-sky-500/40"
+                  className={`w-full rounded-xl border bg-white px-3 py-2 text-sm text-slate-900 outline-none transition ${
+                    errors.niche
+                      ? "border-red-400 focus:border-red-500 focus:ring-2 focus:ring-red-500/40"
+                      : "border-slate-300 ring-sky-500/0 focus:border-sky-500/70 focus:ring-2 focus:ring-sky-500/40"
+                  }`}
                 />
+                {errors.niche && (
+                  <p className="mt-1 text-xs text-red-600">{errors.niche}</p>
+                )}
               </div>
               <div>
                 <label className="mb-1 block text-xs font-medium text-slate-700">
@@ -510,16 +619,27 @@ export default function Home() {
                 </label>
                 <input
                   type="text"
+                  name="budget"
+                  value={formData.budget}
+                  onChange={handleInputChange}
                   placeholder="Наприклад: $500–$2000"
-                  className="w-full rounded-xl border border-slate-300 bg-white px-3 py-2 text-sm text-slate-900 outline-none ring-sky-500/0 transition focus:border-sky-500/70 focus:ring-2 focus:ring-sky-500/40"
+                  className={`w-full rounded-xl border bg-white px-3 py-2 text-sm text-slate-900 outline-none transition ${
+                    errors.budget
+                      ? "border-red-400 focus:border-red-500 focus:ring-2 focus:ring-red-500/40"
+                      : "border-slate-300 ring-sky-500/0 focus:border-sky-500/70 focus:ring-2 focus:ring-sky-500/40"
+                  }`}
                 />
+                {errors.budget && (
+                  <p className="mt-1 text-xs text-red-600">{errors.budget}</p>
+                )}
               </div>
 
               <button
-                type="button"
-                className="mt-2 inline-flex w-full items-center justify-center rounded-full bg-sky-500 px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-sky-500/40 transition hover:bg-sky-600 md:w-auto"
+                type="submit"
+                disabled={isSubmitting}
+                className="mt-2 inline-flex w-full items-center justify-center rounded-full bg-sky-500 px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-sky-500/40 transition hover:bg-sky-600 disabled:cursor-not-allowed disabled:opacity-50 md:w-auto"
               >
-                Відправити заявку
+                {isSubmitting ? "Відправляється..." : "Відправити заявку"}
               </button>
 
               <p className="text-[11px] text-slate-500">
