@@ -5,6 +5,7 @@ import { Hero } from "@/widgets/hero/ui";
 import { Advantages } from "@/widgets/advantages/ui";
 import { Pricing } from "@/widgets/pricing/ui";
 import { FAQ } from "@/widgets/faq/ui";
+import { WordPressBlock } from "@/widgets/wordpress-block/ui";
 import LeadFormSection from "@/features/lead-form/ui/LeadFormSection";
 import { Footer } from "@/widgets/footer/ui";
 import { DelayedBanner } from "@/widgets/delayed-banner/ui";
@@ -18,6 +19,7 @@ export default function Home() {
         <Advantages />
         <Pricing />
         <FAQ />
+        <WordPressBlock />
         <LeadFormSection />
       </main>
       <Footer />

@@ -188,6 +188,18 @@ export interface Translations {
     copyright: string;
     links: string[];
   };
+  wordpress: {
+    title: string;
+    paragraphs: string[];
+    advantages: {
+      title: string;
+      items: string[];
+    };
+    disadvantages: {
+      title: string;
+      items: string[];
+    };
+  };
 }
 
 export const translations: Record<Language, Translations> = {
@@ -428,6 +440,36 @@ export const translations: Record<Language, Translations> = {
         "Контакти",
       ],
     },
+    wordpress: {
+      title: "ЦІНА САЙТУ НА ВОРДПРЕС",
+      paragraphs: [
+        "Платформа WordPress, яка доступна безкоштовно, з'явилася в 2003 році. З того часу багато користувачів обирають її за стильний дизайн, легке налаштування резервного копіювання, постійні оновлення, дружність до пошукових систем та вбудовану підтримку SEO.",
+        "Станом на березень 2020 року WordPress займає майже 45% сайтів у доменній зоні .ru. Його популярність здебільшого обумовлена безкоштовністю. WordPress часто обирають для створення блогів, сайтів-візиток, онлайн-каталогів, новинних сайтів або інформаційних тематичних платформ.",
+        "Загальна кількість сайтів на WordPress, розроблених у всьому світі, перевищує 500 000. Також можна назвати відомі брендові веб-ресурси, побудовані на WordPress, серед яких vogue.com, newyorker.com, nasa.gov та mercedes-benz.com.",
+      ],
+      advantages: {
+        title: "Переваги Вордпрес:",
+        items: [
+          "Великий асортимент готових шаблонів.",
+          "Можливість безкоштовно завантажити CMS і шаблони.",
+          "Швидке встановлення.",
+          "Можливість завантажити доповнення та розширення (плагіни).",
+          "Зрозуміла і проста адміністративна панель.",
+          "Можливість змінювати код шаблону.",
+        ],
+      },
+      disadvantages: {
+        title: "Недоліки Вордпрес:",
+        items: [
+          "Невеликий набір базових можливостей.",
+          "Низька швидкість для завантаження сайту.",
+          "Відчутне навантаження на сервер.",
+          "Велика кількість неякісно зроблених тем і розширень з помилками.",
+          "Дублювання зображень і сторінок.",
+          "Упереджене ставлення пошукових систем до сайту на безкоштовній системі.",
+        ],
+      },
+    },
   },
   ru: {
     header: {
@@ -666,6 +708,36 @@ export const translations: Record<Language, Translations> = {
         "Контакты",
       ],
     },
+    wordpress: {
+      title: "ЦЕНА САЙТА НА ВОРДПРЕСС",
+      paragraphs: [
+        "Платформа WordPress, которая доступна бесплатно, появилась в 2003 году. С того времени многие пользователи выбирают её за стильный дизайн, лёгкую настройку резервного копирования, постоянные обновления, дружелюбность к поисковым системам и встроенную поддержку SEO.",
+        "По состоянию на март 2020 года WordPress занимает почти 45% сайтов в доменной зоне .ru. Его популярность во многом обусловлена бесплатностью. WordPress часто выбирают для создания блогов, сайтов-визиток, онлайн-каталогов, новостных сайтов или информационных тематических платформ.",
+        "Общее количество сайтов на WordPress, разработанных во всём мире, превышает 500 000. Также можно назвать известные брендовые веб-ресурсы, построенные на WordPress, среди которых vogue.com, newyorker.com, nasa.gov и mercedes-benz.com.",
+      ],
+      advantages: {
+        title: "Преимущества Вордпресс:",
+        items: [
+          "Большой ассортимент готовых шаблонов.",
+          "Возможность бесплатно загрузить CMS и шаблоны.",
+          "Быстрая установка.",
+          "Возможность загрузить дополнения и расширения (плагины).",
+          "Понятная и простая административная панель.",
+          "Возможность изменять код шаблона.",
+        ],
+      },
+      disadvantages: {
+        title: "Недостатки Вордпресс:",
+        items: [
+          "Небольшой набор базовых возможностей.",
+          "Низкая скорость для загрузки сайта.",
+          "Значительная нагрузка на сервер.",
+          "Большое количество некачественно сделанных тем и расширений с ошибками.",
+          "Дублирование изображений и страниц.",
+          "Предвзятое отношение поисковых систем к сайту на бесплатной системе.",
+        ],
+      },
+    },
   },
   en: {
     header: {
@@ -903,6 +975,36 @@ export const translations: Record<Language, Translations> = {
         "Targeted advertising",
         "Contacts",
       ],
+    },
+    wordpress: {
+      title: "WORDPRESS WEBSITE PRICE",
+      paragraphs: [
+        "The WordPress platform, available for free, appeared in 2003. Since then, many users have chosen it for its stylish design, easy backup setup, constant updates, search engine friendliness, and built-in SEO support.",
+        "As of March 2020, WordPress accounts for almost 45% of websites in the .ru domain zone. Its popularity is largely attributed to its freeness. WordPress is frequently chosen for creating blogs, business card websites, online catalogs, news sites, or informational thematic platforms.",
+        "The total number of WordPress sites developed worldwide exceeds 500,000. Well-known brand web resources built on WordPress include vogue.com, newyorker.com, nasa.gov, and mercedes-benz.com.",
+      ],
+      advantages: {
+        title: "WordPress Advantages:",
+        items: [
+          "Large assortment of ready-made templates.",
+          "Ability to download CMS and templates for free.",
+          "Fast installation.",
+          "Ability to download add-ons and extensions (plugins).",
+          "Clear and simple administrative panel.",
+          "Ability to change template code.",
+        ],
+      },
+      disadvantages: {
+        title: "WordPress Disadvantages:",
+        items: [
+          "Small set of basic features.",
+          "Low speed for site loading.",
+          "Significant server load.",
+          "Large number of poorly made themes and extensions with errors.",
+          "Duplication of images and pages.",
+          "Biased attitude of search engines towards sites on a free system.",
+        ],
+      },
     },
   },
 };
