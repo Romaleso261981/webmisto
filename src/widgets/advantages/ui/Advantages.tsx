@@ -1,4 +1,10 @@
+"use client";
+
+import { useI18n } from "@/shared/lib/i18n/I18nProvider";
+
 export default function Advantages() {
+  const { t } = useI18n();
+
   return (
     <section
       id="services"
@@ -7,11 +13,10 @@ export default function Advantages() {
       <div className="grid gap-10 md:grid-cols-[minmax(0,1.1fr)_minmax(0,1.1fr)]">
         <div>
           <h2 className="mb-3 text-2xl font-semibold md:text-3xl">
-            Чому варто довірити нам розробку
+            {t.advantages.title}
           </h2>
           <p className="mb-6 text-sm text-slate-600 md:text-base">
-            Працюємо як технічний партнер: від прототипу та дизайну до
-            розробки, інтеграцій і підтримки проєкту.
+            {t.advantages.description}
           </p>
           <ul className="space-y-4 text-sm text-slate-800">
             <li className="flex gap-3">
@@ -19,10 +24,9 @@ export default function Advantages() {
                 01
               </span>
               <div>
-                <p className="font-medium">Продумана архітектура</p>
+                <p className="font-medium">{t.advantages.items.architecture.title}</p>
                 <p className="text-xs text-slate-500 md:text-sm">
-                  Аналізуємо бізнес‑процеси, будуємо логіку сайту чи платформи
-                  так, щоб її було легко масштабувати та допрацьовувати.
+                  {t.advantages.items.architecture.description}
                 </p>
               </div>
             </li>
@@ -31,10 +35,9 @@ export default function Advantages() {
                 02
               </span>
               <div>
-                <p className="font-medium">Фокус на конверсії</p>
+                <p className="font-medium">{t.advantages.items.conversion.title}</p>
                 <p className="text-xs text-slate-500 md:text-sm">
-                  Проєктуємо зрозумілу структуру, форми, кошики та особисті
-                  кабінети, щоб користувачі швидко доходили до цільової дії.
+                  {t.advantages.items.conversion.description}
                 </p>
               </div>
             </li>
@@ -43,11 +46,9 @@ export default function Advantages() {
                 03
               </span>
               <div>
-                <p className="font-medium">Сучасний стек</p>
+                <p className="font-medium">{t.advantages.items.stack.title}</p>
                 <p className="text-xs text-slate-500 md:text-sm">
-                  Використовуємо Next.js, React, headless‑CMS, платіжні
-                  інтеграції та інші актуальні технології для стабільної
-                  роботи.
+                  {t.advantages.items.stack.description}
                 </p>
               </div>
             </li>
@@ -56,10 +57,9 @@ export default function Advantages() {
                 04
               </span>
               <div>
-                <p className="font-medium">Прозора вартість</p>
+                <p className="font-medium">{t.advantages.items.pricing.title}</p>
                 <p className="text-xs text-slate-500 md:text-sm">
-                  Фіксуємо обсяг робіт, етапи та дедлайни. Допомагаємо
-                  обрати рішення під ваш бюджет — від MVP до повної версії.
+                  {t.advantages.items.pricing.description}
                 </p>
               </div>
             </li>
@@ -69,50 +69,46 @@ export default function Advantages() {
         <div className="grid gap-4 text-sm md:grid-cols-2">
           <div className="rounded-2xl border border-slate-200 bg-slate-50 p-4">
             <p className="text-xs font-medium uppercase tracking-[0.18em] text-slate-500">
-              Типи рішень
+              {t.advantages.solutions.corporate.label}
             </p>
             <p className="mt-2 text-sm font-semibold text-slate-900">
-              Корпоративні сайти та лендінги
+              {t.advantages.solutions.corporate.title}
             </p>
             <p className="mt-2 text-xs text-slate-600">
-              Сайти‑візитки, посадкові сторінки, багатосторінкові сайти з
-              блогом, портфоліо та сторінками послуг.
+              {t.advantages.solutions.corporate.description}
             </p>
           </div>
           <div className="rounded-2xl border border-slate-200 bg-slate-50 p-4">
             <p className="text-xs font-medium uppercase tracking-[0.18em] text-slate-500">
-              Інтернет‑магазини
+              {t.advantages.solutions.shop.label}
             </p>
             <p className="mt-2 text-sm font-semibold text-slate-900">
-              Каталоги, кошики, оплати
+              {t.advantages.solutions.shop.title}
             </p>
             <p className="mt-2 text-xs text-slate-600">
-              Імпорт товарів, категорії, фільтри, інтеграції з платіжними
-              системами та службами доставки.
+              {t.advantages.solutions.shop.description}
             </p>
           </div>
           <div className="rounded-2xl border border-slate-200 bg-slate-50 p-4">
             <p className="text-xs font-medium uppercase tracking-[0.18em] text-slate-500">
-              Навчальні платформи
+              {t.advantages.solutions.platform.label}
             </p>
             <p className="mt-2 text-sm font-semibold text-slate-900">
-              Онлайн‑курси та кабінети студентів
+              {t.advantages.solutions.platform.title}
             </p>
             <p className="mt-2 text-xs text-slate-600">
-              Особисті кабінети, уроки, модулі, прогрес, домашні завдання,
-              оплати й доступи до курсів.
+              {t.advantages.solutions.platform.description}
             </p>
           </div>
           <div className="rounded-2xl border border-slate-200 bg-slate-50 p-4">
             <p className="text-xs font-medium uppercase tracking-[0.18em] text-slate-500">
-              Додатково
+              {t.advantages.solutions.additional.label}
             </p>
             <p className="mt-2 text-sm font-semibold text-slate-900">
-              Підключення сервісів та підтримка
+              {t.advantages.solutions.additional.title}
             </p>
             <p className="mt-2 text-xs text-slate-600">
-              Інтеграції з CRM, email‑розсилками, чат‑ботами, аналітикою,
-              технічна підтримка та доробки.
+              {t.advantages.solutions.additional.description}
             </p>
           </div>
         </div>

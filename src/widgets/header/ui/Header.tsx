@@ -1,4 +1,11 @@
+"use client";
+
+import { useI18n } from "@/shared/lib/i18n/I18nProvider";
+import { LanguageSwitcher } from "@/shared/ui/LanguageSwitcher";
+
 export default function Header() {
+  const { t } = useI18n();
+
   return (
     <header className="border-b border-slate-200 bg-white/90 backdrop-blur">
       <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-4 md:px-6">
@@ -18,25 +25,28 @@ export default function Header() {
 
         <nav className="hidden items-center gap-8 text-sm text-slate-700 md:flex">
           <a href="#services" className="hover:text-sky-600">
-            Послуги
+            {t.header.nav.services}
           </a>
           <a href="#pricing" className="hover:text-sky-600">
-            Тарифи
+            {t.header.nav.pricing}
           </a>
           <a href="#faq" className="hover:text-sky-600">
-            Питання
+            {t.header.nav.faq}
           </a>
           <a href="#contacts" className="hover:text-sky-600">
-            Контакти
+            {t.header.nav.contacts}
           </a>
         </nav>
 
-        <a
-          href="#lead-form"
-          className="hidden rounded-full bg-sky-500 px-5 py-2.5 text-sm font-semibold text-white shadow-lg shadow-sky-500/30 transition hover:bg-sky-600 md:inline-flex"
-        >
-          Замовити таргет
-        </a>
+        <div className="hidden items-center gap-4 md:flex">
+          <LanguageSwitcher />
+          <a
+            href="#lead-form"
+            className="rounded-full bg-sky-500 px-5 py-2.5 text-sm font-semibold text-white shadow-lg shadow-sky-500/30 transition hover:bg-sky-600"
+          >
+            {t.header.cta}
+          </a>
+        </div>
       </div>
     </header>
   );

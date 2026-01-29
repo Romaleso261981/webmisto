@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useI18n } from "@/shared/lib/i18n/I18nProvider";
 
 export interface FormData {
   name: string;
@@ -18,6 +19,7 @@ export interface NotificationState {
 }
 
 export function useLeadForm() {
+  const { t } = useI18n();
   const [formData, setFormData] = useState<FormData>({
     name: "",
     phone: "",
@@ -49,19 +51,19 @@ export function useLeadForm() {
     const newErrors: FormErrors = {};
 
     if (!formData.name.trim()) {
-      newErrors.name = "Будь ласка, введіть ваше ім'я";
+      newErrors.name = t.form.fields.name.error;
     }
 
     if (!formData.phone.trim()) {
-      newErrors.phone = "Будь ласка, введіть телефон або Telegram";
+      newErrors.phone = t.form.fields.phone.error;
     }
 
     if (!formData.niche.trim()) {
-      newErrors.niche = "Будь ласка, вкажіть нішу або послугу";
+      newErrors.niche = t.form.fields.niche.error;
     }
 
     if (!formData.budget.trim()) {
-      newErrors.budget = "Будь ласка, вкажіть орієнтовний бюджет";
+      newErrors.budget = t.form.fields.budget.error;
     }
 
     setErrors(newErrors);
@@ -105,7 +107,7 @@ export function useLeadForm() {
       // Успішна відправка
       setNotification({
         type: "success",
-        message: "Дякуємо! Ваша заявка відправлена. Ми зв'яжемося з вами найближчим часом.",
+        message: t.form.success,
         isVisible: true,
       });
       setFormData({ name: "", phone: "", niche: "", budget: "" });

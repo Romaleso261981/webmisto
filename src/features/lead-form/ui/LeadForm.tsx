@@ -1,12 +1,14 @@
 "use client";
 
 import { useLeadForm } from "../model/useLeadForm";
+import { useI18n } from "@/shared/lib/i18n/I18nProvider";
 
 interface LeadFormProps {
   hook: ReturnType<typeof useLeadForm>;
 }
 
 export default function LeadForm({ hook }: LeadFormProps) {
+  const { t } = useI18n();
   const {
     formData,
     errors,
@@ -18,24 +20,23 @@ export default function LeadForm({ hook }: LeadFormProps) {
   return (
     <div>
       <h2 className="text-2xl font-semibold md:text-3xl">
-        Отримайте безкоштовну консультацію по вашому проєкту
+        {t.form.title}
       </h2>
       <p className="mt-3 text-sm text-slate-600 md:text-base">
-        Залиште контакти — ми проаналізуємо вашу ідею або поточний сайт,
-        підкажемо оптимальний формат та орієнтовний бюджет розробки.
+        {t.form.description}
       </p>
 
       <form onSubmit={handleSubmit} className="mt-6 space-y-4">
         <div>
           <label className="mb-1 block text-xs font-medium text-slate-700">
-            Ім&apos;я
+            {t.form.fields.name.label}
           </label>
           <input
             type="text"
             name="name"
             value={formData.name}
             onChange={handleInputChange}
-            placeholder="Як до вас звертатись?"
+            placeholder={t.form.fields.name.placeholder}
             className={`w-full rounded-xl border bg-white px-3 py-2 text-sm text-slate-900 outline-none transition ${
               errors.name
                 ? "border-red-400 focus:border-red-500 focus:ring-2 focus:ring-red-500/40"
@@ -48,14 +49,14 @@ export default function LeadForm({ hook }: LeadFormProps) {
         </div>
         <div>
           <label className="mb-1 block text-xs font-medium text-slate-700">
-            Телефон або Telegram
+            {t.form.fields.phone.label}
           </label>
           <input
             type="text"
             name="phone"
             value={formData.phone}
             onChange={handleInputChange}
-            placeholder="+38 (0__) ___ __ __"
+            placeholder={t.form.fields.phone.placeholder}
             className={`w-full rounded-xl border bg-white px-3 py-2 text-sm text-slate-900 outline-none transition ${
               errors.phone
                 ? "border-red-400 focus:border-red-500 focus:ring-2 focus:ring-red-500/40"
@@ -68,14 +69,14 @@ export default function LeadForm({ hook }: LeadFormProps) {
         </div>
         <div>
           <label className="mb-1 block text-xs font-medium text-slate-700">
-            Ніша / послуга
+            {t.form.fields.niche.label}
           </label>
           <input
             type="text"
             name="niche"
             value={formData.niche}
             onChange={handleInputChange}
-            placeholder="Наприклад: салон краси, онлайн-курс, клініка тощо"
+            placeholder={t.form.fields.niche.placeholder}
             className={`w-full rounded-xl border bg-white px-3 py-2 text-sm text-slate-900 outline-none transition ${
               errors.niche
                 ? "border-red-400 focus:border-red-500 focus:ring-2 focus:ring-red-500/40"
@@ -88,14 +89,14 @@ export default function LeadForm({ hook }: LeadFormProps) {
         </div>
         <div>
           <label className="mb-1 block text-xs font-medium text-slate-700">
-            Орієнтовний бюджет на розробку
+            {t.form.fields.budget.label}
           </label>
           <input
             type="text"
             name="budget"
             value={formData.budget}
             onChange={handleInputChange}
-            placeholder="Наприклад: $500–$2000"
+            placeholder={t.form.fields.budget.placeholder}
             className={`w-full rounded-xl border bg-white px-3 py-2 text-sm text-slate-900 outline-none transition ${
               errors.budget
                 ? "border-red-400 focus:border-red-500 focus:ring-2 focus:ring-red-500/40"
@@ -112,12 +113,11 @@ export default function LeadForm({ hook }: LeadFormProps) {
           disabled={isSubmitting}
           className="mt-2 inline-flex w-full items-center justify-center rounded-full bg-sky-500 px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-sky-500/40 transition hover:bg-sky-600 disabled:cursor-not-allowed disabled:opacity-50 md:w-auto"
         >
-          {isSubmitting ? "Відправляється..." : "Відправити заявку"}
+          {isSubmitting ? t.form.submitting : t.form.submit}
         </button>
 
         <p className="text-[11px] text-slate-500">
-          Натискаючи кнопку, ви погоджуєтесь на обробку персональних
-          даних. Ми не передаємо ваші контакти третім особам.
+          {t.form.privacy}
         </p>
       </form>
     </div>
