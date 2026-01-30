@@ -2,7 +2,6 @@
 
 import { useState } from "react";
 import { useI18n } from "@/shared/lib/i18n/I18nProvider";
-import { LanguageSwitcher } from "@/shared/ui/LanguageSwitcher";
 import LanguageSwitcherDropdown from "@/shared/ui/LanguageSwitcher/LanguageSwitcherDropdown";
 
 export default function Header() {
@@ -42,7 +41,9 @@ export default function Header() {
         </nav>
 
         <div className="hidden items-center gap-4 md:flex">
-          <LanguageSwitcher />
+          <div className="w-32">
+            <LanguageSwitcherDropdown />
+          </div>
           <a
             href="#lead-form"
             className="rounded-full bg-sky-500 px-5 py-2.5 text-sm font-semibold text-white shadow-lg shadow-sky-500/30 transition hover:bg-sky-600"
