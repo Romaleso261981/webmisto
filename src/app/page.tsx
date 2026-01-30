@@ -23,7 +23,7 @@ export default function Home() {
         <LeadFormSection />
       </main>
       <Footer />
-      <DelayedBanner delay={5000} />
+      <DelayedBanner delay={5000} resetOnMount={true} />
     </div>
   );
 }

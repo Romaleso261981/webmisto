@@ -6,29 +6,41 @@ import { useI18n } from "@/shared/lib/i18n/I18nProvider";
 interface DelayedBannerProps {
   delay?: number; // Затримка в мілісекундах (за замовчуванням 5 секунд)
   onClose?: () => void;
+  resetOnMount?: boolean; // Скинути localStorage при монтуванні (для тестування)
 }
 
 export default function DelayedBanner({
   delay = 5000,
   onClose,
+  resetOnMount = false,
 }: DelayedBannerProps) {
-  const { t, language } = useI18n();
+  const { language } = useI18n();
   const [isVisible, setIsVisible] = useState(false);
   const [phone, setPhone] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   useEffect(() => {
+    // Якщо потрібно скинути, видаляємо з localStorage
+    if (resetOnMount) {
+      localStorage.removeItem("delayedBannerClosed");
+    }
+
     // Перевіряємо, чи банер вже був закритий
     const wasClosed = localStorage.getItem("delayedBannerClosed");
-    if (wasClosed) return;
+    
+    if (wasClosed === "true") {
+      return;
+    }
 
     // Встановлюємо таймер для показу банера
     const timer = setTimeout(() => {
       setIsVisible(true);
     }, delay);
 
-    return () => clearTimeout(timer);
-  }, [delay]);
+    return () => {
+      clearTimeout(timer);
+    };
+  }, [delay, resetOnMount]);
 
   const handleClose = () => {
     setIsVisible(false);
@@ -110,8 +122,18 @@ export default function DelayedBanner({
   const text = translations[language];
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 p-4 backdrop-blur-sm animate-in fade-in duration-300">
-      <div className="relative w-full max-w-4xl rounded-3xl bg-white p-8 shadow-2xl animate-in zoom-in-95 duration-300 md:p-12">
+    <div 
+      className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 p-4 backdrop-blur-sm"
+      style={{
+        animation: "fadeIn 0.3s ease-out",
+      }}
+    >
+      <div 
+        className="relative w-full max-w-4xl rounded-3xl bg-white p-8 shadow-2xl md:p-12"
+        style={{
+          animation: "slideIn 0.3s ease-out",
+        }}
+      >
         {/* Кнопка закриття */}
         <button
           onClick={handleClose}
