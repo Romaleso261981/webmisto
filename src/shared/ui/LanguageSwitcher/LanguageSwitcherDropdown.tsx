@@ -33,6 +33,11 @@ export default function LanguageSwitcherDropdown() {
     };
   }, [isOpen]);
 
+  const handleLanguageChange = (lang: Language) => {
+    setLanguage(lang);
+    setIsOpen(false);
+  };
+
   return (
     <div className="relative w-full" ref={dropdownRef}>
       <button
@@ -65,10 +70,7 @@ export default function LanguageSwitcherDropdown() {
           {languages.map((lang) => (
             <button
               key={lang.code}
-              onClick={() => {
-                setLanguage(lang.code);
-                setIsOpen(false);
-              }}
+              onClick={() => handleLanguageChange(lang.code)}
               className={`
                 flex w-full items-center gap-2 px-4 py-3 text-left text-sm transition-colors first:rounded-t-lg last:rounded-b-lg
                 ${
