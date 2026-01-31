@@ -55,12 +55,19 @@ export async function POST(request: NextRequest) {
         chatId = autoChatId.toString();
         console.log(`Auto-detected chat_id: ${chatId}`);
       } else {
+        // Логуємо детальну інформацію для розробника
+        console.error("Chat ID не знайдено. Для налаштування:");
+        console.error("1. Напишіть будь-яке повідомлення вашому боту в Telegram");
+        console.error("2. Відкрийте /api/get-chat-id для отримання вашого chat_id");
+        console.error("3. Додайте TELEGRAM_CHAT_ID=ваш_chat_id в файл .env.local в корені проекту");
+        
+        // Повертаємо загальне повідомлення для користувача
         return NextResponse.json(
           { 
-            error: "Chat ID не знайдено. Для налаштування виконайте один з кроків:\n\n1. Напишіть будь-яке повідомлення вашому боту в Telegram\n2. Відкрийте http://localhost:3000/api/get-chat-id для отримання вашого chat_id\n3. Додайте TELEGRAM_CHAT_ID=ваш_chat_id в файл .env.local в корені проекту",
-            hint: "Після налаштування перезапустіть сервер розробки"
+            error: "Сервіс тимчасово недоступний. Будь ласка, спробуйте пізніше або зв'яжіться з нами безпосередньо.",
+            isConfigError: true // Прапорець для розробника
           },
-          { status: 400 }
+          { status: 503 }
         );
       }
     }

@@ -101,6 +101,10 @@ export function useLeadForm() {
       const data = await response.json();
 
       if (!response.ok) {
+        // Якщо це помилка конфігурації, показуємо загальне повідомлення
+        if (data.isConfigError) {
+          throw new Error("Сервіс тимчасово недоступний. Будь ласка, спробуйте пізніше або зв'яжіться з нами безпосередньо.");
+        }
         throw new Error(data.error || "Помилка відправки заявки");
       }
 
