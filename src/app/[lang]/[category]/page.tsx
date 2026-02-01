@@ -24,7 +24,7 @@ export default function CategoryPage({
   }
 
   const categoryKey = category === "e-commerce" ? "e-commerce" : category;
-  const categoryData = t.categories[categoryKey as keyof typeof t.categories];
+  const categoryData = t.categories[categoryKey as "e-commerce" | "corporate" | "landing" | "platform"];
 
   return (
     <div className="min-h-screen bg-slate-50 text-slate-900">

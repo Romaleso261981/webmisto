@@ -1,17 +1,21 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import { useI18n } from "@/shared/lib/i18n/I18nProvider";
 import LanguageSwitcherDropdown from "@/shared/ui/LanguageSwitcher/LanguageSwitcherDropdown";
 
 export default function Header() {
-  const { t } = useI18n();
+  const { t, language } = useI18n();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   return (
     <header className="border-b border-slate-200 bg-white/90 backdrop-blur">
       <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-4 md:px-6">
-        <div className="flex items-center gap-2">
+        <Link
+          href={`/${language}`}
+          className="flex items-center gap-2 transition-opacity hover:opacity-80"
+        >
           <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-sky-500 text-lg font-bold text-white">
             WM
           </div>
@@ -23,7 +27,7 @@ export default function Header() {
               Веб студія у Львові
             </span>
           </div>
-        </div>
+        </Link>
 
         <nav className="hidden items-center gap-8 text-sm text-slate-700 md:flex">
           <a href="#services" className="hover:text-sky-600">
