@@ -233,6 +233,25 @@ export interface Translations {
       price: string;
       cta: string;
     };
+    contextual: {
+      title: string;
+      description: string;
+      subtitle: string;
+      benefits: {
+        title: string;
+        items: Array<{ title: string; description: string }>;
+      };
+      tasks: {
+        title: string;
+        items: string[];
+      };
+      howItWorks: {
+        title: string;
+        description: string;
+      };
+      price: string;
+      cta: string;
+    };
   };
 }
 
@@ -570,6 +589,55 @@ export const translations: Record<Language, Translations> = {
         price: "Індивідуально",
         cta: "Запланувати консультацію",
       },
+      contextual: {
+        title: "Контекстна реклама",
+        description:
+          "Підвищимо впізнаваність бренду та залучимо зацікавлених клієнтів завдяки контекстній рекламі в Google та інших пошукових системах.",
+        subtitle:
+          "Контекстна реклама — вид інтернет-реклами, що показує оголошення користувачам на основі їхніх пошукових запитів та змісту переглянутих сторінок.",
+        benefits: {
+          title: "Переваги контекстної реклами",
+          items: [
+            {
+              title: "Точне влучення у цільову аудиторію",
+              description:
+                "Рекламу бачать користувачі, які вже зацікавлені у вашій послузі або товарі.",
+            },
+            {
+              title: "Швидкий результат",
+              description:
+                "Перші клієнти можуть з'явитися вже через кілька годин після запуску кампанії.",
+            },
+            {
+              title: "Контроль бюджету",
+              description:
+                "Ви платите тільки за кліки, маєте повний контроль над витратами та можливість налаштувати денний ліміт.",
+            },
+            {
+              title: "Детальна аналітика",
+              description:
+                "Отримуйте звіти про кількість показів, кліків, конверсій та ROI кампанії.",
+            },
+          ],
+        },
+        tasks: {
+          title: "Задачі, які вирішує контекстна реклама",
+          items: [
+            "Залучення якісного цільового трафіку на сайт",
+            "Збільшення кількості лідів і продажів",
+            "Підвищення впізнаваності бренду",
+            "Стимулювання повторних покупок",
+            "Просування нових товарів або послуг",
+          ],
+        },
+        howItWorks: {
+          title: "Як працює контекстна реклама Google Ads?",
+          description:
+            "Для показу оголошень використовуються релевантні ключові слова. Коли користувач вводить запит, що містить ці ключові слова, реклама відображається в результатах пошуку або на сайтах партнерів Google. Ви сплачуєте лише за кліки (pay per click), що робить цей вид реклами ефективним та економічним.",
+        },
+        price: "Індивідуально",
+        cta: "Отримати консультацію",
+      },
     },
   },
   ru: {
@@ -905,6 +973,55 @@ export const translations: Record<Language, Translations> = {
         price: "Индивидуально",
         cta: "Запланировать консультацию",
       },
+      contextual: {
+        title: "Контекстная реклама",
+        description:
+          "Повысим узнаваемость бренда и привлечём заинтересованных клиентов благодаря контекстной рекламе в Google и других поисковых системах.",
+        subtitle:
+          "Контекстная реклама — вид интернет-рекламы, который показывает объявления пользователям на основе их поисковых запросов и содержания просмотренных страниц.",
+        benefits: {
+          title: "Преимущества контекстной рекламы",
+          items: [
+            {
+              title: "Точное попадание в целевую аудиторию",
+              description:
+                "Рекламу видят пользователи, которые уже заинтересованы в вашей услуге или товаре.",
+            },
+            {
+              title: "Быстрый результат",
+              description:
+                "Первые клиенты могут появиться уже через несколько часов после запуска кампании.",
+            },
+            {
+              title: "Контроль бюджета",
+              description:
+                "Вы платите только за клики, имеете полный контроль над расходами и возможность настроить дневной лимит.",
+            },
+            {
+              title: "Детальная аналитика",
+              description:
+                "Получайте отчёты о количестве показов, кликов, конверсий и ROI кампании.",
+            },
+          ],
+        },
+        tasks: {
+          title: "Задачи, которые решает контекстная реклама",
+          items: [
+            "Привлечение качественного целевого трафика на сайт",
+            "Увеличение количества лидов и продаж",
+            "Повышение узнаваемости бренда",
+            "Стимулирование повторных покупок",
+            "Продвижение новых товаров или услуг",
+          ],
+        },
+        howItWorks: {
+          title: "Как работает контекстная реклама Google Ads?",
+          description:
+            "Для показа объявлений используются релевантные ключевые слова. Когда пользователь вводит запрос, содержащий эти ключевые слова, реклама отображается в результатах поиска или на сайтах партнёров Google. Вы платите только за клики (pay per click), что делает этот вид рекламы эффективным и экономичным.",
+        },
+        price: "Индивидуально",
+        cta: "Получить консультацию",
+      },
     },
   },
   en: {
@@ -1239,6 +1356,55 @@ export const translations: Record<Language, Translations> = {
         ],
         price: "Individual",
         cta: "Schedule consultation",
+      },
+      contextual: {
+        title: "Contextual Advertising",
+        description:
+          "Increase brand recognition and attract interested clients through contextual advertising in Google and other search engines.",
+        subtitle:
+          "Contextual advertising is a type of internet advertising that shows ads to users based on their search queries and the content of viewed pages.",
+        benefits: {
+          title: "Benefits of contextual advertising",
+          items: [
+            {
+              title: "Precise targeting of the target audience",
+              description:
+                "Ads are seen by users who are already interested in your service or product.",
+            },
+            {
+              title: "Quick results",
+              description:
+                "First clients can appear within a few hours after launching the campaign.",
+            },
+            {
+              title: "Budget control",
+              description:
+                "You pay only for clicks, have full control over expenses and can set a daily limit.",
+            },
+            {
+              title: "Detailed analytics",
+              description:
+                "Receive reports on impressions, clicks, conversions and campaign ROI.",
+            },
+          ],
+        },
+        tasks: {
+          title: "Tasks solved by contextual advertising",
+          items: [
+            "Attracting quality targeted traffic to the website",
+            "Increasing the number of leads and sales",
+            "Increasing brand recognition",
+            "Stimulating repeat purchases",
+            "Promoting new products or services",
+          ],
+        },
+        howItWorks: {
+          title: "How does Google Ads contextual advertising work?",
+          description:
+            "Relevant keywords are used to display ads. When a user enters a query containing these keywords, the ad appears in search results or on Google partner sites. You pay only for clicks (pay per click), making this type of advertising effective and economical.",
+        },
+        price: "Individual",
+        cta: "Get consultation",
       },
     },
   },
