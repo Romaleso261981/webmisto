@@ -189,6 +189,9 @@ export interface Translations {
     copyright: string;
     links: string[];
   };
+  certificates: {
+    title: string;
+  };
   wordpress: {
     title: string;
     paragraphs: string[];
@@ -249,6 +252,27 @@ export interface Translations {
         title: string;
         description: string;
       };
+      price: string;
+      cta: string;
+    };
+    targeting: {
+      title: string;
+      description: string;
+      features: string[];
+      price: string;
+      cta: string;
+    };
+    seo: {
+      title: string;
+      description: string;
+      features: string[];
+      price: string;
+      cta: string;
+    };
+    smm: {
+      title: string;
+      description: string;
+      features: string[];
       price: string;
       cta: string;
     };
@@ -485,6 +509,9 @@ export const translations: Record<Language, Translations> = {
         ],
       },
     },
+    certificates: {
+      title: "Сертифікати",
+    },
     footer: {
       copyright: "Створено ©",
       links: [
@@ -635,6 +662,51 @@ export const translations: Record<Language, Translations> = {
           description:
             "Для показу оголошень використовуються релевантні ключові слова. Коли користувач вводить запит, що містить ці ключові слова, реклама відображається в результатах пошуку або на сайтах партнерів Google. Ви сплачуєте лише за кліки (pay per click), що робить цей вид реклами ефективним та економічним.",
         },
+        price: "Індивідуально",
+        cta: "Отримати консультацію",
+      },
+      targeting: {
+        title: "Таргетована реклама",
+        description:
+          "Налаштуємо ефективну таргетовану рекламу в соціальних мережах (Facebook, Instagram, Telegram) для залучення цільової аудиторії та збільшення продажів.",
+        features: [
+          "Налаштування рекламних кампаній у Facebook та Instagram",
+          "Створення таргетованих аудиторій",
+          "Налаштування реклами в Telegram",
+          "A/B тестування креативів",
+          "Оптимізація за конверсіями",
+          "Детальна аналітика та звіти",
+        ],
+        price: "Індивідуально",
+        cta: "Отримати консультацію",
+      },
+      seo: {
+        title: "SEO просування",
+        description:
+          "Підвищимо позиції вашого сайту в пошукових системах Google та Yandex, залучимо органічний трафік та збільшимо кількість клієнтів.",
+        features: [
+          "Технічний аудит сайту",
+          "Оптимізація контенту та мета-тегів",
+          "Побудова внутрішньої перелінковки",
+          "Зовнішнє посилання (link building)",
+          "Створення контенту для SEO",
+          "Моніторинг позицій та аналітика",
+        ],
+        price: "Індивідуально",
+        cta: "Отримати консультацію",
+      },
+      smm: {
+        title: "SMM просування",
+        description:
+          "Розвиваємо ваші соціальні мережі, створюємо контент-план, ведемо профілі та залучаємо нових підписників та клієнтів.",
+        features: [
+          "Створення контент-плану",
+          "Ведення соціальних мереж",
+          "Створення візуального контенту",
+          "Робота з коментарями та повідомленнями",
+          "Запуск конкурсів та акцій",
+          "Аналітика та звіти по профілям",
+        ],
         price: "Індивідуально",
         cta: "Отримати консультацію",
       },
@@ -869,6 +941,9 @@ export const translations: Record<Language, Translations> = {
         ],
       },
     },
+    certificates: {
+      title: "Сертификаты",
+    },
     footer: {
       copyright: "Создано ©",
       links: [
@@ -1019,6 +1094,51 @@ export const translations: Record<Language, Translations> = {
           description:
             "Для показа объявлений используются релевантные ключевые слова. Когда пользователь вводит запрос, содержащий эти ключевые слова, реклама отображается в результатах поиска или на сайтах партнёров Google. Вы платите только за клики (pay per click), что делает этот вид рекламы эффективным и экономичным.",
         },
+        price: "Индивидуально",
+        cta: "Получить консультацию",
+      },
+      targeting: {
+        title: "Таргетированная реклама",
+        description:
+          "Настроим эффективную таргетированную рекламу в социальных сетях (Facebook, Instagram, Telegram) для привлечения целевой аудитории и увеличения продаж.",
+        features: [
+          "Настройка рекламных кампаний в Facebook и Instagram",
+          "Создание таргетированных аудиторий",
+          "Настройка рекламы в Telegram",
+          "A/B тестирование креативов",
+          "Оптимизация по конверсиям",
+          "Детальная аналитика и отчёты",
+        ],
+        price: "Индивидуально",
+        cta: "Получить консультацию",
+      },
+      seo: {
+        title: "SEO продвижение",
+        description:
+          "Повысим позиции вашего сайта в поисковых системах Google и Yandex, привлечём органический трафик и увеличим количество клиентов.",
+        features: [
+          "Технический аудит сайта",
+          "Оптимизация контента и мета-тегов",
+          "Построение внутренней перелинковки",
+          "Внешние ссылки (link building)",
+          "Создание контента для SEO",
+          "Мониторинг позиций и аналитика",
+        ],
+        price: "Индивидуально",
+        cta: "Получить консультацию",
+      },
+      smm: {
+        title: "SMM продвижение",
+        description:
+          "Развиваем ваши социальные сети, создаём контент-план, ведём профили и привлекаем новых подписчиков и клиентов.",
+        features: [
+          "Создание контент-плана",
+          "Ведение социальных сетей",
+          "Создание визуального контента",
+          "Работа с комментариями и сообщениями",
+          "Запуск конкурсов и акций",
+          "Аналитика и отчёты по профилям",
+        ],
         price: "Индивидуально",
         cta: "Получить консультацию",
       },
@@ -1253,6 +1373,9 @@ export const translations: Record<Language, Translations> = {
         ],
       },
     },
+    certificates: {
+      title: "Certificates",
+    },
     footer: {
       copyright: "Created ©",
       links: [
@@ -1403,6 +1526,51 @@ export const translations: Record<Language, Translations> = {
           description:
             "Relevant keywords are used to display ads. When a user enters a query containing these keywords, the ad appears in search results or on Google partner sites. You pay only for clicks (pay per click), making this type of advertising effective and economical.",
         },
+        price: "Individual",
+        cta: "Get consultation",
+      },
+      targeting: {
+        title: "Targeted Advertising",
+        description:
+          "Set up effective targeted advertising on social networks (Facebook, Instagram, Telegram) to attract your target audience and increase sales.",
+        features: [
+          "Setting up advertising campaigns on Facebook and Instagram",
+          "Creating targeted audiences",
+          "Setting up advertising on Telegram",
+          "A/B testing of creatives",
+          "Conversion optimization",
+          "Detailed analytics and reports",
+        ],
+        price: "Individual",
+        cta: "Get consultation",
+      },
+      seo: {
+        title: "SEO Promotion",
+        description:
+          "Improve your website's positions in Google and Yandex search engines, attract organic traffic and increase the number of clients.",
+        features: [
+          "Technical website audit",
+          "Content and meta tags optimization",
+          "Building internal linking",
+          "External links (link building)",
+          "Creating SEO content",
+          "Position monitoring and analytics",
+        ],
+        price: "Individual",
+        cta: "Get consultation",
+      },
+      smm: {
+        title: "SMM Promotion",
+        description:
+          "Develop your social networks, create content plans, manage profiles and attract new subscribers and clients.",
+        features: [
+          "Creating content plans",
+          "Social media management",
+          "Creating visual content",
+          "Working with comments and messages",
+          "Launching contests and promotions",
+          "Analytics and reports on profiles",
+        ],
         price: "Individual",
         cta: "Get consultation",
       },

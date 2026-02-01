@@ -5,6 +5,7 @@ import { useI18n } from "@/shared/lib/i18n/I18nProvider";
 import { Header } from "@/widgets/header/ui";
 import { Footer } from "@/widgets/footer/ui";
 import LeadFormSection from "@/features/lead-form/ui/LeadFormSection";
+import { Certificates } from "@/widgets/certificates/ui";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 
@@ -118,6 +119,9 @@ export default function CategoryPage({
             </p>
           </section>
 
+          {/* Certificates Section */}
+          <Certificates />
+
           {/* CTA Section */}
           <section className="mb-12 rounded-2xl bg-gradient-to-br from-sky-500 to-sky-600 p-8 text-center text-white shadow-xl">
             <h2 className="mb-4 text-2xl font-semibold md:text-3xl">
@@ -141,7 +145,11 @@ export default function CategoryPage({
   }
 
   // Стандартна сторінка для інших категорій
-  const categoryData = t.categories[categoryKey as "e-commerce" | "corporate" | "landing" | "platform"];
+  const categoryData = t.categories[categoryKey as "e-commerce" | "corporate" | "landing" | "platform" | "targeting" | "seo" | "smm"];
+  
+  if (!categoryData) {
+    notFound();
+  }
 
   return (
     <div className="min-h-screen bg-slate-50 text-slate-900">
@@ -195,6 +203,9 @@ export default function CategoryPage({
             ))}
           </div>
         </section>
+
+        {/* Certificates Section - для SMM та contextual */}
+        {(category === "smm" || category === "contextual") && <Certificates />}
 
         {/* CTA Section */}
         <section className="mb-12 rounded-2xl bg-gradient-to-br from-sky-500 to-sky-600 p-8 text-center text-white shadow-xl">
