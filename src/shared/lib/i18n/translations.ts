@@ -212,6 +212,11 @@ export interface Translations {
       title: string;
       description: string;
       features: string[];
+      tasks: {
+        title: string;
+        subtitle: string;
+        items: string[];
+      };
       price: string;
       cta: string;
     };
@@ -219,6 +224,11 @@ export interface Translations {
       title: string;
       description: string;
       features: string[];
+      tasks: {
+        title: string;
+        subtitle: string;
+        items: string[];
+      };
       price: string;
       cta: string;
     };
@@ -226,6 +236,11 @@ export interface Translations {
       title: string;
       description: string;
       features: string[];
+      tasks: {
+        title: string;
+        subtitle: string;
+        items: string[];
+      };
       price: string;
       cta: string;
     };
@@ -233,6 +248,11 @@ export interface Translations {
       title: string;
       description: string;
       features: string[];
+      tasks: {
+        title: string;
+        subtitle: string;
+        items: string[];
+      };
       price: string;
       cta: string;
     };
@@ -244,10 +264,11 @@ export interface Translations {
         title: string;
         items: Array<{ title: string; description: string }>;
       };
-      tasks: {
-        title: string;
-        items: string[];
-      };
+        tasks: {
+          title: string;
+          subtitle: string;
+          items: string[];
+        };
       howItWorks: {
         title: string;
         description: string;
@@ -259,6 +280,11 @@ export interface Translations {
       title: string;
       description: string;
       features: string[];
+      tasks: {
+        title: string;
+        subtitle: string;
+        items: string[];
+      };
       price: string;
       cta: string;
     };
@@ -266,6 +292,11 @@ export interface Translations {
       title: string;
       description: string;
       features: string[];
+      tasks: {
+        title: string;
+        subtitle: string;
+        items: string[];
+      };
       price: string;
       cta: string;
     };
@@ -273,6 +304,11 @@ export interface Translations {
       title: string;
       description: string;
       features: string[];
+      tasks: {
+        title: string;
+        subtitle: string;
+        items: string[];
+      };
       price: string;
       cta: string;
     };
@@ -568,6 +604,16 @@ export const translations: Record<Language, Translations> = {
           "Особистий кабінет покупця",
           "Адмін-панель для керування товарами",
         ],
+        tasks: {
+          title: "Задачі, які вирішує інтернет-магазин",
+          subtitle: "Правильно розроблений магазин допомагає:",
+          items: [
+            "Збільшити продажі та конверсію",
+            "Залучити більше клієнтів онлайн",
+            "Автоматизувати процес замовлень",
+            "Покращити досвід покупок",
+          ],
+        },
         price: "від $720",
         cta: "Замовити інтернет-магазин",
       },
@@ -583,6 +629,16 @@ export const translations: Record<Language, Translations> = {
           "SEO-оптимізація",
           "Адаптивний дизайн",
         ],
+        tasks: {
+          title: "Задачі, які вирішує корпоративний сайт",
+          subtitle: "Правильно розроблений сайт допомагає:",
+          items: [
+            "Підвищити впізнаваність бренду",
+            "Залучити нових клієнтів та партнерів",
+            "Презентувати послуги та компанію",
+            "Збільшити кількість заявок",
+          ],
+        },
         price: "від $450",
         cta: "Замовити корпоративний сайт",
       },
@@ -598,6 +654,16 @@ export const translations: Record<Language, Translations> = {
           "SEO-структура",
           "Швидке завантаження",
         ],
+        tasks: {
+          title: "Задачі, які вирішує лендінг",
+          subtitle: "Правильно розроблений лендінг допомагає:",
+          items: [
+            "Швидко залучити цільових клієнтів",
+            "Збільшити конверсію та заявки",
+            "Презентувати продукт або послугу",
+            "Отримати більше лідів",
+          ],
+        },
         price: "від $320",
         cta: "Замовити лендінг",
       },
@@ -613,6 +679,16 @@ export const translations: Record<Language, Translations> = {
           "Система оплати та доступів",
           "Аналітика та звіти",
         ],
+        tasks: {
+          title: "Задачі, які вирішує навчальна платформа",
+          subtitle: "Правильно розроблена платформа допомагає:",
+          items: [
+            "Організувати навчальний процес",
+            "Збільшити кількість студентів",
+            "Автоматизувати перевірку та оцінювання",
+            "Покращити якість навчання",
+          ],
+        },
         price: "Індивідуально",
         cta: "Запланувати консультацію",
       },
@@ -649,12 +725,12 @@ export const translations: Record<Language, Translations> = {
         },
         tasks: {
           title: "Задачі, які вирішує контекстна реклама",
+          subtitle: "Правильно налаштована реклама допомагає:",
           items: [
-            "Залучення якісного цільового трафіку на сайт",
-            "Збільшення кількості лідів і продажів",
-            "Підвищення впізнаваності бренду",
-            "Стимулювання повторних покупок",
-            "Просування нових товарів або послуг",
+            "Залучити якісний цільовий трафік на сайт або в застосунок",
+            "Збільшити кількість лідів і продажів",
+            "Підвищити впізнаваність бренду",
+            "Стимулювати повторні покупки",
           ],
         },
         howItWorks: {
@@ -677,6 +753,16 @@ export const translations: Record<Language, Translations> = {
           "Оптимізація за конверсіями",
           "Детальна аналітика та звіти",
         ],
+        tasks: {
+          title: "Задачі, які вирішує таргетована реклама",
+          subtitle: "Правильно налаштована реклама допомагає:",
+          items: [
+            "Залучити цільову аудиторію в соцмережах",
+            "Збільшити кількість лідів та продажів",
+            "Підвищити впізнаваність бренду",
+            "Стимулювати повторні покупки",
+          ],
+        },
         price: "Індивідуально",
         cta: "Отримати консультацію",
       },
@@ -692,6 +778,16 @@ export const translations: Record<Language, Translations> = {
           "Створення контенту для SEO",
           "Моніторинг позицій та аналітика",
         ],
+        tasks: {
+          title: "Задачі, які вирішує SEO просування",
+          subtitle: "Правильно налаштоване SEO допомагає:",
+          items: [
+            "Підвищити позиції в пошукових системах",
+            "Залучити органічний трафік на сайт",
+            "Збільшити кількість клієнтів",
+            "Покращити впізнаваність бренду",
+          ],
+        },
         price: "Індивідуально",
         cta: "Отримати консультацію",
       },
@@ -707,6 +803,16 @@ export const translations: Record<Language, Translations> = {
           "Запуск конкурсів та акцій",
           "Аналітика та звіти по профілям",
         ],
+        tasks: {
+          title: "Задачі, які вирішує SMM просування",
+          subtitle: "Правильно налаштований SMM допомагає:",
+          items: [
+            "Збільшити кількість підписників та охоплення",
+            "Підвищити впізнаваність бренду",
+            "Залучити нових клієнтів",
+            "Покращити взаємодію з аудиторією",
+          ],
+        },
         price: "Індивідуально",
         cta: "Отримати консультацію",
       },
@@ -1000,6 +1106,16 @@ export const translations: Record<Language, Translations> = {
           "Личный кабинет покупателя",
           "Админ-панель для управления товарами",
         ],
+        tasks: {
+          title: "Задачи, которые решает интернет-магазин",
+          subtitle: "Правильно разработанный магазин помогает:",
+          items: [
+            "Увеличить продажи и конверсию",
+            "Привлечь больше клиентов онлайн",
+            "Автоматизировать процесс заказов",
+            "Улучшить опыт покупок",
+          ],
+        },
         price: "от $720",
         cta: "Заказать интернет-магазин",
       },
@@ -1015,6 +1131,16 @@ export const translations: Record<Language, Translations> = {
           "SEO-оптимизация",
           "Адаптивный дизайн",
         ],
+        tasks: {
+          title: "Задачи, которые решает корпоративный сайт",
+          subtitle: "Правильно разработанный сайт помогает:",
+          items: [
+            "Повысить узнаваемость бренда",
+            "Привлечь новых клиентов и партнёров",
+            "Презентовать услуги и компанию",
+            "Увеличить количество заявок",
+          ],
+        },
         price: "от $450",
         cta: "Заказать корпоративный сайт",
       },
@@ -1030,6 +1156,16 @@ export const translations: Record<Language, Translations> = {
           "SEO-структура",
           "Быстрая загрузка",
         ],
+        tasks: {
+          title: "Задачи, которые решает лендинг",
+          subtitle: "Правильно разработанный лендинг помогает:",
+          items: [
+            "Быстро привлечь целевых клиентов",
+            "Увеличить конверсию и заявки",
+            "Презентовать продукт или услугу",
+            "Получить больше лидов",
+          ],
+        },
         price: "от $320",
         cta: "Заказать лендинг",
       },
@@ -1045,6 +1181,16 @@ export const translations: Record<Language, Translations> = {
           "Система оплаты и доступов",
           "Аналитика и отчёты",
         ],
+        tasks: {
+          title: "Задачи, которые решает обучающая платформа",
+          subtitle: "Правильно разработанная платформа помогает:",
+          items: [
+            "Организовать учебный процесс",
+            "Увеличить количество студентов",
+            "Автоматизировать проверку и оценивание",
+            "Улучшить качество обучения",
+          ],
+        },
         price: "Индивидуально",
         cta: "Запланировать консультацию",
       },
@@ -1081,12 +1227,12 @@ export const translations: Record<Language, Translations> = {
         },
         tasks: {
           title: "Задачи, которые решает контекстная реклама",
+          subtitle: "Правильно настроенная реклама помогает:",
           items: [
-            "Привлечение качественного целевого трафика на сайт",
-            "Увеличение количества лидов и продаж",
-            "Повышение узнаваемости бренда",
-            "Стимулирование повторных покупок",
-            "Продвижение новых товаров или услуг",
+            "Привлечь качественный целевой трафик на сайт или в приложение",
+            "Увеличить количество лидов и продаж",
+            "Повысить узнаваемость бренда",
+            "Стимулировать повторные покупки",
           ],
         },
         howItWorks: {
@@ -1109,6 +1255,16 @@ export const translations: Record<Language, Translations> = {
           "Оптимизация по конверсиям",
           "Детальная аналитика и отчёты",
         ],
+        tasks: {
+          title: "Задачи, которые решает таргетированная реклама",
+          subtitle: "Правильно настроенная реклама помогает:",
+          items: [
+            "Привлечь целевую аудиторию в соцсетях",
+            "Увеличить количество лидов и продаж",
+            "Повысить узнаваемость бренда",
+            "Стимулировать повторные покупки",
+          ],
+        },
         price: "Индивидуально",
         cta: "Получить консультацию",
       },
@@ -1124,6 +1280,16 @@ export const translations: Record<Language, Translations> = {
           "Создание контента для SEO",
           "Мониторинг позиций и аналитика",
         ],
+        tasks: {
+          title: "Задачи, которые решает SEO продвижение",
+          subtitle: "Правильно настроенное SEO помогает:",
+          items: [
+            "Повысить позиции в поисковых системах",
+            "Привлечь органический трафик на сайт",
+            "Увеличить количество клиентов",
+            "Улучшить узнаваемость бренда",
+          ],
+        },
         price: "Индивидуально",
         cta: "Получить консультацию",
       },
@@ -1139,6 +1305,16 @@ export const translations: Record<Language, Translations> = {
           "Запуск конкурсов и акций",
           "Аналитика и отчёты по профилям",
         ],
+        tasks: {
+          title: "Задачи, которые решает SMM продвижение",
+          subtitle: "Правильно настроенный SMM помогает:",
+          items: [
+            "Увеличить количество подписчиков и охват",
+            "Повысить узнаваемость бренда",
+            "Привлечь новых клиентов",
+            "Улучшить взаимодействие с аудиторией",
+          ],
+        },
         price: "Индивидуально",
         cta: "Получить консультацию",
       },
@@ -1432,6 +1608,16 @@ export const translations: Record<Language, Translations> = {
           "Customer personal account",
           "Admin panel for product management",
         ],
+        tasks: {
+          title: "Tasks that an online store solves",
+          subtitle: "A properly developed store helps:",
+          items: [
+            "Increase sales and conversion",
+            "Attract more customers online",
+            "Automate the ordering process",
+            "Improve shopping experience",
+          ],
+        },
         price: "from $720",
         cta: "Order online store",
       },
@@ -1447,6 +1633,16 @@ export const translations: Record<Language, Translations> = {
           "SEO optimization",
           "Responsive design",
         ],
+        tasks: {
+          title: "Tasks that a corporate website solves",
+          subtitle: "A properly developed website helps:",
+          items: [
+            "Increase brand recognition",
+            "Attract new clients and partners",
+            "Present services and company",
+            "Increase number of inquiries",
+          ],
+        },
         price: "from $450",
         cta: "Order corporate website",
       },
@@ -1462,6 +1658,16 @@ export const translations: Record<Language, Translations> = {
           "SEO structure",
           "Fast loading",
         ],
+        tasks: {
+          title: "Tasks that a landing page solves",
+          subtitle: "A properly developed landing page helps:",
+          items: [
+            "Quickly attract target clients",
+            "Increase conversion and inquiries",
+            "Present product or service",
+            "Get more leads",
+          ],
+        },
         price: "from $320",
         cta: "Order landing page",
       },
@@ -1477,6 +1683,16 @@ export const translations: Record<Language, Translations> = {
           "Payment and access system",
           "Analytics and reports",
         ],
+        tasks: {
+          title: "Tasks that a learning platform solves",
+          subtitle: "A properly developed platform helps:",
+          items: [
+            "Organize the learning process",
+            "Increase number of students",
+            "Automate checking and grading",
+            "Improve quality of education",
+          ],
+        },
         price: "Individual",
         cta: "Schedule consultation",
       },
@@ -1513,12 +1729,12 @@ export const translations: Record<Language, Translations> = {
         },
         tasks: {
           title: "Tasks solved by contextual advertising",
+          subtitle: "Properly configured advertising helps:",
           items: [
-            "Attracting quality targeted traffic to the website",
-            "Increasing the number of leads and sales",
-            "Increasing brand recognition",
-            "Stimulating repeat purchases",
-            "Promoting new products or services",
+            "Attract quality targeted traffic to the website or app",
+            "Increase the number of leads and sales",
+            "Increase brand recognition",
+            "Stimulate repeat purchases",
           ],
         },
         howItWorks: {
@@ -1541,6 +1757,16 @@ export const translations: Record<Language, Translations> = {
           "Conversion optimization",
           "Detailed analytics and reports",
         ],
+        tasks: {
+          title: "Tasks that targeted advertising solves",
+          subtitle: "Properly configured advertising helps:",
+          items: [
+            "Attract target audience on social networks",
+            "Increase the number of leads and sales",
+            "Increase brand recognition",
+            "Stimulate repeat purchases",
+          ],
+        },
         price: "Individual",
         cta: "Get consultation",
       },
@@ -1556,6 +1782,16 @@ export const translations: Record<Language, Translations> = {
           "Creating SEO content",
           "Position monitoring and analytics",
         ],
+        tasks: {
+          title: "Tasks that SEO promotion solves",
+          subtitle: "Properly configured SEO helps:",
+          items: [
+            "Improve positions in search engines",
+            "Attract organic traffic to the website",
+            "Increase the number of clients",
+            "Improve brand recognition",
+          ],
+        },
         price: "Individual",
         cta: "Get consultation",
       },
@@ -1571,6 +1807,16 @@ export const translations: Record<Language, Translations> = {
           "Launching contests and promotions",
           "Analytics and reports on profiles",
         ],
+        tasks: {
+          title: "Tasks that SMM promotion solves",
+          subtitle: "Properly configured SMM helps:",
+          items: [
+            "Increase number of subscribers and reach",
+            "Increase brand recognition",
+            "Attract new clients",
+            "Improve audience engagement",
+          ],
+        },
         price: "Individual",
         cta: "Get consultation",
       },

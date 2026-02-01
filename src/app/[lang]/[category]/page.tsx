@@ -69,21 +69,28 @@ export default function CategoryPage({
 
           {/* Tasks Section */}
           <section className="mb-12 rounded-2xl border border-slate-200 bg-white p-6 md:p-8">
-            <h2 className="mb-6 text-xl font-semibold md:text-2xl">
+            <h2 className="mb-2 text-xl font-semibold text-slate-900 md:text-2xl">
               {categoryData.tasks.title}
             </h2>
-            <div className="grid gap-4 md:grid-cols-2">
-              {categoryData.tasks.items.map((task, index) => (
-                <div
-                  key={index}
-                  className="flex items-start gap-3 rounded-lg border border-slate-100 bg-slate-50 p-4"
-                >
-                  <span className="mt-0.5 h-5 w-5 shrink-0 rounded-full bg-sky-100 text-center text-xs leading-5 text-sky-700">
-                    ✓
-                  </span>
-                  <p className="text-sm text-slate-700 md:text-base">{task}</p>
-                </div>
-              ))}
+            <p className="mb-8 text-sm text-slate-600 md:text-base">
+              {categoryData.tasks.subtitle}
+            </p>
+            <div className="relative py-4">
+              {/* Horizontal line */}
+              <div className="absolute left-0 top-1/2 h-1 w-full -translate-y-1/2 bg-sky-200" />
+              {/* Tasks with circles */}
+              <div className="relative grid grid-cols-1 gap-8 md:grid-cols-4">
+                {categoryData.tasks.items.map((task, index) => (
+                  <div key={index} className="relative flex flex-col items-center">
+                    {/* Circle */}
+                    <div className="relative z-10 mb-4 h-8 w-8 shrink-0 rounded-full bg-sky-500 md:h-10 md:w-10" />
+                    {/* Task text */}
+                    <p className="text-center text-sm leading-relaxed text-slate-700 md:text-base">
+                      {task}
+                    </p>
+                  </div>
+                ))}
+              </div>
             </div>
           </section>
 
@@ -181,6 +188,33 @@ export default function CategoryPage({
             </span>
           </div>
         </div>
+
+        {/* Tasks Section */}
+        <section className="mb-12 rounded-2xl border border-slate-200 bg-white p-6 md:p-8">
+          <h2 className="mb-2 text-xl font-semibold text-slate-900 md:text-2xl">
+            {categoryData.tasks.title}
+          </h2>
+          <p className="mb-8 text-sm text-slate-600 md:text-base">
+            {categoryData.tasks.subtitle}
+          </p>
+          <div className="relative py-4">
+            {/* Horizontal line */}
+            <div className="absolute left-0 top-1/2 h-1 w-full -translate-y-1/2 bg-sky-200" />
+            {/* Tasks with circles */}
+            <div className="relative grid grid-cols-1 gap-8 md:grid-cols-4">
+              {categoryData.tasks.items.map((task, index) => (
+                <div key={index} className="relative flex flex-col items-center">
+                  {/* Circle */}
+                  <div className="relative z-10 mb-4 h-8 w-8 shrink-0 rounded-full bg-sky-500 md:h-10 md:w-10" />
+                  {/* Task text */}
+                  <p className="text-center text-sm leading-relaxed text-slate-700 md:text-base">
+                    {task}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
 
         {/* Features */}
         <section className="mb-12 rounded-2xl border border-slate-200 bg-white p-6 md:p-8">
