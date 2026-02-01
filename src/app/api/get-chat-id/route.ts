@@ -2,6 +2,24 @@ import { NextResponse } from "next/server";
 
 const TELEGRAM_BOT_TOKEN = "8555898660:AAGACcEFsN5akhBXgtBUowjscQpZl28CMJ8";
 
+interface TelegramChat {
+  id: number;
+}
+
+interface TelegramMessage {
+  chat: TelegramChat;
+}
+
+interface TelegramUpdate {
+  message?: TelegramMessage;
+  edited_message?: TelegramMessage;
+  channel_post?: TelegramMessage;
+  edited_channel_post?: TelegramMessage;
+  callback_query?: {
+    message?: TelegramMessage;
+  };
+}
+
 export async function GET() {
   try {
     // Отримуємо останні оновлення від Telegram
@@ -18,10 +36,10 @@ export async function GET() {
     }
 
     // Знаходимо всі chat_id з різних типів повідомлень
-    const updates = data.result || [];
+    const updates = (data.result || []) as TelegramUpdate[];
     const chatIds = new Set<number>();
     
-    updates.forEach((update: any) => {
+    updates.forEach((update) => {
       // Перевіряємо різні типи повідомлень
       const chatId = 
         update.message?.chat?.id ||
