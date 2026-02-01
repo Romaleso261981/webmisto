@@ -96,7 +96,7 @@ export default function CategoryPage({
               {categoryData.benefits.items.map((benefit, index) => (
                 <div
                   key={index}
-                  className="rounded-lg border border-slate-200 bg-gradient-to-br from-sky-50 to-white p-6"
+                  className="rounded-lg border border-slate-200 bg-linear-to-br from-sky-50 to-white p-6"
                 >
                   <h3 className="mb-2 text-lg font-semibold text-slate-900">
                     {benefit.title}
@@ -123,7 +123,7 @@ export default function CategoryPage({
           <Certificates />
 
           {/* CTA Section */}
-          <section className="mb-12 rounded-2xl bg-gradient-to-br from-sky-500 to-sky-600 p-8 text-center text-white shadow-xl">
+          <section className="mb-12 rounded-2xl bg-linear-to-br from-sky-500 to-sky-600 p-8 text-center text-white shadow-xl">
             <h2 className="mb-4 text-2xl font-semibold md:text-3xl">
               {t.categories.ctaTitle}
             </h2>
@@ -208,7 +208,7 @@ export default function CategoryPage({
         <Certificates />
 
         {/* CTA Section */}
-        <section className="mb-12 rounded-2xl bg-gradient-to-br from-sky-500 to-sky-600 p-8 text-center text-white shadow-xl">
+        <section className="mb-12 rounded-2xl bg-linear-to-br from-sky-500 to-sky-600 p-8 text-center text-white shadow-xl">
           <h2 className="mb-4 text-2xl font-semibold md:text-3xl">
             {t.categories.ctaTitle}
           </h2>
