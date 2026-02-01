@@ -205,7 +205,7 @@ export default function CategoryPage({
         </section>
 
         {/* Certificates Section - для SMM та contextual */}
-        {(category === "smm" || category === "contextual") && <Certificates />}
+        <Certificates />
 
         {/* CTA Section */}
         <section className="mb-12 rounded-2xl bg-gradient-to-br from-sky-500 to-sky-600 p-8 text-center text-white shadow-xl">
