@@ -1,13 +1,65 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import Link from "next/link";
 import { useI18n } from "@/shared/lib/i18n/I18nProvider";
 import LanguageSwitcherDropdown from "@/shared/ui/LanguageSwitcher/LanguageSwitcherDropdown";
 
+const categorySlugs = {
+  "e-commerce": "e-commerce",
+  corporate: "corporate",
+  landing: "landing",
+  platform: "platform",
+} as const;
+
 export default function Header() {
   const { t, language } = useI18n();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isServicesDropdownOpen, setIsServicesDropdownOpen] = useState(false);
+  const servicesDropdownRef = useRef<HTMLDivElement>(null);
+
+  const categories = [
+    {
+      slug: categorySlugs["e-commerce"],
+      title: t.categories["e-commerce"].title,
+      icon: "🛒",
+    },
+    {
+      slug: categorySlugs.corporate,
+      title: t.categories.corporate.title,
+      icon: "🏢",
+    },
+    {
+      slug: categorySlugs.landing,
+      title: t.categories.landing.title,
+      icon: "📄",
+    },
+    {
+      slug: categorySlugs.platform,
+      title: t.categories.platform.title,
+      icon: "🎓",
+    },
+  ];
+
+  // Закриваємо dropdown при кліку поза ним
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (
+        servicesDropdownRef.current &&
+        !servicesDropdownRef.current.contains(event.target as Node)
+      ) {
+        setIsServicesDropdownOpen(false);
+      }
+    };
+
+    if (isServicesDropdownOpen) {
+      document.addEventListener("mousedown", handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [isServicesDropdownOpen]);
 
   return (
     <header className="border-b border-slate-200 bg-white/90 backdrop-blur">
@@ -30,9 +82,45 @@ export default function Header() {
         </Link>
 
         <nav className="hidden items-center gap-8 text-sm text-slate-700 md:flex">
-          <a href="#services" className="hover:text-sky-600">
-            {t.header.nav.services}
-          </a>
+          <div className="relative" ref={servicesDropdownRef}>
+            <button
+              onClick={() => setIsServicesDropdownOpen(!isServicesDropdownOpen)}
+              className="flex items-center gap-1 transition-colors hover:text-sky-600"
+            >
+              {t.header.nav.services}
+              <svg
+                className={`h-4 w-4 transition-transform ${
+                  isServicesDropdownOpen ? "rotate-180" : ""
+                }`}
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M19 9l-7 7-7-7"
+                />
+              </svg>
+            </button>
+
+            {isServicesDropdownOpen && (
+              <div className="absolute left-0 top-full z-50 mt-2 w-64 rounded-lg border border-slate-200 bg-white shadow-lg">
+                {categories.map((category) => (
+                  <Link
+                    key={category.slug}
+                    href={`/${language}/${category.slug}`}
+                    onClick={() => setIsServicesDropdownOpen(false)}
+                    className="flex items-center gap-3 px-4 py-3 text-sm text-slate-700 transition-colors first:rounded-t-lg last:rounded-b-lg hover:bg-slate-50 hover:text-sky-600"
+                  >
+                    <span className="text-lg">{category.icon}</span>
+                    <span>{category.title}</span>
+                  </Link>
+                ))}
+              </div>
+            )}
+          </div>
           <a href="#pricing" className="hover:text-sky-600">
             {t.header.nav.pricing}
           </a>
@@ -101,13 +189,49 @@ export default function Header() {
         <div className="border-t border-slate-200 bg-white md:hidden">
           <nav className="mx-auto max-w-6xl space-y-1 px-4 py-4">
             <LanguageSwitcherDropdown />
-            <a
-              href="#services"
-              onClick={() => setIsMobileMenuOpen(false)}
-              className="block rounded-lg px-4 py-3 text-sm text-slate-700 transition hover:bg-slate-50 hover:text-sky-600"
-            >
-              {t.header.nav.services}
-            </a>
+            <div className="space-y-1">
+              <button
+                onClick={() =>
+                  setIsServicesDropdownOpen(!isServicesDropdownOpen)
+                }
+                className="flex w-full items-center justify-between rounded-lg px-4 py-3 text-sm text-slate-700 transition hover:bg-slate-50 hover:text-sky-600"
+              >
+                <span>{t.header.nav.services}</span>
+                <svg
+                  className={`h-4 w-4 transition-transform ${
+                    isServicesDropdownOpen ? "rotate-180" : ""
+                  }`}
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M19 9l-7 7-7-7"
+                  />
+                </svg>
+              </button>
+              {isServicesDropdownOpen && (
+                <div className="ml-4 space-y-1">
+                  {categories.map((category) => (
+                    <Link
+                      key={category.slug}
+                      href={`/${language}/${category.slug}`}
+                      onClick={() => {
+                        setIsServicesDropdownOpen(false);
+                        setIsMobileMenuOpen(false);
+                      }}
+                      className="flex items-center gap-2 rounded-lg px-4 py-2 text-sm text-slate-600 transition hover:bg-slate-50 hover:text-sky-600"
+                    >
+                      <span>{category.icon}</span>
+                      <span>{category.title}</span>
+                    </Link>
+                  ))}
+                </div>
+              )}
+            </div>
             <a
               href="#pricing"
               onClick={() => setIsMobileMenuOpen(false)}
