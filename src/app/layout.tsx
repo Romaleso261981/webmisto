@@ -15,6 +15,9 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "WebMisto - Веб студія у Львові",
   description: "Розробка сайтів, інтернет-магазинів та навчальних платформ",
+  verification: {
+    google: "OBZZDX9-lpQTJicdiKAjgaJoJczptyRbgGkoJuYexpQ",
+  },
 };
 
 export default function RootLayout({
