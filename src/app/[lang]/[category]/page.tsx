@@ -36,7 +36,7 @@ export default function CategoryPage({
             href={`/${language}`}
             className="transition-colors hover:text-sky-600"
           >
-            {t.header.nav.services}
+            {language === "uk" ? "Головна" : language === "ru" ? "Главная" : "Home"}
           </Link>
           <span className="mx-2">/</span>
           <span className="text-slate-900">{categoryData.title}</span>

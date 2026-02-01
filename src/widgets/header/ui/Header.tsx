@@ -15,10 +15,12 @@ const categorySlugs = {
 export default function Header() {
   const { t, language } = useI18n();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [isServicesDropdownOpen, setIsServicesDropdownOpen] = useState(false);
-  const servicesDropdownRef = useRef<HTMLDivElement>(null);
+  const [isDevelopmentDropdownOpen, setIsDevelopmentDropdownOpen] = useState(false);
+  const [isAdvertisingDropdownOpen, setIsAdvertisingDropdownOpen] = useState(false);
+  const developmentDropdownRef = useRef<HTMLDivElement>(null);
+  const advertisingDropdownRef = useRef<HTMLDivElement>(null);
 
-  const categories = [
+  const developmentCategories = [
     {
       slug: categorySlugs["e-commerce"],
       title: t.categories["e-commerce"].title,
@@ -41,25 +43,51 @@ export default function Header() {
     },
   ];
 
+  const advertisingCategories = [
+    {
+      slug: "targeting",
+      title: language === "uk" ? "Таргетована реклама" : language === "ru" ? "Таргетированная реклама" : "Targeted Advertising",
+      icon: "🎯",
+    },
+    {
+      slug: "seo",
+      title: language === "uk" ? "SEO просування" : language === "ru" ? "SEO продвижение" : "SEO Promotion",
+      icon: "🔍",
+    },
+    {
+      slug: "contextual",
+      title: language === "uk" ? "Контекстна реклама" : language === "ru" ? "Контекстная реклама" : "Contextual Advertising",
+      icon: "📢",
+    },
+    {
+      slug: "smm",
+      title: language === "uk" ? "SMM просування" : language === "ru" ? "SMM продвижение" : "SMM Promotion",
+      icon: "📱",
+    },
+  ];
+
   // Закриваємо dropdown при кліку поза ним
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       if (
-        servicesDropdownRef.current &&
-        !servicesDropdownRef.current.contains(event.target as Node)
+        developmentDropdownRef.current &&
+        !developmentDropdownRef.current.contains(event.target as Node) &&
+        advertisingDropdownRef.current &&
+        !advertisingDropdownRef.current.contains(event.target as Node)
       ) {
-        setIsServicesDropdownOpen(false);
+        setIsDevelopmentDropdownOpen(false);
+        setIsAdvertisingDropdownOpen(false);
       }
     };
 
-    if (isServicesDropdownOpen) {
+    if (isDevelopmentDropdownOpen || isAdvertisingDropdownOpen) {
       document.addEventListener("mousedown", handleClickOutside);
     }
 
     return () => {
       document.removeEventListener("mousedown", handleClickOutside);
     };
-  }, [isServicesDropdownOpen]);
+  }, [isDevelopmentDropdownOpen, isAdvertisingDropdownOpen]);
 
   return (
     <header className="border-b border-slate-200 bg-white/90 backdrop-blur">
@@ -82,15 +110,19 @@ export default function Header() {
         </Link>
 
         <nav className="hidden items-center gap-8 text-sm text-slate-700 md:flex">
-          <div className="relative" ref={servicesDropdownRef}>
+          {/* Розробка Dropdown */}
+          <div className="relative" ref={developmentDropdownRef}>
             <button
-              onClick={() => setIsServicesDropdownOpen(!isServicesDropdownOpen)}
+              onClick={() => {
+                setIsDevelopmentDropdownOpen(!isDevelopmentDropdownOpen);
+                setIsAdvertisingDropdownOpen(false);
+              }}
               className="flex items-center gap-1 transition-colors hover:text-sky-600"
             >
-              {t.header.nav.services}
+              {t.header.nav.development}
               <svg
                 className={`h-4 w-4 transition-transform ${
-                  isServicesDropdownOpen ? "rotate-180" : ""
+                  isDevelopmentDropdownOpen ? "rotate-180" : ""
                 }`}
                 fill="none"
                 viewBox="0 0 24 24"
@@ -105,13 +137,13 @@ export default function Header() {
               </svg>
             </button>
 
-            {isServicesDropdownOpen && (
+            {isDevelopmentDropdownOpen && (
               <div className="absolute left-0 top-full z-50 mt-2 w-64 rounded-lg border border-slate-200 bg-white shadow-lg">
-                {categories.map((category) => (
+                {developmentCategories.map((category) => (
                   <Link
                     key={category.slug}
                     href={`/${language}/${category.slug}`}
-                    onClick={() => setIsServicesDropdownOpen(false)}
+                    onClick={() => setIsDevelopmentDropdownOpen(false)}
                     className="flex items-center gap-3 px-4 py-3 text-sm text-slate-700 transition-colors first:rounded-t-lg last:rounded-b-lg hover:bg-slate-50 hover:text-sky-600"
                   >
                     <span className="text-lg">{category.icon}</span>
@@ -121,6 +153,51 @@ export default function Header() {
               </div>
             )}
           </div>
+
+          {/* Реклама Dropdown */}
+          <div className="relative" ref={advertisingDropdownRef}>
+            <button
+              onClick={() => {
+                setIsAdvertisingDropdownOpen(!isAdvertisingDropdownOpen);
+                setIsDevelopmentDropdownOpen(false);
+              }}
+              className="flex items-center gap-1 transition-colors hover:text-sky-600"
+            >
+              {t.header.nav.advertising}
+              <svg
+                className={`h-4 w-4 transition-transform ${
+                  isAdvertisingDropdownOpen ? "rotate-180" : ""
+                }`}
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M19 9l-7 7-7-7"
+                />
+              </svg>
+            </button>
+
+            {isAdvertisingDropdownOpen && (
+              <div className="absolute left-0 top-full z-50 mt-2 w-64 rounded-lg border border-slate-200 bg-white shadow-lg">
+                {advertisingCategories.map((category) => (
+                  <Link
+                    key={category.slug}
+                    href={`/${language}/${category.slug}`}
+                    onClick={() => setIsAdvertisingDropdownOpen(false)}
+                    className="flex items-center gap-3 px-4 py-3 text-sm text-slate-700 transition-colors first:rounded-t-lg last:rounded-b-lg hover:bg-slate-50 hover:text-sky-600"
+                  >
+                    <span className="text-lg">{category.icon}</span>
+                    <span>{category.title}</span>
+                  </Link>
+                ))}
+              </div>
+            )}
+          </div>
+
           <a href="#pricing" className="hover:text-sky-600">
             {t.header.nav.pricing}
           </a>
@@ -189,17 +266,18 @@ export default function Header() {
         <div className="border-t border-slate-200 bg-white md:hidden">
           <nav className="mx-auto max-w-6xl space-y-1 px-4 py-4">
             <LanguageSwitcherDropdown />
+            {/* Розробка Dropdown Mobile */}
             <div className="space-y-1">
               <button
                 onClick={() =>
-                  setIsServicesDropdownOpen(!isServicesDropdownOpen)
+                  setIsDevelopmentDropdownOpen(!isDevelopmentDropdownOpen)
                 }
                 className="flex w-full items-center justify-between rounded-lg px-4 py-3 text-sm text-slate-700 transition hover:bg-slate-50 hover:text-sky-600"
               >
-                <span>{t.header.nav.services}</span>
+                <span>{t.header.nav.development}</span>
                 <svg
                   className={`h-4 w-4 transition-transform ${
-                    isServicesDropdownOpen ? "rotate-180" : ""
+                    isDevelopmentDropdownOpen ? "rotate-180" : ""
                   }`}
                   fill="none"
                   viewBox="0 0 24 24"
@@ -213,14 +291,59 @@ export default function Header() {
                   />
                 </svg>
               </button>
-              {isServicesDropdownOpen && (
+              {isDevelopmentDropdownOpen && (
                 <div className="ml-4 space-y-1">
-                  {categories.map((category) => (
+                  {developmentCategories.map((category) => (
                     <Link
                       key={category.slug}
                       href={`/${language}/${category.slug}`}
                       onClick={() => {
-                        setIsServicesDropdownOpen(false);
+                        setIsDevelopmentDropdownOpen(false);
+                        setIsMobileMenuOpen(false);
+                      }}
+                      className="flex items-center gap-2 rounded-lg px-4 py-2 text-sm text-slate-600 transition hover:bg-slate-50 hover:text-sky-600"
+                    >
+                      <span>{category.icon}</span>
+                      <span>{category.title}</span>
+                    </Link>
+                  ))}
+                </div>
+              )}
+            </div>
+
+            {/* Реклама Dropdown Mobile */}
+            <div className="space-y-1">
+              <button
+                onClick={() =>
+                  setIsAdvertisingDropdownOpen(!isAdvertisingDropdownOpen)
+                }
+                className="flex w-full items-center justify-between rounded-lg px-4 py-3 text-sm text-slate-700 transition hover:bg-slate-50 hover:text-sky-600"
+              >
+                <span>{t.header.nav.advertising}</span>
+                <svg
+                  className={`h-4 w-4 transition-transform ${
+                    isAdvertisingDropdownOpen ? "rotate-180" : ""
+                  }`}
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M19 9l-7 7-7-7"
+                  />
+                </svg>
+              </button>
+              {isAdvertisingDropdownOpen && (
+                <div className="ml-4 space-y-1">
+                  {advertisingCategories.map((category) => (
+                    <Link
+                      key={category.slug}
+                      href={`/${language}/${category.slug}`}
+                      onClick={() => {
+                        setIsAdvertisingDropdownOpen(false);
                         setIsMobileMenuOpen(false);
                       }}
                       className="flex items-center gap-2 rounded-lg px-4 py-2 text-sm text-slate-600 transition hover:bg-slate-50 hover:text-sky-600"

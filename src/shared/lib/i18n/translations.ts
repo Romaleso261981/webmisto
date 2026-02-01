@@ -3,7 +3,8 @@ export type Language = "uk" | "ru" | "en";
 export interface Translations {
   header: {
     nav: {
-      services: string;
+      development: string;
+      advertising: string;
       pricing: string;
       faq: string;
       contacts: string;
@@ -239,7 +240,8 @@ export const translations: Record<Language, Translations> = {
   uk: {
     header: {
       nav: {
-        services: "Послуги",
+        development: "Розробка",
+        advertising: "Реклама",
         pricing: "Тарифи",
         faq: "Питання",
         contacts: "Контакти",
@@ -573,7 +575,8 @@ export const translations: Record<Language, Translations> = {
   ru: {
     header: {
       nav: {
-        services: "Услуги",
+        development: "Разработка",
+        advertising: "Реклама",
         pricing: "Тарифы",
         faq: "Вопросы",
         contacts: "Контакты",
@@ -907,7 +910,8 @@ export const translations: Record<Language, Translations> = {
   en: {
     header: {
       nav: {
-        services: "Services",
+        development: "Development",
+        advertising: "Advertising",
         pricing: "Pricing",
         faq: "FAQ",
         contacts: "Contacts",
