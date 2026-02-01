@@ -49,17 +49,24 @@ export async function POST(request: NextRequest) {
     // Отримуємо chat_id з .env або автоматично з getUpdates
     let chatId = process.env.TELEGRAM_CHAT_ID;
     
+    // Логуємо для діагностики (тільки в development)
+    if (process.env.NODE_ENV === "development") {
+      console.log("TELEGRAM_CHAT_ID from env:", chatId ? "✅ Set" : "❌ Not set");
+    }
+    
     if (!chatId) {
+      console.log("Attempting to auto-detect chat_id...");
       const autoChatId = await getChatId();
       if (autoChatId) {
         chatId = autoChatId.toString();
-        console.log(`Auto-detected chat_id: ${chatId}`);
+        console.log(`✅ Auto-detected chat_id: ${chatId}`);
       } else {
         // Логуємо детальну інформацію для розробника
-        console.error("Chat ID не знайдено. Для налаштування:");
+        console.error("❌ Chat ID не знайдено. Для налаштування:");
         console.error("1. Напишіть будь-яке повідомлення вашому боту в Telegram");
         console.error("2. Відкрийте /api/get-chat-id для отримання вашого chat_id");
-        console.error("3. Додайте TELEGRAM_CHAT_ID=ваш_chat_id в файл .env.local в корені проекту");
+        console.error("3. Додайте TELEGRAM_CHAT_ID=ваш_chat_id в файл .env.local (локально) або в налаштуваннях Vercel (production)");
+        console.error("4. Перезапустіть сервер після додавання змінної");
         
         // Повертаємо загальне повідомлення для користувача
         return NextResponse.json(
@@ -70,6 +77,18 @@ export async function POST(request: NextRequest) {
           { status: 503 }
         );
       }
+    }
+    
+    // Перевіряємо, чи chatId валідний
+    if (!chatId || chatId.trim() === "") {
+      console.error("❌ Chat ID порожній або невалідний");
+      return NextResponse.json(
+        { 
+          error: "Сервіс тимчасово недоступний. Будь ласка, спробуйте пізніше або зв'яжіться з нами безпосередньо.",
+          isConfigError: true
+        },
+        { status: 503 }
+      );
     }
 
     // Формуємо повідомлення для Telegram
@@ -102,24 +121,34 @@ _Час заявки: ${new Date().toLocaleString("uk-UA", {
     const data = await response.json();
 
     if (!response.ok || !data.ok) {
-      console.error("Telegram API error:", data);
+      console.error("❌ Telegram API error:", JSON.stringify(data, null, 2));
+      console.error("Chat ID used:", chatId);
       
-      // Якщо помилка через невірний chat_id, надаємо підказку
-      if (data.error_code === 400) {
+      // Якщо помилка через невірний chat_id або бот заблокований
+      if (data.error_code === 400 || data.description?.includes("chat not found") || data.description?.includes("bot was blocked")) {
+        console.error("❌ Помилка: Бот заблокований або chat_id невірний");
         return NextResponse.json(
           { 
-            error: "Помилка відправки повідомлення. Перевірте, чи правильно налаштований chat_id.",
-            hint: "Відкрийте /api/get-chat-id для отримання вашого chat_id"
+            error: "Сервіс тимчасово недоступний. Будь ласка, спробуйте пізніше або зв'яжіться з нами безпосередньо.",
+            isConfigError: true,
+            hint: "Перевірте налаштування бота та chat_id"
           },
-          { status: 500 }
+          { status: 503 }
         );
       }
       
+      // Інші помилки Telegram API
+      console.error("❌ Інша помилка Telegram API:", data.description || "Unknown error");
       return NextResponse.json(
-        { error: "Помилка відправки повідомлення. Спробуйте пізніше." },
-        { status: 500 }
+        { 
+          error: "Сервіс тимчасово недоступний. Будь ласка, спробуйте пізніше або зв'яжіться з нами безпосередньо.",
+          isConfigError: true
+        },
+        { status: 503 }
       );
     }
+    
+    console.log("✅ Повідомлення успішно відправлено в Telegram");
 
     return NextResponse.json(
       { success: true, message: "Заявка успішно відправлена!" },
