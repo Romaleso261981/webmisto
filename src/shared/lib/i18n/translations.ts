@@ -200,6 +200,39 @@ export interface Translations {
       items: string[];
     };
   };
+  categories: {
+    featuresTitle: string;
+    ctaTitle: string;
+    ctaDescription: string;
+    "e-commerce": {
+      title: string;
+      description: string;
+      features: string[];
+      price: string;
+      cta: string;
+    };
+    corporate: {
+      title: string;
+      description: string;
+      features: string[];
+      price: string;
+      cta: string;
+    };
+    landing: {
+      title: string;
+      description: string;
+      features: string[];
+      price: string;
+      cta: string;
+    };
+    platform: {
+      title: string;
+      description: string;
+      features: string[];
+      price: string;
+      cta: string;
+    };
+  };
 }
 
 export const translations: Record<Language, Translations> = {
@@ -470,6 +503,72 @@ export const translations: Record<Language, Translations> = {
         ],
       },
     },
+    categories: {
+      featuresTitle: "Що входить у розробку",
+      ctaTitle: "Готові розпочати проєкт?",
+      ctaDescription:
+        "Залиште заявку, і ми зв'яжемося з вами для обговорення деталей",
+      "e-commerce": {
+        title: "Інтернет-магазини",
+        description:
+          "Створюємо повнофункціональні інтернет-магазини з каталогом товарів, кошиком, системою оплати та доставки. Інтеграції з платіжними системами, CRM та службами доставки.",
+        features: [
+          "Каталог товарів з фільтрами та пошуком",
+          "Кошик та система замовлень",
+          "Інтеграція з платіжними системами",
+          "Підключення служб доставки",
+          "Особистий кабінет покупця",
+          "Адмін-панель для керування товарами",
+        ],
+        price: "від $720",
+        cta: "Замовити інтернет-магазин",
+      },
+      corporate: {
+        title: "Корпоративні сайти",
+        description:
+          "Розробка багатосторінкових корпоративних сайтів з блогом, портфоліо та сторінками послуг. Сучасний дизайн та зручна навігація.",
+        features: [
+          "Багатосторінковий сайт з блогом",
+          "Портфоліо та галерея робіт",
+          "Сторінки послуг та контактів",
+          "Форми заявок та зворотного зв'язку",
+          "SEO-оптимізація",
+          "Адаптивний дизайн",
+        ],
+        price: "від $450",
+        cta: "Замовити корпоративний сайт",
+      },
+      landing: {
+        title: "Лендінги та сайти-візитки",
+        description:
+          "Створюємо ефективні лендінги та сайти-візитки для малого бізнесу. Фокус на конверсії та швидкості завантаження.",
+        features: [
+          "Односторінковий лендінг або сайт-візитка",
+          "До 5 сторінок",
+          "Форми заявок та контактів",
+          "Базовий адаптив",
+          "SEO-структура",
+          "Швидке завантаження",
+        ],
+        price: "від $320",
+        cta: "Замовити лендінг",
+      },
+      platform: {
+        title: "Навчальні платформи",
+        description:
+          "Розробка повнофункціональних навчальних платформ з особистими кабінетами, уроками, модулями та системою прогресу.",
+        features: [
+          "Особисті кабінети студентів та викладачів",
+          "Система уроків та модулів",
+          "Відстеження прогресу",
+          "Домашні завдання та перевірка",
+          "Система оплати та доступів",
+          "Аналітика та звіти",
+        ],
+        price: "Індивідуально",
+        cta: "Запланувати консультацію",
+      },
+    },
   },
   ru: {
     header: {
@@ -738,6 +837,72 @@ export const translations: Record<Language, Translations> = {
         ],
       },
     },
+    categories: {
+      featuresTitle: "Что входит в разработку",
+      ctaTitle: "Готовы начать проект?",
+      ctaDescription:
+        "Оставьте заявку, и мы свяжемся с вами для обсуждения деталей",
+      "e-commerce": {
+        title: "Интернет-магазины",
+        description:
+          "Создаём полнофункциональные интернет-магазины с каталогом товаров, корзиной, системой оплаты и доставки. Интеграции с платёжными системами, CRM и службами доставки.",
+        features: [
+          "Каталог товаров с фильтрами и поиском",
+          "Корзина и система заказов",
+          "Интеграция с платёжными системами",
+          "Подключение служб доставки",
+          "Личный кабинет покупателя",
+          "Админ-панель для управления товарами",
+        ],
+        price: "от $720",
+        cta: "Заказать интернет-магазин",
+      },
+      corporate: {
+        title: "Корпоративные сайты",
+        description:
+          "Разработка многостраничных корпоративных сайтов с блогом, портфолио и страницами услуг. Современный дизайн и удобная навигация.",
+        features: [
+          "Многостраничный сайт с блогом",
+          "Портфолио и галерея работ",
+          "Страницы услуг и контактов",
+          "Формы заявок и обратной связи",
+          "SEO-оптимизация",
+          "Адаптивный дизайн",
+        ],
+        price: "от $450",
+        cta: "Заказать корпоративный сайт",
+      },
+      landing: {
+        title: "Лендинги и сайты-визитки",
+        description:
+          "Создаём эффективные лендинги и сайты-визитки для малого бизнеса. Фокус на конверсии и скорости загрузки.",
+        features: [
+          "Одностраничный лендинг или сайт-визитка",
+          "До 5 страниц",
+          "Формы заявок и контактов",
+          "Базовый адаптив",
+          "SEO-структура",
+          "Быстрая загрузка",
+        ],
+        price: "от $320",
+        cta: "Заказать лендинг",
+      },
+      platform: {
+        title: "Обучающие платформы",
+        description:
+          "Разработка полнофункциональных обучающих платформ с личными кабинетами, уроками, модулями и системой прогресса.",
+        features: [
+          "Личные кабинеты студентов и преподавателей",
+          "Система уроков и модулей",
+          "Отслеживание прогресса",
+          "Домашние задания и проверка",
+          "Система оплаты и доступов",
+          "Аналитика и отчёты",
+        ],
+        price: "Индивидуально",
+        cta: "Запланировать консультацию",
+      },
+    },
   },
   en: {
     header: {
@@ -1004,6 +1169,72 @@ export const translations: Record<Language, Translations> = {
           "Duplication of images and pages.",
           "Biased attitude of search engines towards sites on a free system.",
         ],
+      },
+    },
+    categories: {
+      featuresTitle: "What's included in development",
+      ctaTitle: "Ready to start the project?",
+      ctaDescription:
+        "Leave a request, and we will contact you to discuss the details",
+      "e-commerce": {
+        title: "E-commerce",
+        description:
+          "We create fully functional online stores with product catalogs, shopping carts, payment and delivery systems. Integrations with payment systems, CRM and delivery services.",
+        features: [
+          "Product catalog with filters and search",
+          "Shopping cart and order system",
+          "Payment system integration",
+          "Delivery service connection",
+          "Customer personal account",
+          "Admin panel for product management",
+        ],
+        price: "from $720",
+        cta: "Order online store",
+      },
+      corporate: {
+        title: "Corporate Websites",
+        description:
+          "Development of multi-page corporate websites with blogs, portfolios and service pages. Modern design and convenient navigation.",
+        features: [
+          "Multi-page website with blog",
+          "Portfolio and gallery of works",
+          "Service and contact pages",
+          "Application and feedback forms",
+          "SEO optimization",
+          "Responsive design",
+        ],
+        price: "from $450",
+        cta: "Order corporate website",
+      },
+      landing: {
+        title: "Landing Pages & Business Cards",
+        description:
+          "We create effective landing pages and business card websites for small businesses. Focus on conversion and loading speed.",
+        features: [
+          "Single-page landing or business card website",
+          "Up to 5 pages",
+          "Application and contact forms",
+          "Basic responsive design",
+          "SEO structure",
+          "Fast loading",
+        ],
+        price: "from $320",
+        cta: "Order landing page",
+      },
+      platform: {
+        title: "Learning Platforms",
+        description:
+          "Development of fully functional learning platforms with personal accounts, lessons, modules and progress tracking system.",
+        features: [
+          "Personal accounts for students and teachers",
+          "Lesson and module system",
+          "Progress tracking",
+          "Homework and checking",
+          "Payment and access system",
+          "Analytics and reports",
+        ],
+        price: "Individual",
+        cta: "Schedule consultation",
       },
     },
   },

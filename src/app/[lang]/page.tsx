@@ -3,6 +3,7 @@
 import { Header } from "@/widgets/header/ui";
 import { Hero } from "@/widgets/hero/ui";
 import { Advantages } from "@/widgets/advantages/ui";
+import { Categories } from "@/widgets/categories/ui";
 import { Pricing } from "@/widgets/pricing/ui";
 import { FAQ } from "@/widgets/faq/ui";
 import { WordPressBlock } from "@/widgets/wordpress-block/ui";
@@ -16,6 +17,7 @@ export default function Home() {
       <Header />
       <main className="mx-auto max-w-6xl px-4 pb-16 pt-10 md:px-6 md:pb-24 md:pt-16">
         <Hero />
+        <Categories />
         <Advantages />
         <Pricing />
         <FAQ />

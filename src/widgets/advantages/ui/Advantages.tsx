@@ -1,9 +1,10 @@
 "use client";
 
+import Link from "next/link";
 import { useI18n } from "@/shared/lib/i18n/I18nProvider";
 
 export default function Advantages() {
-  const { t } = useI18n();
+  const { t, language } = useI18n();
 
   return (
     <section
@@ -67,50 +68,62 @@ export default function Advantages() {
         </div>
 
         <div className="grid gap-4 text-sm md:grid-cols-2">
-          <div className="rounded-2xl border border-slate-200 bg-slate-50 p-4">
+          <Link
+            href={`/${language}/corporate`}
+            className="group rounded-2xl border border-slate-200 bg-slate-50 p-4 transition-all hover:border-sky-300 hover:shadow-md"
+          >
             <p className="text-xs font-medium uppercase tracking-[0.18em] text-slate-500">
               {t.advantages.solutions.corporate.label}
             </p>
-            <p className="mt-2 text-sm font-semibold text-slate-900">
+            <p className="mt-2 text-sm font-semibold text-slate-900 group-hover:text-sky-600">
               {t.advantages.solutions.corporate.title}
             </p>
             <p className="mt-2 text-xs text-slate-600">
               {t.advantages.solutions.corporate.description}
             </p>
-          </div>
-          <div className="rounded-2xl border border-slate-200 bg-slate-50 p-4">
+          </Link>
+          <Link
+            href={`/${language}/e-commerce`}
+            className="group rounded-2xl border border-slate-200 bg-slate-50 p-4 transition-all hover:border-sky-300 hover:shadow-md"
+          >
             <p className="text-xs font-medium uppercase tracking-[0.18em] text-slate-500">
               {t.advantages.solutions.shop.label}
             </p>
-            <p className="mt-2 text-sm font-semibold text-slate-900">
+            <p className="mt-2 text-sm font-semibold text-slate-900 group-hover:text-sky-600">
               {t.advantages.solutions.shop.title}
             </p>
             <p className="mt-2 text-xs text-slate-600">
               {t.advantages.solutions.shop.description}
             </p>
-          </div>
-          <div className="rounded-2xl border border-slate-200 bg-slate-50 p-4">
+          </Link>
+          <Link
+            href={`/${language}/platform`}
+            className="group rounded-2xl border border-slate-200 bg-slate-50 p-4 transition-all hover:border-sky-300 hover:shadow-md"
+          >
             <p className="text-xs font-medium uppercase tracking-[0.18em] text-slate-500">
               {t.advantages.solutions.platform.label}
             </p>
-            <p className="mt-2 text-sm font-semibold text-slate-900">
+            <p className="mt-2 text-sm font-semibold text-slate-900 group-hover:text-sky-600">
               {t.advantages.solutions.platform.title}
             </p>
             <p className="mt-2 text-xs text-slate-600">
               {t.advantages.solutions.platform.description}
             </p>
-          </div>
-          <div className="rounded-2xl border border-slate-200 bg-slate-50 p-4">
+          </Link>
+          <Link
+            href={`/${language}/landing`}
+            className="group rounded-2xl border border-slate-200 bg-slate-50 p-4 transition-all hover:border-sky-300 hover:shadow-md"
+          >
             <p className="text-xs font-medium uppercase tracking-[0.18em] text-slate-500">
               {t.advantages.solutions.additional.label}
             </p>
-            <p className="mt-2 text-sm font-semibold text-slate-900">
+            <p className="mt-2 text-sm font-semibold text-slate-900 group-hover:text-sky-600">
               {t.advantages.solutions.additional.title}
             </p>
             <p className="mt-2 text-xs text-slate-600">
               {t.advantages.solutions.additional.description}
             </p>
-          </div>
+          </Link>
         </div>
       </div>
     </section>
