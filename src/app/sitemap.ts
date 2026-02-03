@@ -1,6 +1,6 @@
 import { MetadataRoute } from "next";
 
-const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://webmisto.com.ua";
+const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://www.webzona.site";
 
 const languages = ["uk", "ru", "en"];
 const categories = [
@@ -16,6 +16,14 @@ const categories = [
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const routes: MetadataRoute.Sitemap = [];
+
+  // Root page (will redirect to /uk)
+  routes.push({
+    url: baseUrl,
+    lastModified: new Date(),
+    changeFrequency: "daily",
+    priority: 1,
+  });
 
   // Home pages for each language
   languages.forEach((lang) => {
