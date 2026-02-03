@@ -29,53 +29,52 @@ export default function CategoryPage({
 
   const categoryKey = category === "e-commerce" ? "e-commerce" : category;
   
-  // Перевіряємо, чи це категорія з розширеним контентом (contextual)
-  if (category === "contextual") {
-    return <ContextualPage />;
-  }
-
-    // Перевіряємо, чи це категорія з розширеним контентом (SMMPage)
-    if (category === "smm") {
+  // Рендеринг всіх сторінок через switch case
+  switch (category) {
+    case "contextual":
+      return <ContextualPage />;
+    
+    case "smm":
       return <SMMPage />;
-    }
+    
+    default: {
+      // Стандартна сторінка для інших категорій
+      const categoryData = t.categories[categoryKey as "e-commerce" | "corporate" | "landing" | "platform" | "targeting" | "seo" | "smm"];
+      
+      if (!categoryData) {
+        notFound();
+      }
 
-  // Стандартна сторінка для інших категорій
-  const categoryData = t.categories[categoryKey as "e-commerce" | "corporate" | "landing" | "platform" | "targeting" | "seo" | "smm"];
-  
-  if (!categoryData) {
-    notFound();
-  }
+      const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://www.webzona.site";
+      const isDevelopmentCategory = ["e-commerce", "corporate", "landing", "platform"].includes(category);
+      const parentCategoryName = isDevelopmentCategory ? t.header.nav.development : t.header.nav.advertising;
 
-  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://www.webzona.site";
-  const isDevelopmentCategory = ["e-commerce", "corporate", "landing", "platform"].includes(category);
-  const parentCategoryName = isDevelopmentCategory ? t.header.nav.development : t.header.nav.advertising;
+      const breadcrumbSchema = {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        itemListElement: [
+          {
+            "@type": "ListItem",
+            position: 1,
+            name: language === "uk" ? "Головна" : language === "ru" ? "Главная" : "Home",
+            item: `${baseUrl}/${language}`,
+          },
+          {
+            "@type": "ListItem",
+            position: 2,
+            name: parentCategoryName,
+            item: `${baseUrl}/${language}`,
+          },
+          {
+            "@type": "ListItem",
+            position: 3,
+            name: categoryData.title,
+            item: `${baseUrl}/${language}/${category}`,
+          },
+        ],
+      };
 
-  const breadcrumbSchema = {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    itemListElement: [
-      {
-        "@type": "ListItem",
-        position: 1,
-        name: language === "uk" ? "Головна" : language === "ru" ? "Главная" : "Home",
-        item: `${baseUrl}/${language}`,
-      },
-      {
-        "@type": "ListItem",
-        position: 2,
-        name: parentCategoryName,
-        item: `${baseUrl}/${language}`,
-      },
-      {
-        "@type": "ListItem",
-        position: 3,
-        name: categoryData.title,
-        item: `${baseUrl}/${language}/${category}`,
-      },
-    ],
-  };
-
-  return (
+      return (
     <div className="min-h-screen bg-slate-50 text-slate-900">
       <StructuredData data={breadcrumbSchema} />
       <Header />
@@ -200,5 +199,7 @@ export default function CategoryPage({
       </main>
       <Footer />
     </div>
-  );
+      );
+    }
+  }
 }
