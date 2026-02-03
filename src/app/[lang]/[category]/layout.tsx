@@ -20,7 +20,7 @@ export async function generateMetadata({
   const categoryKey = category === "e-commerce" ? "e-commerce" : category;
   const categoryData = t.categories[categoryKey as keyof typeof t.categories];
 
-  if (!categoryData || !("title" in categoryData)) {
+  if (!categoryData || typeof categoryData !== "object" || !("title" in categoryData)) {
     return {};
   }
 
