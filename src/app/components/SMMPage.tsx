@@ -1,6 +1,5 @@
 "use client";
 
-import { use } from "react";
 import { useI18n } from "@/shared/lib/i18n/I18nProvider";
 import { Header } from "@/widgets/header/ui";
 import { Footer } from "@/widgets/footer/ui";
@@ -8,47 +7,11 @@ import LeadFormSection from "@/features/lead-form/ui/LeadFormSection";
 import { Certificates } from "@/widgets/certificates/ui";
 import { StructuredData } from "@/app/components/StructuredData";
 import Link from "next/link";
-import { notFound } from "next/navigation";
-import { ContextualPage } from "@/app/components/ContextualPage";
-import { SMMPage } from "@/app/components/SMMPage";
 
-const validCategories = ["e-commerce", "corporate", "landing", "platform", "contextual", "targeting", "seo", "smm"] as const;
-type CategorySlug = (typeof validCategories)[number];
-
-export default function CategoryPage({
-  params,
-}: {
-  params: Promise<{ lang: string; category: string }>;
-}) {
+export function SMMPage() {
   const { t, language } = useI18n();
-  const { category } = use(params);
-
-  if (!validCategories.includes(category as CategorySlug)) {
-    notFound();
-  }
-
-  const categoryKey = category === "e-commerce" ? "e-commerce" : category;
-  
-  // Перевіряємо, чи це категорія з розширеним контентом (contextual)
-  if (category === "contextual") {
-    return <ContextualPage />;
-  }
-
-    // Перевіряємо, чи це категорія з розширеним контентом (SMMPage)
-    if (category === "smm") {
-      return <SMMPage />;
-    }
-
-  // Стандартна сторінка для інших категорій
-  const categoryData = t.categories[categoryKey as "e-commerce" | "corporate" | "landing" | "platform" | "targeting" | "seo" | "smm"];
-  
-  if (!categoryData) {
-    notFound();
-  }
-
+  const categoryData = t.categories.smm;
   const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://www.webzona.site";
-  const isDevelopmentCategory = ["e-commerce", "corporate", "landing", "platform"].includes(category);
-  const parentCategoryName = isDevelopmentCategory ? t.header.nav.development : t.header.nav.advertising;
 
   const breadcrumbSchema = {
     "@context": "https://schema.org",
@@ -63,14 +26,14 @@ export default function CategoryPage({
       {
         "@type": "ListItem",
         position: 2,
-        name: parentCategoryName,
+        name: t.header.nav.advertising,
         item: `${baseUrl}/${language}`,
       },
       {
         "@type": "ListItem",
         position: 3,
         name: categoryData.title,
-        item: `${baseUrl}/${language}/${category}`,
+        item: `${baseUrl}/${language}/smm`,
       },
     ],
   };
@@ -89,37 +52,22 @@ export default function CategoryPage({
             {language === "uk" ? "Головна" : language === "ru" ? "Главная" : "Home"}
           </Link>
           <span className="mx-2">/</span>
-          {isDevelopmentCategory ? (
-            <>
-              <Link
-                href={`/${language}`}
-                className="transition-colors hover:text-sky-600"
-              >
-                {t.header.nav.development}
-              </Link>
-              <span className="mx-2">/</span>
-              <span className="text-slate-900">{categoryData.title}</span>
-            </>
-          ) : (
-            <>
-              <Link
-                href={`/${language}`}
-                className="transition-colors hover:text-sky-600"
-              >
-                {t.header.nav.advertising}
-              </Link>
-              <span className="mx-2">/</span>
-              <span className="text-slate-900">{categoryData.title}</span>
-            </>
-          )}
+          <Link
+            href={`/${language}`}
+            className="transition-colors hover:text-sky-600"
+          >
+            {t.header.nav.advertising}
+          </Link>
+          <span className="mx-2">/</span>
+          <span className="text-slate-900">{categoryData.title}</span>
         </nav>
 
         {/* Hero Section */}
         <div className="mb-12 text-center">
-          <h1 className="mb-4 text-3xl font-semibold md:text-4xl">
+          <h1 className="mb-4 text-3xl font-semibold md:text-4xl lg:text-5xl">
             {categoryData.title}
           </h1>
-          <p className="mx-auto max-w-2xl text-base text-slate-600 md:text-lg">
+          <p className="mx-auto mb-4 max-w-3xl text-base text-slate-600 md:text-lg">
             {categoryData.description}
           </p>
           <div className="mt-6">
@@ -156,7 +104,7 @@ export default function CategoryPage({
           </div>
         </section>
 
-        {/* Features */}
+        {/* Features Section */}
         <section className="mb-12 rounded-2xl border border-slate-200 bg-white p-6 md:p-8">
           <h2 className="mb-6 text-xl font-semibold md:text-2xl">
             {t.categories.featuresTitle}
@@ -178,7 +126,7 @@ export default function CategoryPage({
           </div>
         </section>
 
-        {/* Certificates Section - для SMM та contextual */}
+        {/* Certificates Section */}
         <Certificates />
 
         {/* CTA Section */}
