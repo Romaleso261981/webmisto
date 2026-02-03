@@ -20,19 +20,27 @@ export default function Home() {
   const organizationSchema = {
     "@context": "https://schema.org",
     "@type": "Organization",
+    "@id": `${baseUrl}#organization`,
     name: "WebMisto",
     description: t.hero.description,
     url: baseUrl,
-    logo: `${baseUrl}/icon.svg`,
+    logo: {
+      "@type": "ImageObject",
+      url: `${baseUrl}/icon.svg`,
+    },
     address: {
       "@type": "PostalAddress",
       addressLocality: "Львів",
+      addressRegion: "Львівська область",
       addressCountry: "UA",
     },
     contactPoint: {
       "@type": "ContactPoint",
       contactType: "customer service",
+      telephone: "+38 (068) 947 87 23",
+      email: "webmisto@gmail.com",
       availableLanguage: ["Ukrainian", "Russian", "English"],
+      areaServed: "UA",
     },
     sameAs: [],
   };

@@ -1,15 +1,57 @@
 "use client";
 
 import { useI18n } from "@/shared/lib/i18n/I18nProvider";
+import { StructuredData } from "@/app/components/StructuredData";
 
 export default function FAQ() {
-  const { t } = useI18n();
+  const { t, language } = useI18n();
+  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://webmisto.com.ua";
+
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: [
+      {
+        "@type": "Question",
+        name: t.faq.items.cost.question,
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: t.faq.items.cost.answer,
+        },
+      },
+      {
+        "@type": "Question",
+        name: t.faq.items.time.question,
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: t.faq.items.time.answer,
+        },
+      },
+      {
+        "@type": "Question",
+        name: t.faq.items.difference.question,
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: t.faq.items.difference.answer,
+        },
+      },
+      {
+        "@type": "Question",
+        name: t.faq.items.platform.question,
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: t.faq.items.platform.answer,
+        },
+      },
+    ],
+  };
 
   return (
     <section
       id="faq"
       className="border-y border-slate-200 bg-white py-14 md:py-20"
     >
+      <StructuredData data={faqSchema} />
       <div className="mb-8 text-center">
         <h2 className="text-2xl font-semibold md:text-3xl">
           {t.faq.title}

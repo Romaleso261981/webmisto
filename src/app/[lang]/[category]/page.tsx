@@ -6,6 +6,7 @@ import { Header } from "@/widgets/header/ui";
 import { Footer } from "@/widgets/footer/ui";
 import LeadFormSection from "@/features/lead-form/ui/LeadFormSection";
 import { Certificates } from "@/widgets/certificates/ui";
+import { StructuredData } from "@/app/components/StructuredData";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 
@@ -31,8 +32,36 @@ export default function CategoryPage({
   
   if (isContextual) {
     const categoryData = t.categories.contextual;
+    const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://www.webzona.site";
+    
+    const breadcrumbSchema = {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      itemListElement: [
+        {
+          "@type": "ListItem",
+          position: 1,
+          name: language === "uk" ? "Головна" : language === "ru" ? "Главная" : "Home",
+          item: `${baseUrl}/${language}`,
+        },
+        {
+          "@type": "ListItem",
+          position: 2,
+          name: t.header.nav.advertising,
+          item: `${baseUrl}/${language}`,
+        },
+        {
+          "@type": "ListItem",
+          position: 3,
+          name: categoryData.title,
+          item: `${baseUrl}/${language}/${category}`,
+        },
+      ],
+    };
+
     return (
       <div className="min-h-screen bg-slate-50 text-slate-900">
+        <StructuredData data={breadcrumbSchema} />
         <Header />
         <main className="mx-auto max-w-6xl px-4 pb-16 pt-10 md:px-6 md:pb-24 md:pt-16">
           {/* Breadcrumb */}
@@ -158,8 +187,38 @@ export default function CategoryPage({
     notFound();
   }
 
+  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://www.webzona.site";
+  const isDevelopmentCategory = ["e-commerce", "corporate", "landing", "platform"].includes(category);
+  const parentCategoryName = isDevelopmentCategory ? t.header.nav.development : t.header.nav.advertising;
+
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: language === "uk" ? "Головна" : language === "ru" ? "Главная" : "Home",
+        item: `${baseUrl}/${language}`,
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: parentCategoryName,
+        item: `${baseUrl}/${language}`,
+      },
+      {
+        "@type": "ListItem",
+        position: 3,
+        name: categoryData.title,
+        item: `${baseUrl}/${language}/${category}`,
+      },
+    ],
+  };
+
   return (
     <div className="min-h-screen bg-slate-50 text-slate-900">
+      <StructuredData data={breadcrumbSchema} />
       <Header />
       <main className="mx-auto max-w-6xl px-4 pb-16 pt-10 md:px-6 md:pb-24 md:pt-16">
         {/* Breadcrumb */}
@@ -171,7 +230,29 @@ export default function CategoryPage({
             {language === "uk" ? "Головна" : language === "ru" ? "Главная" : "Home"}
           </Link>
           <span className="mx-2">/</span>
-          <span className="text-slate-900">{categoryData.title}</span>
+          {isDevelopmentCategory ? (
+            <>
+              <Link
+                href={`/${language}`}
+                className="transition-colors hover:text-sky-600"
+              >
+                {t.header.nav.development}
+              </Link>
+              <span className="mx-2">/</span>
+              <span className="text-slate-900">{categoryData.title}</span>
+            </>
+          ) : (
+            <>
+              <Link
+                href={`/${language}`}
+                className="transition-colors hover:text-sky-600"
+              >
+                {t.header.nav.advertising}
+              </Link>
+              <span className="mx-2">/</span>
+              <span className="text-slate-900">{categoryData.title}</span>
+            </>
+          )}
         </nav>
 
         {/* Hero Section */}
