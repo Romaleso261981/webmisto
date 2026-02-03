@@ -7,13 +7,16 @@ const defaultLanguage = "uk";
 export function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;
 
-  // Пропускаємо статичні файли, API роути, sitemap та robots.txt
+  // Пропускаємо sitemap та robots.txt на самому початку
+  if (pathname === "/sitemap.xml" || pathname === "/robots.txt") {
+    return NextResponse.next();
+  }
+
+  // Пропускаємо статичні файли та API роути
   if (
     pathname.startsWith("/_next") ||
     pathname.startsWith("/api") ||
     pathname.startsWith("/static") ||
-    pathname === "/sitemap.xml" ||
-    pathname === "/robots.txt" ||
     pathname.includes(".")
   ) {
     return NextResponse.next();
