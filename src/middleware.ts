@@ -7,11 +7,13 @@ const defaultLanguage = "uk";
 export function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;
 
-  // Пропускаємо статичні файли та API роути
+  // Пропускаємо статичні файли, API роути, sitemap та robots.txt
   if (
     pathname.startsWith("/_next") ||
     pathname.startsWith("/api") ||
     pathname.startsWith("/static") ||
+    pathname === "/sitemap.xml" ||
+    pathname === "/robots.txt" ||
     pathname.includes(".")
   ) {
     return NextResponse.next();
@@ -66,7 +68,9 @@ export const config = {
      * - _next/static (static files)
      * - _next/image (image optimization files)
      * - favicon.ico (favicon file)
+     * - sitemap.xml (sitemap file)
+     * - robots.txt (robots file)
      */
-    "/((?!api|_next/static|_next/image|favicon.ico).*)",
+    "/((?!api|_next/static|_next/image|favicon.ico|sitemap.xml|robots.txt).*)",
   ],
 };
