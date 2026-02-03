@@ -39,17 +39,15 @@ export default function LanguageSwitcherDropdown() {
   };
 
   return (
-    <div className="relative w-full" ref={dropdownRef}>
+    <div className="relative" ref={dropdownRef}>
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="flex w-full items-center justify-between gap-2 rounded-lg border border-slate-200 bg-white px-3 py-2 text-sm font-medium text-slate-700 transition hover:bg-slate-50 md:px-4 md:py-2.5"
+        className="flex items-center gap-1.5 text-sm text-slate-700 transition-colors hover:text-sky-600"
       >
-        <div className="flex items-center gap-2">
-          <span className="text-base">{currentLanguage.flag}</span>
-          <span>{currentLanguage.label}</span>
-        </div>
+        <span className="text-base">{currentLanguage.flag}</span>
+        <span className="font-medium">{currentLanguage.label}</span>
         <svg
-          className={`h-4 w-4 text-slate-500 transition-transform ${
+          className={`h-4 w-4 transition-transform ${
             isOpen ? "rotate-180" : ""
           }`}
           fill="none"
@@ -66,17 +64,17 @@ export default function LanguageSwitcherDropdown() {
       </button>
 
       {isOpen && (
-        <div className="absolute left-0 right-0 top-full z-50 mt-1 rounded-lg border border-slate-200 bg-white shadow-lg">
+        <div className="absolute right-0 top-full z-50 mt-2 w-40 rounded-lg border border-slate-200 bg-white shadow-lg">
           {languages.map((lang) => (
             <button
               key={lang.code}
               onClick={() => handleLanguageChange(lang.code)}
               className={`
-                flex w-full items-center gap-2 px-4 py-3 text-left text-sm transition-colors first:rounded-t-lg last:rounded-b-lg
+                flex w-full items-center gap-2 px-4 py-2.5 text-left text-sm transition-colors first:rounded-t-lg last:rounded-b-lg
                 ${
                   language === lang.code
-                    ? "bg-sky-50 text-sky-700 font-medium"
-                    : "text-slate-700 hover:bg-slate-50"
+                    ? "bg-sky-50 text-sky-600 font-medium"
+                    : "text-slate-700 hover:bg-slate-50 hover:text-sky-600"
                 }
               `}
             >
