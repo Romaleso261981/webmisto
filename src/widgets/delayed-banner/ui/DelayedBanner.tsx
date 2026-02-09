@@ -257,23 +257,23 @@ export default function DelayedBanner({
           <div className="relative hidden md:block">
             <div className="relative h-96">
               {/* Декоративні елементи */}
-              <div className="absolute left-0 top-0 h-32 w-32 rounded-2xl bg-gradient-to-br from-sky-400 to-cyan-500 opacity-20 blur-2xl" />
-              <div className="absolute right-0 bottom-0 h-40 w-40 rounded-2xl bg-gradient-to-br from-emerald-400 to-teal-500 opacity-20 blur-2xl" />
+              <div className="absolute left-0 top-0 h-32 w-32 rounded-2xl bg-linear-to-br from-sky-400 to-cyan-500 opacity-20 blur-2xl" />
+              <div className="absolute right-0 bottom-0 h-40 w-40 rounded-2xl bg-linear-to-br from-emerald-400 to-teal-500 opacity-20 blur-2xl" />
 
               {/* Мок-апи сайтів */}
               <div className="absolute left-0 top-0 rotate-[-8deg] transform">
                 <div className="h-48 w-32 rounded-lg border-2 border-slate-200 bg-white p-2 shadow-xl">
-                  <div className="h-full rounded bg-gradient-to-br from-sky-50 to-cyan-50" />
+                  <div className="h-full rounded bg-linear-to-br from-sky-50 to-cyan-50" />
                 </div>
               </div>
-              <div className="absolute right-0 top-8 rotate-[6deg] transform">
+              <div className="absolute right-0 top-8 rotate-6 transform">
                 <div className="h-48 w-32 rounded-lg border-2 border-slate-200 bg-white p-2 shadow-xl">
-                  <div className="h-full rounded bg-gradient-to-br from-emerald-50 to-teal-50" />
+                  <div className="h-full rounded bg-linear-to-br from-emerald-50 to-teal-50" />
                 </div>
               </div>
-              <div className="absolute left-1/2 top-16 -translate-x-1/2 rotate-[2deg] transform">
+              <div className="absolute left-1/2 top-16 -translate-x-1/2 rotate-2 transform">
                 <div className="h-52 w-36 rounded-lg border-2 border-slate-200 bg-white p-2 shadow-2xl">
-                  <div className="h-full rounded bg-gradient-to-br from-purple-50 to-pink-50" />
+                  <div className="h-full rounded bg-linear-to-br from-purple-50 to-pink-50" />
                 </div>
               </div>
             </div>
