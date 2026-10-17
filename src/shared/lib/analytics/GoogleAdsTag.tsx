@@ -1,13 +1,8 @@
 import Script from "next/script";
-import { getGoogleAdsSendTo } from "./googleAds";
+import { getGoogleAdsId } from "./googleAds";
 
 export function GoogleAdsTag() {
-  const sendTo = getGoogleAdsSendTo();
-  const adsId = sendTo?.split("/")[0];
-
-  if (!adsId) {
-    return null;
-  }
+  const adsId = getGoogleAdsId();
 
   return (
     <>

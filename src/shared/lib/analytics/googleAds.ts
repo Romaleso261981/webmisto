@@ -8,15 +8,23 @@ declare global {
 const ADS_ID_PATTERN = /^AW-\d+$/;
 const LABEL_PATTERN = /^[A-Za-z0-9_-]{1,64}$/;
 
-export function getGoogleAdsSendTo(): string | null {
-  const id = process.env.NEXT_PUBLIC_GOOGLE_ADS_ID?.trim();
-  const label = process.env.NEXT_PUBLIC_GOOGLE_ADS_CONVERSION_LABEL?.trim();
+/** Literal tag id from the pasted Google tag. Env overrides it when set. */
+const PASTED_GOOGLE_ADS_ID = "AW-18512379903";
 
-  if (!id || !label || !ADS_ID_PATTERN.test(id) || !LABEL_PATTERN.test(label)) {
+export function getGoogleAdsId(): string {
+  const fromEnv = process.env.NEXT_PUBLIC_GOOGLE_ADS_ID?.trim();
+  if (fromEnv && ADS_ID_PATTERN.test(fromEnv)) {
+    return fromEnv;
+  }
+  return PASTED_GOOGLE_ADS_ID;
+}
+
+export function getGoogleAdsSendTo(): string | null {
+  const label = process.env.NEXT_PUBLIC_GOOGLE_ADS_CONVERSION_LABEL?.trim();
+  if (!label || !LABEL_PATTERN.test(label)) {
     return null;
   }
-
-  return `${id}/${label}`;
+  return `${getGoogleAdsId()}/${label}`;
 }
 
 export function trackLeadConversion(): boolean {
