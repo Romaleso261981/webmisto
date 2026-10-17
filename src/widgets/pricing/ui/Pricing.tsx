@@ -1,9 +1,10 @@
 "use client";
 
+import Link from "next/link";
 import { useI18n } from "@/shared/lib/i18n/I18nProvider";
 
 export default function Pricing() {
-  const { t } = useI18n();
+  const { t, language } = useI18n();
 
   return (
     <section id="pricing" className="bg-slate-50 py-14 md:py-20">
@@ -32,12 +33,12 @@ export default function Pricing() {
               <li key={index}>• {feature}</li>
             ))}
           </ul>
-          <a
-            href="#lead-form"
+          <Link
+            href={`/${language}/landing#lead-form`}
             className="mt-5 inline-flex items-center justify-center rounded-full bg-slate-900 px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-slate-800"
           >
             {t.pricing.plans.start.cta}
-          </a>
+          </Link>
         </div>
 
         <div className="relative flex flex-col rounded-3xl border border-sky-200 bg-white p-6 shadow-xl shadow-sky-100">
@@ -58,12 +59,12 @@ export default function Pricing() {
               <li key={index}>• {feature}</li>
             ))}
           </ul>
-          <a
-            href="#lead-form"
+          <Link
+            href={`/${language}/corporate#lead-form`}
             className="mt-5 inline-flex items-center justify-center rounded-full bg-sky-500 px-5 py-2.5 text-sm font-semibold text-white shadow-lg shadow-sky-300 transition hover:bg-sky-600"
           >
             {t.pricing.plans.business.cta}
-          </a>
+          </Link>
         </div>
 
         <div className="flex flex-col rounded-3xl border border-slate-200 bg-white p-6">
@@ -81,12 +82,12 @@ export default function Pricing() {
               <li key={index}>• {feature}</li>
             ))}
           </ul>
-          <a
-            href="#lead-form"
+          <Link
+            href={`/${language}/platform#lead-form`}
             className="mt-5 inline-flex items-center justify-center rounded-full bg-slate-900 px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-slate-800"
           >
             {t.pricing.plans.platform.cta}
-          </a>
+          </Link>
         </div>
       </div>
 
@@ -97,13 +98,21 @@ export default function Pricing() {
             {t.pricing.priceList.title}
           </p>
           <div className="grid grid-cols-2 gap-x-4 gap-y-2 text-[11px] text-slate-600 md:text-xs">
-            <span>{t.pricing.priceList.landing}</span>
+            <Link href={`/${language}/landing`} className="hover:text-sky-600">
+              {t.pricing.priceList.landing}
+            </Link>
             <span className="text-right text-slate-700">від $320</span>
-            <span>{t.pricing.priceList.corporate}</span>
+            <Link href={`/${language}/corporate`} className="hover:text-sky-600">
+              {t.pricing.priceList.corporate}
+            </Link>
             <span className="text-right text-slate-700">від $450</span>
-            <span>{t.pricing.priceList.shop}</span>
+            <Link href={`/${language}/e-commerce`} className="hover:text-sky-600">
+              {t.pricing.priceList.shop}
+            </Link>
             <span className="text-right text-slate-700">від $720</span>
-            <span>{t.pricing.priceList.platform}</span>
+            <Link href={`/${language}/platform`} className="hover:text-sky-600">
+              {t.pricing.priceList.platform}
+            </Link>
             <span className="text-right text-slate-700">
               {t.pricing.priceList.individual}
             </span>

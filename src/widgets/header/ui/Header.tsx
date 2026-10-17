@@ -204,13 +204,13 @@ export default function Header() {
             )}
           </div>
 
-          <a href="#pricing" className="hover:text-sky-600">
+          <a href={`/${language}#pricing`} className="hover:text-sky-600">
             {t.header.nav.pricing}
           </a>
-          <a href="#faq" className="hover:text-sky-600">
+          <a href={`/${language}#faq`} className="hover:text-sky-600">
             {t.header.nav.faq}
           </a>
-          <a href="#contacts" className="hover:text-sky-600">
+          <a href={`/${language}#contacts`} className="hover:text-sky-600">
             {t.header.nav.contacts}
           </a>
         </nav>
@@ -360,21 +360,21 @@ export default function Header() {
               )}
             </div>
             <a
-              href="#pricing"
+              href={`/${language}#pricing`}
               onClick={() => setIsMobileMenuOpen(false)}
               className="block rounded-lg px-4 py-3 text-sm text-slate-700 transition hover:bg-slate-50 hover:text-sky-600"
             >
               {t.header.nav.pricing}
             </a>
             <a
-              href="#faq"
+              href={`/${language}#faq`}
               onClick={() => setIsMobileMenuOpen(false)}
               className="block rounded-lg px-4 py-3 text-sm text-slate-700 transition hover:bg-slate-50 hover:text-sky-600"
             >
               {t.header.nav.faq}
             </a>
             <a
-              href="#contacts"
+              href={`/${language}#contacts`}
               onClick={() => setIsMobileMenuOpen(false)}
               className="block rounded-lg px-4 py-3 text-sm text-slate-700 transition hover:bg-slate-50 hover:text-sky-600"
             >

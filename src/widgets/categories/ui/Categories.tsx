@@ -38,6 +38,47 @@ export default function Categories() {
     },
   ];
 
+  const advertising = [
+    { slug: "contextual", ...t.categories.contextual, icon: "📢" },
+    { slug: "targeting", ...t.categories.targeting, icon: "🎯" },
+    { slug: "seo", ...t.categories.seo, icon: "🔍" },
+    { slug: "smm", ...t.categories.smm, icon: "📱" },
+  ];
+
+  const renderCards = (items: Array<{ slug: string; title: string; description: string; price: string; icon: string }>) =>
+    items.map((category) => {
+      const href = `/${language}/${category.slug}`;
+      const isActive = pathname === href;
+
+      return (
+        <Link
+          key={category.slug}
+          href={href}
+          className={`group flex flex-col rounded-2xl border p-6 transition-all hover:border-sky-300 hover:shadow-lg ${
+            isActive
+              ? "border-sky-500 bg-sky-50 shadow-md"
+              : "border-slate-200 bg-white"
+          }`}
+        >
+          <div className="mb-4 text-4xl">{category.icon}</div>
+          <h3 className="mb-2 text-lg font-semibold text-slate-900">
+            {category.title}
+          </h3>
+          <p className="mb-4 flex-1 text-sm text-slate-600">
+            {category.description}
+          </p>
+          <div className="mt-auto flex items-center justify-between">
+            <span className="text-sm font-medium text-sky-600">
+              {category.price}
+            </span>
+            <span className="text-sm text-slate-500 transition-colors group-hover:text-sky-600">
+              →
+            </span>
+          </div>
+        </Link>
+      );
+    });
+
   return (
     <section className="bg-white py-14 md:py-20">
       <div className="mb-8 text-center md:mb-12">
@@ -50,38 +91,14 @@ export default function Categories() {
       </div>
 
       <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
-        {categories.map((category) => {
-          const href = `/${language}/${category.slug}`;
-          const isActive = pathname === href;
+        {renderCards(categories)}
+      </div>
 
-          return (
-            <Link
-              key={category.slug}
-              href={href}
-              className={`group flex flex-col rounded-2xl border p-6 transition-all hover:border-sky-300 hover:shadow-lg ${
-                isActive
-                  ? "border-sky-500 bg-sky-50 shadow-md"
-                  : "border-slate-200 bg-white"
-              }`}
-            >
-              <div className="mb-4 text-4xl">{category.icon}</div>
-              <h3 className="mb-2 text-lg font-semibold text-slate-900">
-                {category.title}
-              </h3>
-              <p className="mb-4 flex-1 text-sm text-slate-600">
-                {category.description}
-              </p>
-              <div className="mt-auto flex items-center justify-between">
-                <span className="text-sm font-medium text-sky-600">
-                  {category.price}
-                </span>
-                <span className="text-sm text-slate-500 transition-colors group-hover:text-sky-600">
-                  →
-                </span>
-              </div>
-            </Link>
-          );
-        })}
+      <h2 className="mb-6 mt-14 text-center text-2xl font-semibold md:text-3xl">
+        {t.header.nav.advertising}
+      </h2>
+      <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+        {renderCards(advertising)}
       </div>
     </section>
   );

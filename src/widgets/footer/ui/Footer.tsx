@@ -13,9 +13,17 @@ export default function Footer() {
           {t.footer.copyright} {new Date().getFullYear()} WebMisto
         </p>
         <div className="flex flex-wrap gap-4">
-          {t.footer.links.map((link, index) => (
-            <span key={index}>{link}</span>
-          ))}
+          {t.footer.links.map((link) => {
+            const href = link.path.startsWith("#")
+              ? `/${language}${link.path}`
+              : `/${language}${link.path ? `/${link.path}` : ""}`;
+
+            return (
+              <Link key={link.label} href={href} className="hover:text-sky-600">
+                {link.label}
+              </Link>
+            );
+          })}
           <Link href={`/${language}/privacy`} className="underline hover:text-sky-600">
             {t.footer.privacy}
           </Link>

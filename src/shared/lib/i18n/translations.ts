@@ -189,7 +189,7 @@ export interface Translations {
   };
   footer: {
     copyright: string;
-    links: string[];
+    links: { label: string; path: string }[];
     privacy: string;
   };
   certificates: {
@@ -556,10 +556,16 @@ export const translations: Record<Language, Translations> = {
     footer: {
       copyright: "Створено ©",
       links: [
-        "Розробка сайтів",
-        "Просування сайту",
-        "Таргетована реклама",
-        "Контакти",
+        { label: "Розробка сайтів", path: "" },
+        { label: "Інтернет-магазини", path: "e-commerce" },
+        { label: "Корпоративні сайти", path: "corporate" },
+        { label: "Лендінги", path: "landing" },
+        { label: "Навчальні платформи", path: "platform" },
+        { label: "Контекстна реклама", path: "contextual" },
+        { label: "Таргетована реклама", path: "targeting" },
+        { label: "SEO", path: "seo" },
+        { label: "SMM", path: "smm" },
+        { label: "Контакти", path: "#contacts" },
       ],
       privacy: "Політика конфіденційності",
     },
@@ -1061,10 +1067,16 @@ export const translations: Record<Language, Translations> = {
     footer: {
       copyright: "Создано ©",
       links: [
-        "Разработка сайтов",
-        "Продвижение сайта",
-        "Таргетированная реклама",
-        "Контакты",
+        { label: "Разработка сайтов", path: "" },
+        { label: "Интернет-магазины", path: "e-commerce" },
+        { label: "Корпоративные сайты", path: "corporate" },
+        { label: "Лендинги", path: "landing" },
+        { label: "Обучающие платформы", path: "platform" },
+        { label: "Контекстная реклама", path: "contextual" },
+        { label: "Таргетированная реклама", path: "targeting" },
+        { label: "SEO", path: "seo" },
+        { label: "SMM", path: "smm" },
+        { label: "Контакты", path: "#contacts" },
       ],
       privacy: "Политика конфиденциальности",
     },
@@ -1566,10 +1578,16 @@ export const translations: Record<Language, Translations> = {
     footer: {
       copyright: "Created ©",
       links: [
-        "Website development",
-        "Website promotion",
-        "Targeted advertising",
-        "Contacts",
+        { label: "Website development", path: "" },
+        { label: "Online stores", path: "e-commerce" },
+        { label: "Corporate websites", path: "corporate" },
+        { label: "Landing pages", path: "landing" },
+        { label: "Learning platforms", path: "platform" },
+        { label: "Contextual ads", path: "contextual" },
+        { label: "Targeted ads", path: "targeting" },
+        { label: "SEO", path: "seo" },
+        { label: "SMM", path: "smm" },
+        { label: "Contacts", path: "#contacts" },
       ],
       privacy: "Privacy policy",
     },
