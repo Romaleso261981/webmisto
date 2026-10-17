@@ -11,15 +11,18 @@ export async function generateMetadata({
   const validLang: Language = ["uk", "ru", "en"].includes(lang) ? (lang as Language) : "uk";
   const t = translations[validLang];
 
-  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://webmisto.com.ua";
+  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://www.webzona.site";
   const url = `${baseUrl}/${validLang}`;
 
+  const title = t.hero.metaTitle || t.hero.title;
+  const description = t.hero.metaDescription || t.hero.description;
+
   return {
-    title: t.hero.title,
-    description: t.hero.description,
+    title: t.hero.metaTitle ? { absolute: t.hero.metaTitle } : t.hero.title,
+    description,
     openGraph: {
-      title: t.hero.title,
-      description: t.hero.description,
+      title,
+      description,
       url,
       locale: validLang === "uk" ? "uk_UA" : validLang === "ru" ? "ru_RU" : "en_US",
       alternateLocale: ["uk_UA", "ru_RU", "en_US"],

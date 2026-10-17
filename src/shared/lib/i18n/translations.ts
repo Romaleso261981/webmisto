@@ -17,6 +17,8 @@ export interface Translations {
     title: string;
     titleHighlight: string;
     description: string;
+    metaTitle?: string;
+    metaDescription?: string;
     stats: {
       projects: string;
       ux: string;
@@ -213,6 +215,9 @@ export interface Translations {
     ctaDescription: string;
     "e-commerce": {
       title: string;
+      headline?: string;
+      metaTitle?: string;
+      metaDescription?: string;
       description: string;
       features: string[];
       tasks: {
@@ -225,6 +230,9 @@ export interface Translations {
     };
     corporate: {
       title: string;
+      headline?: string;
+      metaTitle?: string;
+      metaDescription?: string;
       description: string;
       features: string[];
       tasks: {
@@ -237,6 +245,9 @@ export interface Translations {
     };
     landing: {
       title: string;
+      headline?: string;
+      metaTitle?: string;
+      metaDescription?: string;
       description: string;
       features: string[];
       tasks: {
@@ -249,6 +260,9 @@ export interface Translations {
     };
     platform: {
       title: string;
+      headline?: string;
+      metaTitle?: string;
+      metaDescription?: string;
       description: string;
       features: string[];
       tasks: {
@@ -261,6 +275,9 @@ export interface Translations {
     };
     contextual: {
       title: string;
+      headline?: string;
+      metaTitle?: string;
+      metaDescription?: string;
       description: string;
       subtitle: string;
       benefits: {
@@ -281,6 +298,9 @@ export interface Translations {
     };
     targeting: {
       title: string;
+      headline?: string;
+      metaTitle?: string;
+      metaDescription?: string;
       description: string;
       features: string[];
       tasks: {
@@ -293,6 +313,9 @@ export interface Translations {
     };
     seo: {
       title: string;
+      headline?: string;
+      metaTitle?: string;
+      metaDescription?: string;
       description: string;
       features: string[];
       tasks: {
@@ -305,6 +328,9 @@ export interface Translations {
     };
     smm: {
       title: string;
+      headline?: string;
+      metaTitle?: string;
+      metaDescription?: string;
       description: string;
       features: string[];
       tasks: {
@@ -333,8 +359,11 @@ export const translations: Record<Language, Translations> = {
     },
     hero: {
       badge: "Розробка сайтів та онлайн‑платформ",
-      title: "Сучасна розробка",
-      titleHighlight: "сайтів, інтернет‑магазинів, навчальних платформ",
+      title: "Розробка сайтів у Львові —",
+      titleHighlight: "інтернет-магазини, лендінги та платформи",
+      metaTitle: "Розробка сайтів у Львові | WebMisto",
+      metaDescription:
+        "Розробка сайтів, інтернет-магазинів, лендінгів і навчальних платформ у Львові. Лендінг від $320, корпоративний сайт від $450, магазин від $720.",
       description:
         "Створюємо швидкі, адаптивні та зручні веб‑рішення для бізнесу: корпоративні сайти, інтернет‑магазини та навчальні платформи. Допомагаємо перетворити ідею в працюючий онлайн‑проєкт.",
       stats: {
@@ -606,6 +635,10 @@ export const translations: Record<Language, Translations> = {
         "Залиште заявку, і ми зв'яжемося з вами для обговорення деталей",
       "e-commerce": {
         title: "Інтернет-магазини",
+        headline: "Розробка інтернет-магазину під ключ",
+        metaTitle: "Розробка інтернет-магазину під ключ у Львові | WebMisto",
+        metaDescription:
+          "Інтернет-магазин з каталогом, кошиком, оплатою і доставкою. Розробка під ключ від $720.",
         description:
           "Створюємо повнофункціональні інтернет-магазини з каталогом товарів, кошиком, системою оплати та доставки. Інтеграції з платіжними системами, CRM та службами доставки.",
         features: [
@@ -631,6 +664,10 @@ export const translations: Record<Language, Translations> = {
       },
       corporate: {
         title: "Корпоративні сайти",
+        headline: "Розробка корпоративного сайту",
+        metaTitle: "Розробка корпоративного сайту у Львові | WebMisto",
+        metaDescription:
+          "Багатосторінковий корпоративний сайт з послугами, блогом і заявками. Розробка від $450.",
         description:
           "Розробка багатосторінкових корпоративних сайтів з блогом, портфоліо та сторінками послуг. Сучасний дизайн та зручна навігація.",
         features: [
@@ -656,6 +693,10 @@ export const translations: Record<Language, Translations> = {
       },
       landing: {
         title: "Лендінги та сайти-візитки",
+        headline: "Розробка лендінгу та сайту-візитки",
+        metaTitle: "Розробка лендінгу та сайту-візитки від $320 | WebMisto",
+        metaDescription:
+          "Лендінг або сайт-візитка до 5 сторінок для малого бізнесу. Запуск за 2–3 тижні, від $320.",
         description:
           "Створюємо ефективні лендінги та сайти-візитки для малого бізнесу. Фокус на конверсії та швидкості завантаження.",
         features: [
@@ -681,6 +722,10 @@ export const translations: Record<Language, Translations> = {
       },
       platform: {
         title: "Навчальні платформи",
+        headline: "Розробка навчальної платформи",
+        metaTitle: "Розробка навчальної платформи під ключ | WebMisto",
+        metaDescription:
+          "Навчальна платформа з кабінетами, уроками, прогресом і оплатою курсів. Вартість розраховуємо індивідуально.",
         description:
           "Розробка повнофункціональних навчальних платформ з особистими кабінетами, уроками, модулями та системою прогресу.",
         features: [
@@ -706,6 +751,10 @@ export const translations: Record<Language, Translations> = {
       },
       contextual: {
         title: "Контекстна реклама",
+        headline: "Контекстна реклама в Google",
+        metaTitle: "Контекстна реклама в Google Ads | WebMisto",
+        metaDescription:
+          "Налаштування контекстної реклами в Google за пошуковими запитами. Оплата за кліки, контроль бюджету.",
         description:
           "Підвищимо впізнаваність бренду та залучимо зацікавлених клієнтів завдяки контекстній рекламі в Google та інших пошукових системах.",
         subtitle:
@@ -755,6 +804,10 @@ export const translations: Record<Language, Translations> = {
       },
       targeting: {
         title: "Таргетована реклама",
+        headline: "Таргетована реклама у соцмережах",
+        metaTitle: "Таргетована реклама Facebook та Instagram | WebMisto",
+        metaDescription:
+          "Таргетована реклама у Facebook, Instagram і Telegram для заявок і продажів.",
         description:
           "Налаштуємо ефективну таргетовану рекламу в соціальних мережах (Facebook, Instagram, Telegram) для залучення цільової аудиторії та збільшення продажів.",
         features: [
@@ -780,6 +833,10 @@ export const translations: Record<Language, Translations> = {
       },
       seo: {
         title: "SEO просування",
+        headline: "SEO-просування сайту",
+        metaTitle: "SEO-просування сайту в Google | WebMisto",
+        metaDescription:
+          "SEO-просування сайту: технічний аудит, контент і позиції в Google.",
         description:
           "Підвищимо позиції вашого сайту в пошукових системах Google та Yandex, залучимо органічний трафік та збільшимо кількість клієнтів.",
         features: [
@@ -805,6 +862,10 @@ export const translations: Record<Language, Translations> = {
       },
       smm: {
         title: "SMM просування",
+        headline: "SMM-просування для бізнесу",
+        metaTitle: "SMM-просування у соцмережах | WebMisto",
+        metaDescription:
+          "SMM-просування: контент-план, ведення профілів і залучення клієнтів із соцмереж.",
         description:
           "Розвиваємо ваші соціальні мережі, створюємо контент-план, ведемо профілі та залучаємо нових підписників та клієнтів.",
         features: [

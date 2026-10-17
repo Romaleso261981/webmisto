@@ -24,13 +24,21 @@ export async function generateMetadata({
     return {};
   }
 
-  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://webmisto.com.ua";
+  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://www.webzona.site";
   const url = `${baseUrl}/${validLang}/${category}`;
-  const title = `${categoryData.title} | WebMisto`;
-  const description = "description" in categoryData ? categoryData.description : "";
+  const metaTitle =
+    "metaTitle" in categoryData && categoryData.metaTitle
+      ? categoryData.metaTitle
+      : `${categoryData.title} | WebMisto`;
+  const description =
+    "metaDescription" in categoryData && categoryData.metaDescription
+      ? categoryData.metaDescription
+      : "description" in categoryData
+        ? categoryData.description
+        : "";
 
   return {
-    title,
+    title: { absolute: metaTitle },
     description,
     keywords: [
       categoryData.title,
@@ -39,7 +47,7 @@ export async function generateMetadata({
       validLang === "uk" ? "розробка сайтів" : validLang === "ru" ? "разработка сайтов" : "website development",
     ],
     openGraph: {
-      title,
+      title: metaTitle,
       description,
       url,
       locale: validLang === "uk" ? "uk_UA" : validLang === "ru" ? "ru_RU" : "en_US",

@@ -116,7 +116,9 @@ export default function CategoryPage({
         {/* Hero Section */}
         <div className="mb-12 text-center">
           <h1 className="mb-4 text-3xl font-semibold md:text-4xl">
-            {categoryData.title}
+            {"headline" in categoryData && categoryData.headline
+              ? categoryData.headline
+              : categoryData.title}
           </h1>
           <p className="mx-auto max-w-2xl text-base text-slate-600 md:text-lg">
             {categoryData.description}

@@ -91,9 +91,6 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="uk">
-      <head>
-        <link rel="canonical" href={process.env.NEXT_PUBLIC_SITE_URL || "https://webmisto.com.ua"} />
-      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >

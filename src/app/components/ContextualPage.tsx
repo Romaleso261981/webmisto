@@ -65,7 +65,7 @@ export function ContextualPage() {
         {/* Hero Section */}
         <div className="mb-12 text-center">
           <h1 className="mb-4 text-3xl font-semibold md:text-4xl lg:text-5xl">
-            {categoryData.title}
+            {categoryData.headline || categoryData.title}
           </h1>
           <p className="mx-auto mb-4 max-w-3xl text-base text-slate-600 md:text-lg">
             {categoryData.description}
