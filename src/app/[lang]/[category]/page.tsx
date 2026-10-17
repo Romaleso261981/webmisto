@@ -126,6 +126,12 @@ export default function CategoryPage({
               {categoryData.price}
             </span>
           </div>
+          <a
+            href="#lead-form"
+            className="mt-6 inline-flex items-center justify-center rounded-full bg-sky-500 px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-sky-500/30 transition hover:bg-sky-600"
+          >
+            {categoryData.cta}
+          </a>
         </div>
 
         {/* Tasks Section */}

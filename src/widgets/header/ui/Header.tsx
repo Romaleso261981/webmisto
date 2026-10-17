@@ -2,6 +2,7 @@
 
 import { useState, useRef, useEffect } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useI18n } from "@/shared/lib/i18n/I18nProvider";
 import LanguageSwitcherDropdown from "@/shared/ui/LanguageSwitcher/LanguageSwitcherDropdown";
 
@@ -14,6 +15,11 @@ const categorySlugs = {
 
 export default function Header() {
   const { t, language } = useI18n();
+  const pathname = usePathname();
+  const isAdvertisingPage = ["/contextual", "/targeting", "/seo", "/smm"].some((slug) =>
+    pathname.includes(slug)
+  );
+  const headerCta = isAdvertisingPage ? t.header.ctaAdvertising : t.header.cta;
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isDevelopmentDropdownOpen, setIsDevelopmentDropdownOpen] = useState(false);
   const [isAdvertisingDropdownOpen, setIsAdvertisingDropdownOpen] = useState(false);
@@ -215,7 +221,7 @@ export default function Header() {
             href="#lead-form"
             className="rounded-full bg-sky-500 px-5 py-2.5 text-sm font-semibold text-white shadow-lg shadow-sky-500/30 transition hover:bg-sky-600"
           >
-            {t.header.cta}
+            {headerCta}
           </a>
         </div>
 
@@ -379,7 +385,7 @@ export default function Header() {
               onClick={() => setIsMobileMenuOpen(false)}
               className="mt-4 block rounded-full bg-sky-500 px-6 py-3 text-center text-sm font-semibold text-white shadow-lg shadow-sky-500/30 transition hover:bg-sky-600"
             >
-              {t.header.cta}
+              {headerCta}
             </a>
           </nav>
         </div>

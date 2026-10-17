@@ -10,6 +10,7 @@ export interface Translations {
       contacts: string;
     };
     cta: string;
+    ctaAdvertising: string;
   };
   hero: {
     badge: string;
@@ -327,7 +328,8 @@ export const translations: Record<Language, Translations> = {
         faq: "Питання",
         contacts: "Контакти",
       },
-      cta: "Замовити таргет",
+      cta: "Замовити розробку",
+      ctaAdvertising: "Отримати консультацію",
     },
     hero: {
       badge: "Розробка сайтів та онлайн‑платформ",
@@ -831,7 +833,8 @@ export const translations: Record<Language, Translations> = {
         faq: "Вопросы",
         contacts: "Контакты",
       },
-      cta: "Заказать таргет",
+      cta: "Заказать разработку",
+      ctaAdvertising: "Получить консультацию",
     },
     hero: {
       badge: "Разработка сайтов и онлайн‑платформ",
@@ -1335,7 +1338,8 @@ export const translations: Record<Language, Translations> = {
         faq: "FAQ",
         contacts: "Contacts",
       },
-      cta: "Order targeting",
+      cta: "Order development",
+      ctaAdvertising: "Get a consultation",
     },
     hero: {
       badge: "Website and online platform development",
