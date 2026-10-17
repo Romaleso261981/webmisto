@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import Link from "next/link";
 import { useI18n } from "@/shared/lib/i18n/I18nProvider";
 
 interface DelayedBannerProps {
@@ -98,6 +99,7 @@ export default function DelayedBanner({
       descriptionHighlight: "презентацію наших робіт",
       placeholder: "Введіть номер телефону",
       button: "Отримати презентацію",
+      privacy: "Надсилаючи номер, ви погоджуєтесь на обробку даних.",
     },
     ru: {
       title: "Убедитесь, какой",
@@ -107,6 +109,7 @@ export default function DelayedBanner({
       descriptionHighlight: "презентацию наших работ",
       placeholder: "Введите номер телефона",
       button: "Получить презентацию",
+      privacy: "Отправляя номер, вы соглашаетесь на обработку данных.",
     },
     en: {
       title: "See what a",
@@ -116,6 +119,7 @@ export default function DelayedBanner({
       descriptionHighlight: "presentation of our works",
       placeholder: "Enter phone number",
       button: "Get presentation",
+      privacy: "By sending your number, you agree to data processing.",
     },
   };
 
@@ -250,6 +254,16 @@ export default function DelayedBanner({
                   </>
                 )}
               </button>
+              <p className="text-[11px] text-slate-500">
+                {text.privacy}{" "}
+                <Link href={`/${language}/privacy`} className="underline hover:text-sky-600">
+                  {language === "uk"
+                    ? "Політика конфіденційності"
+                    : language === "ru"
+                    ? "Политика конфиденциальности"
+                    : "Privacy policy"}
+                </Link>
+              </p>
             </form>
           </div>
 

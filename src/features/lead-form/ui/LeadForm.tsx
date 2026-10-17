@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useLeadForm } from "../model/useLeadForm";
 import { useI18n } from "@/shared/lib/i18n/I18nProvider";
 
@@ -8,7 +9,7 @@ interface LeadFormProps {
 }
 
 export default function LeadForm({ hook }: LeadFormProps) {
-  const { t } = useI18n();
+  const { t, language } = useI18n();
   const {
     formData,
     errors,
@@ -117,7 +118,10 @@ export default function LeadForm({ hook }: LeadFormProps) {
         </button>
 
         <p className="text-[11px] text-slate-500">
-          {t.form.privacy}
+          {t.form.privacy}{" "}
+          <Link href={`/${language}/privacy`} className="underline hover:text-sky-600">
+            {t.form.privacyLink}
+          </Link>
         </p>
       </form>
     </div>

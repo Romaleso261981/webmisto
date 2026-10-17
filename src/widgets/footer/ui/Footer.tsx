@@ -1,9 +1,10 @@
 "use client";
 
+import Link from "next/link";
 import { useI18n } from "@/shared/lib/i18n/I18nProvider";
 
 export default function Footer() {
-  const { t } = useI18n();
+  const { t, language } = useI18n();
 
   return (
     <footer className="border-t border-slate-200 bg-white/90">
@@ -15,6 +16,9 @@ export default function Footer() {
           {t.footer.links.map((link, index) => (
             <span key={index}>{link}</span>
           ))}
+          <Link href={`/${language}/privacy`} className="underline hover:text-sky-600">
+            {t.footer.privacy}
+          </Link>
         </div>
       </div>
     </footer>

@@ -171,6 +171,7 @@ export interface Translations {
     submit: string;
     submitting: string;
     privacy: string;
+    privacyLink: string;
     success: string;
   };
   contacts: {
@@ -188,6 +189,7 @@ export interface Translations {
   footer: {
     copyright: string;
     links: string[];
+    privacy: string;
   };
   certificates: {
     title: string;
@@ -525,6 +527,7 @@ export const translations: Record<Language, Translations> = {
       submitting: "Відправляється...",
       privacy:
         "Натискаючи кнопку, ви погоджуєтесь на обробку персональних даних. Ми не передаємо ваші контакти третім особам.",
+      privacyLink: "Політика конфіденційності",
       success:
         "Дякуємо! Ваша заявка відправлена. Ми зв'яжемося з вами найближчим часом.",
     },
@@ -556,6 +559,7 @@ export const translations: Record<Language, Translations> = {
         "Таргетована реклама",
         "Контакти",
       ],
+      privacy: "Політика конфіденційності",
     },
     wordpress: {
       title: "ЦІНА САЙТУ НА ВОРДПРЕС",
@@ -1027,6 +1031,7 @@ export const translations: Record<Language, Translations> = {
       submitting: "Отправляется...",
       privacy:
         "Нажимая кнопку, вы соглашаетесь на обработку персональных данных. Мы не передаём ваши контакты третьим лицам.",
+      privacyLink: "Политика конфиденциальности",
       success:
         "Спасибо! Ваша заявка отправлена. Мы свяжемся с вами в ближайшее время.",
     },
@@ -1058,6 +1063,7 @@ export const translations: Record<Language, Translations> = {
         "Таргетированная реклама",
         "Контакты",
       ],
+      privacy: "Политика конфиденциальности",
     },
     wordpress: {
       title: "ЦЕНА САЙТА НА ВОРДПРЕСС",
@@ -1529,6 +1535,7 @@ export const translations: Record<Language, Translations> = {
       submitting: "Submitting...",
       privacy:
         "By clicking the button, you agree to the processing of personal data. We do not share your contacts with third parties.",
+      privacyLink: "Privacy policy",
       success:
         "Thank you! Your request has been submitted. We'll contact you soon.",
     },
@@ -1560,6 +1567,7 @@ export const translations: Record<Language, Translations> = {
         "Targeted advertising",
         "Contacts",
       ],
+      privacy: "Privacy policy",
     },
     wordpress: {
       title: "WORDPRESS WEBSITE PRICE",
