@@ -92,14 +92,14 @@ export default function DelayedBanner({
 
   const translations = {
     uk: {
-      title: "Переконайтесь, який",
+      title: "Переконайтеся, який",
       titleHighlight: "чудовий сайт",
       titleEnd: "ви отримаєте від компанії WebMisto!",
       description: "Просто вкажіть свій номер телефону, і ми відправимо вам",
       descriptionHighlight: "презентацію наших робіт",
       placeholder: "Введіть номер телефону",
       button: "Отримати презентацію",
-      privacy: "Надсилаючи номер, ви погоджуєтесь на обробку даних.",
+      privacy: "Надсилаючи номер, ви погоджуєтеся на обробку даних.",
     },
     ru: {
       title: "Убедитесь, какой",
