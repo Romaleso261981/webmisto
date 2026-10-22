@@ -6,10 +6,14 @@ declare global {
 }
 
 const ADS_ID_PATTERN = /^AW-\d+$/;
+const GA_ID_PATTERN = /^G-[A-Z0-9]+$/;
 const LABEL_PATTERN = /^[A-Za-z0-9_-]{1,64}$/;
 
 /** Literal tag id from the pasted Google tag. Env overrides it when set. */
 const PASTED_GOOGLE_ADS_ID = "AW-18512379903";
+
+/** Literal measurement id from the pasted Google Analytics tag. Env overrides it when set. */
+const PASTED_GOOGLE_ANALYTICS_ID = "G-CKLMPDZNRL";
 
 export function getGoogleAdsId(): string {
   const fromEnv = process.env.NEXT_PUBLIC_GOOGLE_ADS_ID?.trim();
@@ -17,6 +21,14 @@ export function getGoogleAdsId(): string {
     return fromEnv;
   }
   return PASTED_GOOGLE_ADS_ID;
+}
+
+export function getGoogleAnalyticsId(): string {
+  const fromEnv = process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID?.trim();
+  if (fromEnv && GA_ID_PATTERN.test(fromEnv)) {
+    return fromEnv;
+  }
+  return PASTED_GOOGLE_ANALYTICS_ID;
 }
 
 export function getGoogleAdsSendTo(): string | null {
