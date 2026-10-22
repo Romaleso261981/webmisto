@@ -11,7 +11,7 @@ export default function Advantages() {
       id="services"
       className="border-y border-slate-200 bg-white py-14 md:py-16"
     >
-      <div className="grid gap-10 md:grid-cols-[minmax(0,1.1fr)_minmax(0,1.1fr)]">
+      <div className="grid items-stretch gap-10 md:grid-cols-2">
         <div>
           <h2 className="mb-3 text-2xl font-semibold md:text-3xl">
             {t.advantages.title}
@@ -67,10 +67,10 @@ export default function Advantages() {
           </ul>
         </div>
 
-        <div className="grid gap-4 text-sm md:grid-cols-2">
+        <div className="grid gap-4 text-sm sm:grid-cols-2 md:h-full md:grid-rows-2">
           <Link
             href={`/${language}/corporate`}
-            className="group rounded-2xl border border-slate-200 bg-slate-50 p-4 transition-all hover:border-sky-300 hover:shadow-md"
+            className="group flex h-full flex-col rounded-2xl border border-slate-200 bg-slate-50 p-5 transition-all hover:border-sky-300 hover:shadow-md"
           >
             <p className="text-xs font-medium uppercase tracking-[0.18em] text-slate-500">
               {t.advantages.solutions.corporate.label}
@@ -84,7 +84,7 @@ export default function Advantages() {
           </Link>
           <Link
             href={`/${language}/e-commerce`}
-            className="group rounded-2xl border border-slate-200 bg-slate-50 p-4 transition-all hover:border-sky-300 hover:shadow-md"
+            className="group flex h-full flex-col rounded-2xl border border-slate-200 bg-slate-50 p-5 transition-all hover:border-sky-300 hover:shadow-md"
           >
             <p className="text-xs font-medium uppercase tracking-[0.18em] text-slate-500">
               {t.advantages.solutions.shop.label}
@@ -98,7 +98,7 @@ export default function Advantages() {
           </Link>
           <Link
             href={`/${language}/platform`}
-            className="group rounded-2xl border border-slate-200 bg-slate-50 p-4 transition-all hover:border-sky-300 hover:shadow-md"
+            className="group flex h-full flex-col rounded-2xl border border-slate-200 bg-slate-50 p-5 transition-all hover:border-sky-300 hover:shadow-md"
           >
             <p className="text-xs font-medium uppercase tracking-[0.18em] text-slate-500">
               {t.advantages.solutions.platform.label}
@@ -112,7 +112,7 @@ export default function Advantages() {
           </Link>
           <Link
             href={`/${language}/landing`}
-            className="group rounded-2xl border border-slate-200 bg-slate-50 p-4 transition-all hover:border-sky-300 hover:shadow-md"
+            className="group flex h-full flex-col rounded-2xl border border-slate-200 bg-slate-50 p-5 transition-all hover:border-sky-300 hover:shadow-md"
           >
             <p className="text-xs font-medium uppercase tracking-[0.18em] text-slate-500">
               {t.advantages.solutions.additional.label}
