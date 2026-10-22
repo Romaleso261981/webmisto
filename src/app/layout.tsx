@@ -16,8 +16,8 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || "https://webmisto.com.ua"),
   title: {
-    default: "WebMisto - Веб студія у Львові | Розробка сайтів та інтернет-магазинів",
-    template: "%s | WebMisto",
+    default: "webzona - Веб студія у Львові | Розробка сайтів та інтернет-магазинів",
+    template: "%s | webzona",
   },
   description: "Професійна розробка сайтів, інтернет-магазинів та навчальних платформ у Львові. Сучасні веб-рішення для вашого бізнесу.",
   keywords: [
@@ -30,9 +30,9 @@ export const metadata: Metadata = {
     "навчальні платформи",
     "веб-розробка Україна",
   ],
-  authors: [{ name: "WebMisto" }],
-  creator: "WebMisto",
-  publisher: "WebMisto",
+  authors: [{ name: "webzona" }],
+  creator: "webzona",
+  publisher: "webzona",
   formatDetection: {
     email: false,
     address: false,
@@ -43,21 +43,21 @@ export const metadata: Metadata = {
     locale: "uk_UA",
     alternateLocale: ["ru_RU", "en_US"],
     url: process.env.NEXT_PUBLIC_SITE_URL || "https://webmisto.com.ua",
-    siteName: "WebMisto",
-    title: "WebMisto - Веб студія у Львові | Розробка сайтів та інтернет-магазинів",
+    siteName: "webzona",
+    title: "webzona - Веб студія у Львові | Розробка сайтів та інтернет-магазинів",
     description: "Професійна розробка сайтів, інтернет-магазинів та навчальних платформ у Львові. Сучасні веб-рішення для вашого бізнесу.",
     images: [
       {
         url: "/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: "WebMisto - Веб студія у Львові",
+        alt: "webzona - Веб студія у Львові",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "WebMisto - Веб студія у Львові",
+    title: "webzona - Веб студія у Львові",
     description: "Професійна розробка сайтів, інтернет-магазинів та навчальних платформ",
     images: ["/og-image.jpg"],
   },

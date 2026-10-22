@@ -11,7 +11,7 @@ export default function Contacts() {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
     "@id": `${baseUrl}#organization`,
-    name: "WebMisto",
+    name: "webzona",
     description: t.hero.description,
     url: baseUrl,
     logo: `${baseUrl}/icon.svg`,

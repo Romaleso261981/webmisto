@@ -361,7 +361,7 @@ export const translations: Record<Language, Translations> = {
       badge: "Розробка сайтів та онлайн‑платформ",
       title: "Розробка сайтів у Львові —",
       titleHighlight: "інтернет-магазини, лендінги та платформи",
-      metaTitle: "Розробка сайтів у Львові | WebMisto",
+      metaTitle: "Розробка сайтів у Львові | webzona",
       metaDescription:
         "Розробка сайтів, інтернет-магазинів, лендінгів і навчальних платформ у Львові. Лендінг від $320, корпоративний сайт від $450, магазин від $720.",
       description:
@@ -564,7 +564,7 @@ export const translations: Record<Language, Translations> = {
     },
     contacts: {
       title: "Контакти",
-      company: "WebMisto — веб‑студія у Львові",
+      company: "webzona — веб‑студія у Львові",
       location: "Львів, Україна (працюємо онлайн по всій країні та за кордоном)",
       phone: "Телефон",
       email: "Email",
@@ -636,7 +636,7 @@ export const translations: Record<Language, Translations> = {
       "e-commerce": {
         title: "Інтернет-магазини",
         headline: "Розробка інтернет-магазину під ключ",
-        metaTitle: "Розробка інтернет-магазину під ключ у Львові | WebMisto",
+        metaTitle: "Розробка інтернет-магазину під ключ у Львові | webzona",
         metaDescription:
           "Інтернет-магазин з каталогом, кошиком, оплатою і доставкою. Розробка під ключ від $720.",
         description:
@@ -665,7 +665,7 @@ export const translations: Record<Language, Translations> = {
       corporate: {
         title: "Корпоративні сайти",
         headline: "Розробка корпоративного сайту",
-        metaTitle: "Розробка корпоративного сайту у Львові | WebMisto",
+        metaTitle: "Розробка корпоративного сайту у Львові | webzona",
         metaDescription:
           "Багатосторінковий корпоративний сайт з послугами, блогом і заявками. Розробка від $450.",
         description:
@@ -694,7 +694,7 @@ export const translations: Record<Language, Translations> = {
       landing: {
         title: "Лендінги та сайти-візитки",
         headline: "Розробка лендінгу та сайту-візитки",
-        metaTitle: "Розробка лендінгу та сайту-візитки від $320 | WebMisto",
+        metaTitle: "Розробка лендінгу та сайту-візитки від $320 | webzona",
         metaDescription:
           "Лендінг або сайт-візитка до 5 сторінок для малого бізнесу. Запуск за 2–3 тижні, від $320.",
         description:
@@ -723,7 +723,7 @@ export const translations: Record<Language, Translations> = {
       platform: {
         title: "Навчальні платформи",
         headline: "Розробка навчальної платформи",
-        metaTitle: "Розробка навчальної платформи під ключ | WebMisto",
+        metaTitle: "Розробка навчальної платформи під ключ | webzona",
         metaDescription:
           "Навчальна платформа з кабінетами, уроками, прогресом і оплатою курсів. Вартість розраховуємо індивідуально.",
         description:
@@ -752,7 +752,7 @@ export const translations: Record<Language, Translations> = {
       contextual: {
         title: "Контекстна реклама",
         headline: "Контекстна реклама в Google",
-        metaTitle: "Контекстна реклама в Google Ads | WebMisto",
+        metaTitle: "Контекстна реклама в Google Ads | webzona",
         metaDescription:
           "Налаштування контекстної реклами в Google за пошуковими запитами. Оплата за кліки, контроль бюджету.",
         description:
@@ -805,7 +805,7 @@ export const translations: Record<Language, Translations> = {
       targeting: {
         title: "Таргетована реклама",
         headline: "Таргетована реклама у соцмережах",
-        metaTitle: "Таргетована реклама Facebook та Instagram | WebMisto",
+        metaTitle: "Таргетована реклама Facebook та Instagram | webzona",
         metaDescription:
           "Таргетована реклама у Facebook, Instagram і Telegram для заявок і продажів.",
         description:
@@ -834,7 +834,7 @@ export const translations: Record<Language, Translations> = {
       seo: {
         title: "SEO просування",
         headline: "SEO-просування сайту",
-        metaTitle: "SEO-просування сайту в Google | WebMisto",
+        metaTitle: "SEO-просування сайту в Google | webzona",
         metaDescription:
           "SEO-просування сайту: технічний аудит, контент і позиції в Google.",
         description:
@@ -863,7 +863,7 @@ export const translations: Record<Language, Translations> = {
       smm: {
         title: "SMM просування",
         headline: "SMM-просування для бізнесу",
-        metaTitle: "SMM-просування у соцмережах | WebMisto",
+        metaTitle: "SMM-просування у соцмережах | webzona",
         metaDescription:
           "SMM-просування: контент-план, ведення профілів і залучення клієнтів із соцмереж.",
         description:
@@ -1107,7 +1107,7 @@ export const translations: Record<Language, Translations> = {
     },
     contacts: {
       title: "Контакты",
-      company: "WebMisto — веб‑студия во Львове",
+      company: "webzona — веб‑студия во Львове",
       location: "Львов, Украина (работаем онлайн по всей стране и за границей)",
       phone: "Телефон",
       email: "Email",
@@ -1618,7 +1618,7 @@ export const translations: Record<Language, Translations> = {
     },
     contacts: {
       title: "Contacts",
-      company: "WebMisto — web studio in Lviv",
+      company: "webzona — web studio in Lviv",
       location: "Lviv, Ukraine (we work online throughout the country and abroad)",
       phone: "Phone",
       email: "Email",

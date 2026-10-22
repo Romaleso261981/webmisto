@@ -106,8 +106,8 @@ export default function Header() {
             WM
           </div>
           <div className="flex flex-col">
-            <span className="text-sm font-semibold uppercase tracking-[0.2em] text-slate-600">
-              WebMisto
+            <span className="text-sm font-semibold tracking-[0.2em] text-slate-600">
+              webzona
             </span>
             <span className="text-xs text-slate-500">
               Веб студія у Львові

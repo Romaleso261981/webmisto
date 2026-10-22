@@ -16,18 +16,18 @@ export interface PrivacyDocument {
 
 export const privacyPolicy: Record<Language, PrivacyDocument> = {
   uk: {
-    metaTitle: "Політика конфіденційності | WebMisto",
+    metaTitle: "Політика конфіденційності | webzona",
     metaDescription:
-      "Як WebMisto збирає та використовує ім’я, телефон і деталі заявки на сайті webzona.site. Контакти для запиту на видалення даних.",
+      "Як webzona збирає та використовує ім’я, телефон і деталі заявки на сайті webzona.site. Контакти для запиту на видалення даних.",
     title: "Політика конфіденційності",
     updated: "Оновлено 17 жовтня 2026 року",
     intro:
-      "WebMisto — веб-студія у Львові. Ця сторінка пояснює, які дані ви залишаєте на сайті https://www.webzona.site і навіщо ми їх використовуємо.",
+      "webzona — веб-студія у Львові. Ця сторінка пояснює, які дані ви залишаєте на сайті https://www.webzona.site і навіщо ми їх використовуємо.",
     sections: [
       {
         heading: "Хто обробляє дані",
         paragraphs: [
-          "Заявки приймає WebMisto, Львів, Україна. Ми працюємо онлайн по Україні та за її межами.",
+          "Заявки приймає webzona, Львів, Україна. Ми працюємо онлайн по Україні та за її межами.",
           "З питань даних пишіть на webmisto@gmail.com або телефонуйте +38 (068) 947 87 23.",
         ],
       },
@@ -49,7 +49,7 @@ export const privacyPolicy: Record<Language, PrivacyDocument> = {
       {
         heading: "Кому передаються дані",
         paragraphs: [
-          "Заявка надходить команді WebMisto в Telegram, щоб ми могли швидко з вами зв’язатися. Доступ має лише команда, яка обробляє звернення.",
+          "Заявка надходить команді webzona в Telegram, щоб ми могли швидко з вами зв’язатися. Доступ має лише команда, яка обробляє звернення.",
           "Хостинг сайту може технічно обробляти запит як оператор інфраструктури. Окремим компаніям для їхнього власного маркетингу ми дані не продаємо.",
         ],
       },
@@ -70,18 +70,18 @@ export const privacyPolicy: Record<Language, PrivacyDocument> = {
     ],
   },
   ru: {
-    metaTitle: "Политика конфиденциальности | WebMisto",
+    metaTitle: "Политика конфиденциальности | webzona",
     metaDescription:
-      "Как WebMisto собирает и использует имя, телефон и детали заявки на сайте webzona.site. Контакты для запроса на удаление данных.",
+      "Как webzona собирает и использует имя, телефон и детали заявки на сайте webzona.site. Контакты для запроса на удаление данных.",
     title: "Политика конфиденциальности",
     updated: "Обновлено 17 октября 2026 года",
     intro:
-      "WebMisto — веб-студия во Львове. Эта страница объясняет, какие данные вы оставляете на сайте https://www.webzona.site и зачем мы их используем.",
+      "webzona — веб-студия во Львове. Эта страница объясняет, какие данные вы оставляете на сайте https://www.webzona.site и зачем мы их используем.",
     sections: [
       {
         heading: "Кто обрабатывает данные",
         paragraphs: [
-          "Заявки принимает WebMisto, Львов, Украина. Мы работаем онлайн по Украине и за её пределами.",
+          "Заявки принимает webzona, Львов, Украина. Мы работаем онлайн по Украине и за её пределами.",
           "По вопросам данных пишите на webmisto@gmail.com или звоните +38 (068) 947 87 23.",
         ],
       },
@@ -103,7 +103,7 @@ export const privacyPolicy: Record<Language, PrivacyDocument> = {
       {
         heading: "Кому передаются данные",
         paragraphs: [
-          "Заявка поступает команде WebMisto в Telegram, чтобы мы могли быстро с вами связаться. Доступ есть только у команды, которая обрабатывает обращения.",
+          "Заявка поступает команде webzona в Telegram, чтобы мы могли быстро с вами связаться. Доступ есть только у команды, которая обрабатывает обращения.",
           "Хостинг сайта может технически обрабатывать запрос как оператор инфраструктуры. Другим компаниям для их собственного маркетинга мы данные не продаём.",
         ],
       },
@@ -124,18 +124,18 @@ export const privacyPolicy: Record<Language, PrivacyDocument> = {
     ],
   },
   en: {
-    metaTitle: "Privacy policy | WebMisto",
+    metaTitle: "Privacy policy | webzona",
     metaDescription:
-      "How WebMisto collects and uses your name, phone number, and enquiry details on webzona.site, and how to ask us to delete them.",
+      "How webzona collects and uses your name, phone number, and enquiry details on webzona.site, and how to ask us to delete them.",
     title: "Privacy policy",
     updated: "Updated 17 October 2026",
     intro:
-      "WebMisto is a web studio in Lviv. This page explains what you submit on https://www.webzona.site and why we use it.",
+      "webzona is a web studio in Lviv. This page explains what you submit on https://www.webzona.site and why we use it.",
     sections: [
       {
         heading: "Who handles the data",
         paragraphs: [
-          "Enquiries are handled by WebMisto, Lviv, Ukraine. We work online across Ukraine and abroad.",
+          "Enquiries are handled by webzona, Lviv, Ukraine. We work online across Ukraine and abroad.",
           "For data requests email webmisto@gmail.com or call +38 (068) 947 87 23.",
         ],
       },
@@ -157,7 +157,7 @@ export const privacyPolicy: Record<Language, PrivacyDocument> = {
       {
         heading: "Who receives the data",
         paragraphs: [
-          "The enquiry is sent to the WebMisto team in Telegram so we can reply quickly. Only the people handling enquiries can see it.",
+          "The enquiry is sent to the webzona team in Telegram so we can reply quickly. Only the people handling enquiries can see it.",
           "The site host may process the request as infrastructure. We do not sell the data to other companies for their own marketing.",
         ],
       },

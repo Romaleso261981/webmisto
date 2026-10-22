@@ -29,7 +29,7 @@ export async function generateMetadata({
   const metaTitle =
     "metaTitle" in categoryData && categoryData.metaTitle
       ? categoryData.metaTitle
-      : `${categoryData.title} | WebMisto`;
+      : `${categoryData.title} | webzona`;
   const description =
     "metaDescription" in categoryData && categoryData.metaDescription
       ? categoryData.metaDescription

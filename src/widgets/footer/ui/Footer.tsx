@@ -10,7 +10,7 @@ export default function Footer() {
     <footer className="border-t border-slate-200 bg-white/90">
       <div className="mx-auto flex max-w-6xl flex-col gap-3 px-4 py-5 text-xs text-slate-500 md:flex-row md:items-center md:justify-between md:px-6">
         <p>
-          {t.footer.copyright} {new Date().getFullYear()} WebMisto
+          {t.footer.copyright} {new Date().getFullYear()} webzona
         </p>
         <div className="flex flex-wrap gap-4">
           {t.footer.links.map((link) => {

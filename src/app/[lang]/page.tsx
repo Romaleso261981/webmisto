@@ -21,7 +21,7 @@ export default function Home() {
     "@context": "https://schema.org",
     "@type": "Organization",
     "@id": `${baseUrl}#organization`,
-    name: "WebMisto",
+    name: "webzona",
     description: t.hero.description,
     url: baseUrl,
     logo: {
@@ -48,7 +48,7 @@ export default function Home() {
   const websiteSchema = {
     "@context": "https://schema.org",
     "@type": "WebSite",
-    name: "WebMisto",
+    name: "webzona",
     url: baseUrl,
     description: t.hero.description,
     inLanguage: language === "uk" ? "uk-UA" : language === "ru" ? "ru-RU" : "en-US",
@@ -68,7 +68,7 @@ export default function Home() {
     serviceType: "Web Development",
     provider: {
       "@type": "Organization",
-      name: "WebMisto",
+      name: "webzona",
     },
     areaServed: {
       "@type": "Country",

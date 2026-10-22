@@ -94,7 +94,7 @@ export default function DelayedBanner({
     uk: {
       title: "Переконайтеся, який",
       titleHighlight: "чудовий сайт",
-      titleEnd: "ви отримаєте від компанії WebMisto!",
+      titleEnd: "ви отримаєте від компанії webzona!",
       description: "Просто вкажіть свій номер телефону, і ми відправимо вам",
       descriptionHighlight: "презентацію наших робіт",
       placeholder: "Введіть номер телефону",
@@ -104,7 +104,7 @@ export default function DelayedBanner({
     ru: {
       title: "Убедитесь, какой",
       titleHighlight: "замечательный сайт",
-      titleEnd: "вы получите от компании WebMisto!",
+      titleEnd: "вы получите от компании webzona!",
       description: "Просто укажите свой номер телефона, и мы отправим вам",
       descriptionHighlight: "презентацию наших работ",
       placeholder: "Введите номер телефона",
@@ -114,7 +114,7 @@ export default function DelayedBanner({
     en: {
       title: "See what a",
       titleHighlight: "wonderful website",
-      titleEnd: "you'll get from WebMisto!",
+      titleEnd: "you'll get from webzona!",
       description: "Just enter your phone number, and we'll send you a",
       descriptionHighlight: "presentation of our works",
       placeholder: "Enter phone number",

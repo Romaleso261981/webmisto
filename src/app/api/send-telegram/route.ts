@@ -92,7 +92,7 @@ export async function POST(request: NextRequest) {
     }
 
     // Формуємо повідомлення для Telegram
-    const message = `🎯 *Нова заявка з сайту WebMisto*
+    const message = `🎯 *Нова заявка з сайту webzona*
 
 👤 *Ім'я:* ${name}
 📞 *Телефон/Telegram:* ${phone}
