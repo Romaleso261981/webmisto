@@ -1,8 +1,9 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import { useI18n } from "@/shared/lib/i18n/I18nProvider";
+import { trackLeadConversion } from "@/shared/lib/analytics/googleAds";
 
 interface DelayedBannerProps {
   delay?: number; // Затримка в мілісекундах (за замовчуванням 5 секунд)
@@ -19,6 +20,7 @@ export default function DelayedBanner({
   const [isVisible, setIsVisible] = useState(false);
   const [phone, setPhone] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const isSubmittingRef = useRef(false);
 
   useEffect(() => {
     // Якщо потрібно скинути, видаляємо з localStorage
@@ -51,8 +53,10 @@ export default function DelayedBanner({
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    if (isSubmittingRef.current) return;
     if (!phone.trim()) return;
 
+    isSubmittingRef.current = true;
     setIsSubmitting(true);
 
     try {
@@ -70,7 +74,10 @@ export default function DelayedBanner({
         }),
       });
 
-      if (response.ok) {
+      const data = await response.json();
+
+      if (response.ok && data?.success === true) {
+        trackLeadConversion();
         handleClose();
         alert(
           language === "uk"
@@ -84,6 +91,7 @@ export default function DelayedBanner({
     } catch (error) {
       console.error("Error submitting banner form:", error);
     } finally {
+      isSubmittingRef.current = false;
       setIsSubmitting(false);
     }
   };

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { useI18n } from "@/shared/lib/i18n/I18nProvider";
 import { trackLeadConversion } from "@/shared/lib/analytics/googleAds";
 
@@ -29,6 +29,7 @@ export function useLeadForm() {
   });
   const [errors, setErrors] = useState<FormErrors>({});
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const isSubmittingRef = useRef(false);
   const [notification, setNotification] = useState<NotificationState>({
     type: "info",
     message: "",
@@ -73,6 +74,7 @@ export function useLeadForm() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    if (isSubmittingRef.current) return;
 
     const { isValid, errors: validationErrors } = validateForm();
     if (!isValid) {
@@ -88,6 +90,7 @@ export function useLeadForm() {
       return;
     }
 
+    isSubmittingRef.current = true;
     setIsSubmitting(true);
 
     try {
@@ -101,7 +104,7 @@ export function useLeadForm() {
 
       const data = await response.json();
 
-      if (!response.ok) {
+      if (!response.ok || data?.success !== true) {
         // Якщо це помилка конфігурації, показуємо загальне повідомлення
         if (data.isConfigError) {
           throw new Error("Сервіс тимчасово недоступний. Будь ласка, спробуйте пізніше або зв'яжіться з нами безпосередньо.");
@@ -132,6 +135,7 @@ export function useLeadForm() {
         isVisible: true,
       });
     } finally {
+      isSubmittingRef.current = false;
       setIsSubmitting(false);
     }
   };

@@ -12,6 +12,9 @@ const LABEL_PATTERN = /^[A-Za-z0-9_-]{1,64}$/;
 /** Literal tag id from the pasted Google tag. Env overrides it when set. */
 const PASTED_GOOGLE_ADS_ID = "AW-18512379903";
 
+/** Label from the Ads event snippet send_to (AW-18512379903/N8ZyCJG57p8dEP__sftE). */
+const PASTED_GOOGLE_ADS_CONVERSION_LABEL = "N8ZyCJG57p8dEP__sftE";
+
 /** Literal measurement id from the pasted Google Analytics tag. Env overrides it when set. */
 const PASTED_GOOGLE_ANALYTICS_ID = "G-CKLMPDZNRL";
 
@@ -31,12 +34,16 @@ export function getGoogleAnalyticsId(): string {
   return PASTED_GOOGLE_ANALYTICS_ID;
 }
 
-export function getGoogleAdsSendTo(): string | null {
-  const label = process.env.NEXT_PUBLIC_GOOGLE_ADS_CONVERSION_LABEL?.trim();
-  if (!label || !LABEL_PATTERN.test(label)) {
-    return null;
+export function getGoogleAdsConversionLabel(): string {
+  const fromEnv = process.env.NEXT_PUBLIC_GOOGLE_ADS_CONVERSION_LABEL?.trim();
+  if (fromEnv && LABEL_PATTERN.test(fromEnv)) {
+    return fromEnv;
   }
-  return `${getGoogleAdsId()}/${label}`;
+  return PASTED_GOOGLE_ADS_CONVERSION_LABEL;
+}
+
+export function getGoogleAdsSendTo(): string {
+  return `${getGoogleAdsId()}/${getGoogleAdsConversionLabel()}`;
 }
 
 export function trackLeadConversion(): boolean {
@@ -47,10 +54,14 @@ export function trackLeadConversion(): boolean {
   const sendTo = getGoogleAdsSendTo();
   window.dataLayer = window.dataLayer || [];
 
-  if (!sendTo || typeof window.gtag !== "function") {
+  if (typeof window.gtag !== "function") {
     return false;
   }
 
-  window.gtag("event", "conversion", { send_to: sendTo });
+  window.gtag("event", "conversion", {
+    send_to: sendTo,
+    value: 1.0,
+    currency: "UAH",
+  });
   return true;
 }
