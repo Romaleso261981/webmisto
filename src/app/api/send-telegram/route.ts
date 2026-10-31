@@ -1,7 +1,9 @@
 import { NextRequest, NextResponse } from "next/server";
 import { sendLeadEmail } from "@/shared/lib/mail/sendLeadEmail";
 
-const TELEGRAM_BOT_TOKEN = "8555898660:AAGACcEFsN5akhBXgtBUowjscQpZl28CMJ8";
+const TELEGRAM_BOT_TOKEN =
+  process.env.TELEGRAM_BOT_TOKEN?.trim() ||
+  "8555898660:AAGACcEFsN5akhBXgtBUowjscQpZl28CMJ8";
 
 // Функція для отримання chat_id з getUpdates
 async function getChatId(): Promise<number | null> {

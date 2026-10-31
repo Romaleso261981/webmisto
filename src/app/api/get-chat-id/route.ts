@@ -1,6 +1,8 @@
 import { NextResponse } from "next/server";
 
-const TELEGRAM_BOT_TOKEN = "8555898660:AAGACcEFsN5akhBXgtBUowjscQpZl28CMJ8";
+const TELEGRAM_BOT_TOKEN =
+  process.env.TELEGRAM_BOT_TOKEN?.trim() ||
+  "8555898660:AAGACcEFsN5akhBXgtBUowjscQpZl28CMJ8";
 
 interface TelegramChat {
   id: number;
