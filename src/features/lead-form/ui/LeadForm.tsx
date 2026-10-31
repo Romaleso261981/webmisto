@@ -58,7 +58,9 @@ export default function LeadForm({ hook }: LeadFormProps) {
             {t.form.fields.phone.label}
           </label>
           <input
-            type="text"
+            type="tel"
+            inputMode="tel"
+            autoComplete="tel"
             name="phone"
             value={formData.phone}
             onChange={handleInputChange}
