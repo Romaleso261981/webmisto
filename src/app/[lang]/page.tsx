@@ -9,7 +9,6 @@ import { FAQ } from "@/widgets/faq/ui";
 import { WordPressBlock } from "@/widgets/wordpress-block/ui";
 import LeadFormSection from "@/features/lead-form/ui/LeadFormSection";
 import { Footer } from "@/widgets/footer/ui";
-import { DelayedBanner } from "@/widgets/delayed-banner/ui";
 import { StructuredData } from "../components/StructuredData";
 import { useI18n } from "@/shared/lib/i18n/I18nProvider";
 
@@ -96,7 +95,6 @@ export default function Home() {
         <LeadFormSection />
       </main>
       <Footer />
-      <DelayedBanner delay={5000} resetOnMount={true} />
     </div>
   );
 }
