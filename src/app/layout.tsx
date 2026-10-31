@@ -14,7 +14,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || "https://webmisto.com.ua"),
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || "https://www.webzona.site"),
   title: {
     default: "webzona - Веб студія у Львові | Розробка сайтів та інтернет-магазинів",
     template: "%s | webzona",
@@ -42,7 +42,7 @@ export const metadata: Metadata = {
     type: "website",
     locale: "uk_UA",
     alternateLocale: ["ru_RU", "en_US"],
-    url: process.env.NEXT_PUBLIC_SITE_URL || "https://webmisto.com.ua",
+    url: process.env.NEXT_PUBLIC_SITE_URL || "https://www.webzona.site",
     siteName: "webzona",
     title: "webzona - Веб студія у Львові | Розробка сайтів та інтернет-магазинів",
     description: "Професійна розробка сайтів, інтернет-магазинів та навчальних платформ у Львові. Сучасні веб-рішення для вашого бізнесу.",

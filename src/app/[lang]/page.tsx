@@ -15,7 +15,7 @@ import { CONTACT_EMAIL } from "@/shared/config/contacts";
 
 export default function Home() {
   const { t, language } = useI18n();
-  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://webmisto.com.ua";
+  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://www.webzona.site";
 
   const organizationSchema = {
     "@context": "https://schema.org",
