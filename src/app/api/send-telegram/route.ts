@@ -36,12 +36,13 @@ async function getChatId(): Promise<number | null> {
 export async function POST(request: NextRequest) {
   try {
     const body = await request.json();
-    const { name, phone, niche, budget } = body;
+    const { name, phone, details, niche, budget } = body;
+    const phoneDigits = String(phone ?? "").replace(/\D/g, "");
+    const phoneIsValid = /^380\d{9}$/.test(phoneDigits) || /^0\d{9}$/.test(phoneDigits);
 
-    // Валідація даних
-    if (!name || !phone || !niche || !budget) {
+    if (!phoneIsValid) {
       return NextResponse.json(
-        { error: "Всі поля обов'язкові для заповнення" },
+        { error: "Вкажіть коректний номер телефону" },
         { status: 400 }
       );
     }
@@ -94,10 +95,9 @@ export async function POST(request: NextRequest) {
     // Формуємо повідомлення для Telegram
     const message = `🎯 *Нова заявка з сайту webzona*
 
-👤 *Ім'я:* ${name}
-📞 *Телефон/Telegram:* ${phone}
-💼 *Ніша/Послуга:* ${niche}
-💰 *Бюджет:* ${budget}
+👤 *Ім'я:* ${name?.trim() || "—"}
+📞 *Телефон:* ${phone}
+📝 *Опис:* ${details?.trim() || "—"}${niche ? `\n💼 *Ніша/Послуга:* ${niche}` : ""}${budget ? `\n💰 *Бюджет:* ${budget}` : ""}
 
 _Час заявки: ${new Date().toLocaleString("uk-UA", {
       timeZone: "Europe/Kyiv",

@@ -26,6 +26,7 @@ export interface Translations {
     cta: {
       order: string;
       viewPricing: string;
+      call: string;
     };
     note: string;
     analytics: {
@@ -160,18 +161,13 @@ export interface Translations {
         placeholder: string;
         error: string;
       };
-      niche: {
+      details: {
         label: string;
         placeholder: string;
-        error: string;
-      };
-      budget: {
-        label: string;
-        placeholder: string;
-        error: string;
       };
     };
     submit: string;
+    call: string;
     submitting: string;
     privacy: string;
     privacyLink: string;
@@ -373,6 +369,7 @@ export const translations: Record<Language, Translations> = {
       cta: {
         order: "Замовити розробку",
         viewPricing: "Дивитись тарифи",
+        call: "Зателефонувати",
       },
       note: "Допоможемо обрати оптимальний формат: сайт‑візитка, інтернет‑магазин чи повноцінна освітня платформа.",
       analytics: {
@@ -539,22 +536,17 @@ export const translations: Record<Language, Translations> = {
           error: "Будь ласка, введіть ваше ім'я",
         },
         phone: {
-          label: "Телефон або Telegram",
+          label: "Телефон",
           placeholder: "+38 (0__) ___ __ __",
-          error: "Будь ласка, введіть телефон або Telegram",
+          error: "Вкажіть коректний номер телефону, наприклад +380 68 947 87 23",
         },
-        niche: {
-          label: "Ніша / послуга",
-          placeholder: "Наприклад: салон краси, онлайн-курс, клініка тощо",
-          error: "Будь ласка, вкажіть нішу або послугу",
-        },
-        budget: {
-          label: "Орієнтовний бюджет на розробку",
-          placeholder: "Наприклад: $500–$2000",
-          error: "Будь ласка, вкажіть орієнтовний бюджет",
+        details: {
+          label: "Опис",
+          placeholder: "Коротко опишіть задачу",
         },
       },
       submit: "Відправити заявку",
+      call: "Зателефонувати",
       submitting: "Відправляється...",
       privacy:
         "Натискаючи кнопку, ви погоджуєтесь на обробку персональних даних. Ми не передаємо ваші контакти третім особам.",
@@ -916,6 +908,7 @@ export const translations: Record<Language, Translations> = {
       cta: {
         order: "Заказать разработку",
         viewPricing: "Посмотреть тарифы",
+        call: "Позвонить",
       },
       note: "Поможем выбрать оптимальный формат: сайт‑визитка, интернет‑магазин или полноценная образовательная платформа.",
       analytics: {
@@ -1082,22 +1075,17 @@ export const translations: Record<Language, Translations> = {
           error: "Пожалуйста, введите ваше имя",
         },
         phone: {
-          label: "Телефон или Telegram",
+          label: "Телефон",
           placeholder: "+38 (0__) ___ __ __",
-          error: "Пожалуйста, введите телефон или Telegram",
+          error: "Укажите корректный номер телефона, например +380 68 947 87 23",
         },
-        niche: {
-          label: "Ниша / услуга",
-          placeholder: "Например: салон красоты, онлайн‑курс, клиника и т.д.",
-          error: "Пожалуйста, укажите нишу или услугу",
-        },
-        budget: {
-          label: "Ориентировочный бюджет на разработку",
-          placeholder: "Например: $500–$2000",
-          error: "Пожалуйста, укажите ориентировочный бюджет",
+        details: {
+          label: "Описание",
+          placeholder: "Кратко опишите задачу",
         },
       },
       submit: "Отправить заявку",
+      call: "Позвонить",
       submitting: "Отправляется...",
       privacy:
         "Нажимая кнопку, вы соглашаетесь на обработку персональных данных. Мы не передаём ваши контакты третьим лицам.",
@@ -1427,6 +1415,7 @@ export const translations: Record<Language, Translations> = {
       cta: {
         order: "Order development",
         viewPricing: "View pricing",
+        call: "Call",
       },
       note: "We help you choose the optimal format: business card website, online store or full‑fledged educational platform.",
       analytics: {
@@ -1593,22 +1582,17 @@ export const translations: Record<Language, Translations> = {
           error: "Please enter your name",
         },
         phone: {
-          label: "Phone or Telegram",
+          label: "Phone",
           placeholder: "+38 (0__) ___ __ __",
-          error: "Please enter phone or Telegram",
+          error: "Enter a valid phone number, for example +380 68 947 87 23",
         },
-        niche: {
-          label: "Niche / service",
-          placeholder: "For example: beauty salon, online course, clinic, etc.",
-          error: "Please specify niche or service",
-        },
-        budget: {
-          label: "Approximate development budget",
-          placeholder: "For example: $500–$2000",
-          error: "Please specify approximate budget",
+        details: {
+          label: "Description",
+          placeholder: "Briefly describe the task",
         },
       },
       submit: "Submit request",
+      call: "Call",
       submitting: "Submitting...",
       privacy:
         "By clicking the button, you agree to the processing of personal data. We do not share your contacts with third parties.",

@@ -5,8 +5,12 @@ import { trackLeadConversion } from "@/shared/lib/analytics/googleAds";
 export interface FormData {
   name: string;
   phone: string;
-  niche: string;
-  budget: string;
+  details: string;
+}
+
+function isValidPhone(value: string): boolean {
+  const digits = value.replace(/\D/g, "");
+  return /^380\d{9}$/.test(digits) || /^0\d{9}$/.test(digits);
 }
 
 export interface FormErrors {
@@ -24,8 +28,7 @@ export function useLeadForm() {
   const [formData, setFormData] = useState<FormData>({
     name: "",
     phone: "",
-    niche: "",
-    budget: "",
+    details: "",
   });
   const [errors, setErrors] = useState<FormErrors>({});
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -36,7 +39,9 @@ export function useLeadForm() {
     isVisible: false,
   });
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleInputChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
+  ) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
     // Очищаємо помилку для поля, коли користувач починає вводити
@@ -52,20 +57,8 @@ export function useLeadForm() {
   const validateForm = () => {
     const newErrors: FormErrors = {};
 
-    if (!formData.name.trim()) {
-      newErrors.name = t.form.fields.name.error;
-    }
-
-    if (!formData.phone.trim()) {
+    if (!isValidPhone(formData.phone)) {
       newErrors.phone = t.form.fields.phone.error;
-    }
-
-    if (!formData.niche.trim()) {
-      newErrors.niche = t.form.fields.niche.error;
-    }
-
-    if (!formData.budget.trim()) {
-      newErrors.budget = t.form.fields.budget.error;
     }
 
     setErrors(newErrors);
@@ -120,7 +113,7 @@ export function useLeadForm() {
         message: t.form.success,
         isVisible: true,
       });
-      setFormData({ name: "", phone: "", niche: "", budget: "" });
+      setFormData({ name: "", phone: "", details: "" });
       setErrors({});
     } catch (error) {
       console.error("Error submitting form:", error);

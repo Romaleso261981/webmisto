@@ -34,7 +34,7 @@ export const privacyPolicy: Record<Language, PrivacyDocument> = {
       {
         heading: "Які дані ми збираємо",
         paragraphs: [
-          "Через форму заявки: ім’я, телефон або Telegram, нішу чи послугу та орієнтовний бюджет.",
+          "Через форму заявки: ім’я, номер телефону та опис задачі.",
           "Через банер із пропозицією презентації: номер телефону.",
           "Технічно сайт може запам’ятати обрану мову і те, що ви закрили банер. Ці дані зберігаються у вашому браузері і не є окремою заявкою.",
         ],
@@ -88,7 +88,7 @@ export const privacyPolicy: Record<Language, PrivacyDocument> = {
       {
         heading: "Какие данные мы собираем",
         paragraphs: [
-          "Через форму заявки: имя, телефон или Telegram, нишу или услугу и ориентировочный бюджет.",
+          "Через форму заявки: имя, номер телефона и описание задачи.",
           "Через баннер с предложением презентации: номер телефона.",
           "Технически сайт может запомнить выбранный язык и то, что вы закрыли баннер. Эти данные хранятся в вашем браузере и не являются отдельной заявкой.",
         ],
@@ -142,7 +142,7 @@ export const privacyPolicy: Record<Language, PrivacyDocument> = {
       {
         heading: "What we collect",
         paragraphs: [
-          "From the enquiry form: name, phone or Telegram, niche or service, and an approximate budget.",
+          "From the enquiry form: name, phone number, and a short description of the task.",
           "From the presentation banner: a phone number.",
           "The site may remember your language and that you closed the banner. That stays in your browser and is not a separate enquiry.",
         ],

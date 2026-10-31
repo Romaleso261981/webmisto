@@ -1,9 +1,14 @@
 "use client";
 
+import { useState } from "react";
 import { useI18n } from "@/shared/lib/i18n/I18nProvider";
+
+const PHONE_DISPLAY = "+38 (068) 947 87 23";
+const PHONE_TEL = "+380689478723";
 
 export default function Hero() {
   const { t } = useI18n();
+  const [showPhone, setShowPhone] = useState(false);
 
   return (
     <section className="grid gap-10 pb-16 md:grid-cols-[minmax(0,1.35fr)_minmax(0,1fr)] md:items-center md:pb-24">
@@ -36,7 +41,7 @@ export default function Hero() {
           </div>
         </div>
 
-        <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
+        <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center">
           <a
             href="#lead-form"
             className="inline-flex items-center justify-center rounded-full bg-sky-500 px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-sky-500/30 transition hover:bg-sky-600"
@@ -48,6 +53,27 @@ export default function Hero() {
             className="inline-flex items-center justify-center rounded-full border border-slate-300 px-6 py-3 text-sm font-medium text-slate-800 transition hover:border-sky-500/60 hover:text-sky-700"
           >
             {t.hero.cta.viewPricing}
+          </a>
+          <a
+            href={`tel:${PHONE_TEL}`}
+            onClick={() => setShowPhone(true)}
+            className="inline-flex items-center justify-center gap-2 rounded-full border border-slate-300 bg-white px-6 py-3 text-sm font-semibold text-slate-800 transition hover:border-sky-500/60 hover:text-sky-700"
+          >
+            <svg
+              className="h-4 w-4"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              aria-hidden="true"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
+              />
+            </svg>
+            {showPhone ? PHONE_DISPLAY : t.hero.cta.call}
           </a>
         </div>
 
