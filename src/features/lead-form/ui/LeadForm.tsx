@@ -4,6 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 import { useLeadForm } from "../model/useLeadForm";
 import { useI18n } from "@/shared/lib/i18n/I18nProvider";
+import { trackCallConversion } from "@/shared/lib/analytics/googleAds";
 
 const PHONE_DISPLAY = "+38 (068) 947 87 23";
 const PHONE_TEL = "+380689478723";
@@ -99,7 +100,10 @@ export default function LeadForm({ hook }: LeadFormProps) {
           </button>
           <a
             href={`tel:${PHONE_TEL}`}
-            onClick={() => setShowPhone(true)}
+            onClick={() => {
+              setShowPhone(true);
+              trackCallConversion();
+            }}
             className="inline-flex w-full items-center justify-center gap-2 rounded-full border border-slate-300 px-6 py-3 text-sm font-medium text-slate-800 transition hover:border-sky-500/60 hover:text-sky-700 sm:w-auto"
           >
             <svg

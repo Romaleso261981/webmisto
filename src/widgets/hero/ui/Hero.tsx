@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { useI18n } from "@/shared/lib/i18n/I18nProvider";
+import { trackCallConversion } from "@/shared/lib/analytics/googleAds";
 
 const PHONE_DISPLAY = "+38 (068) 947 87 23";
 const PHONE_TEL = "+380689478723";
@@ -56,7 +57,10 @@ export default function Hero() {
           </a>
           <a
             href={`tel:${PHONE_TEL}`}
-            onClick={() => setShowPhone(true)}
+            onClick={() => {
+              setShowPhone(true);
+              trackCallConversion();
+            }}
             className="inline-flex items-center justify-center gap-2 rounded-full border border-slate-300 px-6 py-3 text-sm font-medium text-slate-800 transition hover:border-sky-500/60 hover:text-sky-700"
           >
             <svg

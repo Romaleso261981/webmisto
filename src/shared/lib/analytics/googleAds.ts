@@ -15,6 +15,9 @@ const PASTED_GOOGLE_ADS_ID = "AW-18512379903";
 /** Label from the Ads event snippet send_to (AW-18512379903/N8ZyCJG57p8dEP__sftE). */
 const PASTED_GOOGLE_ADS_CONVERSION_LABEL = "N8ZyCJG57p8dEP__sftE";
 
+/** Label from the "Клік по номеру телефону (сайт)" event snippet (AW-18512379903/7pKsCL_Xxq8dEP__sftE). */
+const PASTED_GOOGLE_ADS_CALL_CONVERSION_LABEL = "7pKsCL_Xxq8dEP__sftE";
+
 /** Literal measurement id from the pasted Google Analytics tag. Env overrides it when set. */
 const PASTED_GOOGLE_ANALYTICS_ID = "G-CKLMPDZNRL";
 
@@ -46,12 +49,11 @@ export function getGoogleAdsSendTo(): string {
   return `${getGoogleAdsId()}/${getGoogleAdsConversionLabel()}`;
 }
 
-export function trackLeadConversion(): boolean {
+function sendConversion(sendTo: string): boolean {
   if (typeof window === "undefined") {
     return false;
   }
 
-  const sendTo = getGoogleAdsSendTo();
   window.dataLayer = window.dataLayer || [];
 
   if (typeof window.gtag !== "function") {
@@ -64,4 +66,12 @@ export function trackLeadConversion(): boolean {
     currency: "UAH",
   });
   return true;
+}
+
+export function trackLeadConversion(): boolean {
+  return sendConversion(getGoogleAdsSendTo());
+}
+
+export function trackCallConversion(): boolean {
+  return sendConversion(`${getGoogleAdsId()}/${PASTED_GOOGLE_ADS_CALL_CONVERSION_LABEL}`);
 }
