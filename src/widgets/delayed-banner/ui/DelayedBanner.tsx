@@ -3,6 +3,7 @@
 import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import { useI18n } from "@/shared/lib/i18n/I18nProvider";
+import { trackLeadConversion } from "@/shared/lib/analytics/googleAds";
 
 interface DelayedBannerProps {
   delay?: number; // Затримка в мілісекундах (за замовчуванням 5 секунд)
@@ -76,6 +77,7 @@ export default function DelayedBanner({
       const data = await response.json();
 
       if (response.ok && data?.success === true) {
+        trackLeadConversion();
         handleClose();
         alert(
           language === "uk"
