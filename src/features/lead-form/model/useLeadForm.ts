@@ -1,6 +1,5 @@
 import { useRef, useState } from "react";
 import { useI18n } from "@/shared/lib/i18n/I18nProvider";
-import { trackLeadConversion } from "@/shared/lib/analytics/googleAds";
 
 export interface FormData {
   name: string;
@@ -104,8 +103,6 @@ export function useLeadForm() {
         }
         throw new Error(data.error || "Помилка відправки заявки");
       }
-
-      trackLeadConversion();
 
       // Успішна відправка
       setNotification({
