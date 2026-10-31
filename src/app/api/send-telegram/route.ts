@@ -1,9 +1,8 @@
 import { NextRequest, NextResponse } from "next/server";
 import { sendLeadEmail } from "@/shared/lib/mail/sendLeadEmail";
+import { getTelegramBotToken, getTelegramChatId } from "@/shared/config/telegram";
 
-const TELEGRAM_BOT_TOKEN =
-  process.env.TELEGRAM_BOT_TOKEN?.trim() ||
-  "8555898660:AAGACcEFsN5akhBXgtBUowjscQpZl28CMJ8";
+const TELEGRAM_BOT_TOKEN = getTelegramBotToken();
 
 // Функція для отримання chat_id з getUpdates
 async function getChatId(): Promise<number | null> {
@@ -68,8 +67,8 @@ export async function POST(request: NextRequest) {
           )
         : null;
 
-    // Отримуємо chat_id з .env або автоматично з getUpdates
-    let chatId = process.env.TELEGRAM_CHAT_ID;
+    // Отримуємо chat_id з коду, .env або автоматично з getUpdates
+    let chatId = getTelegramChatId();
     
     // Логуємо для діагностики (тільки в development)
     if (process.env.NODE_ENV === "development") {
