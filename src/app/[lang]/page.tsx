@@ -11,6 +11,7 @@ import LeadFormSection from "@/features/lead-form/ui/LeadFormSection";
 import { Footer } from "@/widgets/footer/ui";
 import { StructuredData } from "../components/StructuredData";
 import { useI18n } from "@/shared/lib/i18n/I18nProvider";
+import { CONTACT_EMAIL } from "@/shared/config/contacts";
 
 export default function Home() {
   const { t, language } = useI18n();
@@ -37,7 +38,7 @@ export default function Home() {
       "@type": "ContactPoint",
       contactType: "customer service",
       telephone: "+38 (068) 947 87 23",
-      email: "webmisto@gmail.com",
+      email: CONTACT_EMAIL,
       availableLanguage: ["Ukrainian", "Russian", "English"],
       areaServed: "UA",
     },

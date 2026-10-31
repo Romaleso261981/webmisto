@@ -2,6 +2,7 @@
 
 import { useI18n } from "@/shared/lib/i18n/I18nProvider";
 import { StructuredData } from "@/app/components/StructuredData";
+import { CONTACT_EMAIL } from "@/shared/config/contacts";
 
 export default function Contacts() {
   const { t, language } = useI18n();
@@ -23,7 +24,7 @@ export default function Contacts() {
       addressCountry: "UA",
     },
     telephone: "+38 (068) 947 87 23",
-    email: "webmisto@gmail.com",
+    email: CONTACT_EMAIL,
     priceRange: "$$",
     openingHoursSpecification: [
       {
@@ -64,9 +65,12 @@ export default function Contacts() {
         </div>
         <div>
           <p className="text-slate-500">{t.contacts.email}</p>
-          <p className="font-medium text-slate-900">
-            webmisto@gmail.com
-          </p>
+          <a
+            href={`mailto:${CONTACT_EMAIL}`}
+            className="font-medium text-slate-900 hover:text-sky-700"
+          >
+            {CONTACT_EMAIL}
+          </a>
         </div>
         <div>
           <p className="text-slate-500">{t.contacts.schedule}</p>

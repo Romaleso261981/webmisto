@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
+import { sendLeadEmail } from "@/shared/lib/mail/sendLeadEmail";
 
 const TELEGRAM_BOT_TOKEN = "8555898660:AAGACcEFsN5akhBXgtBUowjscQpZl28CMJ8";
 
@@ -34,6 +35,8 @@ async function getChatId(): Promise<number | null> {
 }
 
 export async function POST(request: NextRequest) {
+  let emailOk = false;
+
   try {
     const body = await request.json();
     const { name, phone, details, niche, budget } = body;
@@ -46,6 +49,22 @@ export async function POST(request: NextRequest) {
         { status: 400 }
       );
     }
+
+    emailOk = await sendLeadEmail({
+      name: typeof name === "string" ? name : "",
+      phone: String(phone),
+      details: typeof details === "string" ? details : "",
+      niche: typeof niche === "string" ? niche : "",
+      budget: typeof budget === "string" ? budget : "",
+    });
+
+    const emailFallback = () =>
+      emailOk
+        ? NextResponse.json(
+            { success: true, message: "Заявка успішно відправлена!" },
+            { status: 200 },
+          )
+        : null;
 
     // Отримуємо chat_id з .env або автоматично з getUpdates
     let chatId = process.env.TELEGRAM_CHAT_ID;
@@ -69,6 +88,9 @@ export async function POST(request: NextRequest) {
         console.error("3. Додайте TELEGRAM_CHAT_ID=ваш_chat_id в файл .env.local (локально) або в налаштуваннях Vercel (production)");
         console.error("4. Перезапустіть сервер після додавання змінної");
         
+        const emailed = emailFallback();
+        if (emailed) return emailed;
+
         // Повертаємо загальне повідомлення для користувача
         return NextResponse.json(
           { 
@@ -83,6 +105,8 @@ export async function POST(request: NextRequest) {
     // Перевіряємо, чи chatId валідний
     if (!chatId || chatId.trim() === "") {
       console.error("❌ Chat ID порожній або невалідний");
+      const emailed = emailFallback();
+      if (emailed) return emailed;
       return NextResponse.json(
         { 
           error: "Сервіс тимчасово недоступний. Будь ласка, спробуйте пізніше або зв'яжіться з нами безпосередньо.",
@@ -127,6 +151,8 @@ _Час заявки: ${new Date().toLocaleString("uk-UA", {
       // Якщо помилка через невірний chat_id або бот заблокований
       if (data.error_code === 400 || data.description?.includes("chat not found") || data.description?.includes("bot was blocked")) {
         console.error("❌ Помилка: Бот заблокований або chat_id невірний");
+        const emailed = emailFallback();
+        if (emailed) return emailed;
         return NextResponse.json(
           { 
             error: "Сервіс тимчасово недоступний. Будь ласка, спробуйте пізніше або зв'яжіться з нами безпосередньо.",
@@ -139,6 +165,8 @@ _Час заявки: ${new Date().toLocaleString("uk-UA", {
       
       // Інші помилки Telegram API
       console.error("❌ Інша помилка Telegram API:", data.description || "Unknown error");
+      const emailed = emailFallback();
+      if (emailed) return emailed;
       return NextResponse.json(
         { 
           error: "Сервіс тимчасово недоступний. Будь ласка, спробуйте пізніше або зв'яжіться з нами безпосередньо.",
@@ -156,6 +184,12 @@ _Час заявки: ${new Date().toLocaleString("uk-UA", {
     );
   } catch (error) {
     console.error("Error sending to Telegram:", error);
+    if (emailOk) {
+      return NextResponse.json(
+        { success: true, message: "Заявка успішно відправлена!" },
+        { status: 200 },
+      );
+    }
     return NextResponse.json(
       { error: "Внутрішня помилка сервера" },
       { status: 500 }

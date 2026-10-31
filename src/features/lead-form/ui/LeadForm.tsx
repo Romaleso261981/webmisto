@@ -98,7 +98,7 @@ export default function LeadForm({ hook }: LeadFormProps) {
           <a
             href={`tel:${PHONE_TEL}`}
             onClick={() => setShowPhone(true)}
-            className="inline-flex w-full items-center justify-center gap-2 rounded-full border border-slate-300 bg-white px-6 py-3 text-sm font-semibold text-slate-800 transition hover:border-sky-500/60 hover:text-sky-700 sm:w-auto"
+            className="inline-flex w-full items-center justify-center gap-2 rounded-full border border-slate-300 px-6 py-3 text-sm font-medium text-slate-800 transition hover:border-sky-500/60 hover:text-sky-700 sm:w-auto"
           >
             <svg
               className="h-4 w-4"

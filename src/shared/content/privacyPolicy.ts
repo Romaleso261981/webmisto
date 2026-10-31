@@ -1,3 +1,4 @@
+import { CONTACT_EMAIL } from "@/shared/config/contacts";
 import { Language } from "@/shared/lib/i18n/translations";
 
 export interface PrivacySection {
@@ -28,7 +29,7 @@ export const privacyPolicy: Record<Language, PrivacyDocument> = {
         heading: "Хто обробляє дані",
         paragraphs: [
           "Заявки приймає webzona, Львів, Україна. Ми працюємо онлайн по Україні та за її межами.",
-          "З питань даних пишіть на webmisto@gmail.com або телефонуйте +38 (068) 947 87 23.",
+          `З питань даних пишіть на ${CONTACT_EMAIL} або телефонуйте +38 (068) 947 87 23.`,
         ],
       },
       {
@@ -49,15 +50,15 @@ export const privacyPolicy: Record<Language, PrivacyDocument> = {
       {
         heading: "Кому передаються дані",
         paragraphs: [
-          "Заявка надходить команді webzona в Telegram, щоб ми могли швидко з вами зв’язатися. Доступ має лише команда, яка обробляє звернення.",
-          "Хостинг сайту може технічно обробляти запит як оператор інфраструктури. Окремим компаніям для їхнього власного маркетингу ми дані не продаємо.",
+          `Заявка надходить команді webzona на ${CONTACT_EMAIL} і в Telegram, щоб ми могли швидко з вами зв’язатися. Доступ має лише команда, яка обробляє звернення.`,
+          "Хостинг сайту може технічно обробляти запит як оператор інфраструктури. Доставку листа на пошту студії виконує сервіс FormSubmit. Окремим компаніям для їхнього власного маркетингу ми дані не продаємо.",
         ],
       },
       {
         heading: "Скільки зберігаємо дані",
         paragraphs: [
           "Контакти з заявки зберігаємо, поки ведемо переписку щодо проєкту або поки ви не попросите їх видалити.",
-          "Напишіть на webmisto@gmail.com з темою «Видалити мої дані» — приберемо заявку з переписки, якщо немає іншого законного обов’язку її зберігати.",
+          `Напишіть на ${CONTACT_EMAIL} з темою «Видалити мої дані» — приберемо заявку з переписки, якщо немає іншого законного обов’язку її зберігати.`,
         ],
       },
       {
@@ -82,7 +83,7 @@ export const privacyPolicy: Record<Language, PrivacyDocument> = {
         heading: "Кто обрабатывает данные",
         paragraphs: [
           "Заявки принимает webzona, Львов, Украина. Мы работаем онлайн по Украине и за её пределами.",
-          "По вопросам данных пишите на webmisto@gmail.com или звоните +38 (068) 947 87 23.",
+          `По вопросам данных пишите на ${CONTACT_EMAIL} или звоните +38 (068) 947 87 23.`,
         ],
       },
       {
@@ -103,15 +104,15 @@ export const privacyPolicy: Record<Language, PrivacyDocument> = {
       {
         heading: "Кому передаются данные",
         paragraphs: [
-          "Заявка поступает команде webzona в Telegram, чтобы мы могли быстро с вами связаться. Доступ есть только у команды, которая обрабатывает обращения.",
-          "Хостинг сайта может технически обрабатывать запрос как оператор инфраструктуры. Другим компаниям для их собственного маркетинга мы данные не продаём.",
+          `Заявка поступает команде webzona на ${CONTACT_EMAIL} и в Telegram, чтобы мы могли быстро с вами связаться. Доступ есть только у команды, которая обрабатывает обращения.`,
+          "Хостинг сайта может технически обрабатывать запрос как оператор инфраструктуры. Доставку письма на почту студии выполняет сервис FormSubmit. Другим компаниям для их собственного маркетинга мы данные не продаём.",
         ],
       },
       {
         heading: "Сколько храним данные",
         paragraphs: [
           "Контакты из заявки храним, пока ведём переписку по проекту или пока вы не попросите их удалить.",
-          "Напишите на webmisto@gmail.com с темой «Удалить мои данные» — уберём заявку из переписки, если нет другой законной обязанности её хранить.",
+          `Напишите на ${CONTACT_EMAIL} с темой «Удалить мои данные» — уберём заявку из переписки, если нет другой законной обязанности её хранить.`,
         ],
       },
       {
@@ -136,7 +137,7 @@ export const privacyPolicy: Record<Language, PrivacyDocument> = {
         heading: "Who handles the data",
         paragraphs: [
           "Enquiries are handled by webzona, Lviv, Ukraine. We work online across Ukraine and abroad.",
-          "For data requests email webmisto@gmail.com or call +38 (068) 947 87 23.",
+          `For data requests email ${CONTACT_EMAIL} or call +38 (068) 947 87 23.`,
         ],
       },
       {
@@ -157,15 +158,15 @@ export const privacyPolicy: Record<Language, PrivacyDocument> = {
       {
         heading: "Who receives the data",
         paragraphs: [
-          "The enquiry is sent to the webzona team in Telegram so we can reply quickly. Only the people handling enquiries can see it.",
-          "The site host may process the request as infrastructure. We do not sell the data to other companies for their own marketing.",
+          `The enquiry is sent to the webzona team at ${CONTACT_EMAIL} and in Telegram so we can reply quickly. Only the people handling enquiries can see it.`,
+          "The site host may process the request as infrastructure. FormSubmit delivers the enquiry email to the studio inbox. We do not sell the data to other companies for their own marketing.",
         ],
       },
       {
         heading: "How long we keep it",
         paragraphs: [
           "We keep enquiry contacts while we are discussing the project, or until you ask us to delete them.",
-          "Email webmisto@gmail.com with the subject “Delete my data” and we will remove the enquiry from the conversation unless the law requires us to keep it.",
+          `Email ${CONTACT_EMAIL} with the subject “Delete my data” and we will remove the enquiry from the conversation unless the law requires us to keep it.`,
         ],
       },
       {
