@@ -1,0 +1,22 @@
+{
+  "name": "ai-editor",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Remotion project for editing short vertical videos (1080x1920)",
+  "scripts": {
+    "dev": "remotion studio",
+    "render": "remotion render ShortVideo out/short.mp4",
+    "still": "remotion still ShortVideo out/preview.png --frame=45",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@remotion/cli": "4.0.540",
+    "react": "19.2.3",
+    "react-dom": "19.2.3",
+    "remotion": "4.0.540"
+  },
+  "devDependencies": {
+    "@types/react": "^19",
+    "typescript": "^5"
+  }
+}
