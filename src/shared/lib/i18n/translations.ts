@@ -355,13 +355,13 @@ export const translations: Record<Language, Translations> = {
     },
     hero: {
       badge: "Розробка сайтів та онлайн‑платформ",
-      title: "Розробка сайтів у Львові —",
-      titleHighlight: "інтернет-магазини, лендінги та платформи",
+      title: "Розробка сайтів,",
+      titleHighlight: "інтернет-магазинів, лендінгів та платформ",
       metaTitle: "Розробка сайтів у Львові | webzona",
       metaDescription:
-        "Розробка сайтів, інтернет-магазинів, лендінгів і навчальних платформ у Львові. Лендінг від $320, корпоративний сайт від $450, магазин від $720.",
+        "Розробка сайтів, інтернет-магазинів, лендінгів і навчальних платформ у Львові. Лендінг від $100, корпоративний сайт від $500, магазин від $500.",
       description:
-        "Створюємо швидкі, адаптивні та зручні веб‑рішення для бізнесу: корпоративні сайти, інтернет‑магазини та навчальні платформи. Допомагаємо перетворити ідею в працюючий онлайн‑проєкт.",
+        "Створюємо швидкі, адаптивні та зручні веб‑рішення для бізнесу: корпоративні сайти, інтернет‑магазини та навчальні платформи. Також налаштовуємо таргетовану рекламу.",
       stats: {
         projects: "реалізованих веб‑проєктів",
         ux: "фокус на зручності та конверсії",
@@ -447,7 +447,7 @@ export const translations: Record<Language, Translations> = {
       plans: {
         start: {
           name: "Старт",
-          price: "$320",
+          price: "від $100",
           description: "Оптимальний для невеликого сайту‑візитки або лендінгу",
           features: [
             "Аналіз ніші та структури майбутнього сайту",
@@ -460,7 +460,7 @@ export const translations: Record<Language, Translations> = {
         },
         business: {
           name: "Бізнес",
-          price: "$450",
+          price: "від $500",
           description: "Для малого та середнього бізнесу",
           badge: "Популярний",
           features: [
@@ -474,7 +474,7 @@ export const translations: Record<Language, Translations> = {
         },
         platform: {
           name: "Платформа",
-          price: "$720",
+          price: "від $500",
           description: "Для масштабних магазинів чи навчальних платформ",
           features: [
             "Усі пункти з тарифу «Бізнес»",
@@ -630,7 +630,7 @@ export const translations: Record<Language, Translations> = {
         headline: "Розробка інтернет-магазину під ключ",
         metaTitle: "Розробка інтернет-магазину під ключ у Львові | webzona",
         metaDescription:
-          "Інтернет-магазин з каталогом, кошиком, оплатою і доставкою. Розробка під ключ від $720.",
+          "Інтернет-магазин з каталогом, кошиком, оплатою і доставкою. Розробка під ключ від $500.",
         description:
           "Створюємо повнофункціональні інтернет-магазини з каталогом товарів, кошиком, системою оплати та доставки. Інтеграції з платіжними системами, CRM та службами доставки.",
         features: [
@@ -651,7 +651,7 @@ export const translations: Record<Language, Translations> = {
             "Покращити досвід покупок",
           ],
         },
-        price: "від $720",
+        price: "від $500",
         cta: "Замовити інтернет-магазин",
       },
       corporate: {
@@ -659,7 +659,7 @@ export const translations: Record<Language, Translations> = {
         headline: "Розробка корпоративного сайту",
         metaTitle: "Розробка корпоративного сайту у Львові | webzona",
         metaDescription:
-          "Багатосторінковий корпоративний сайт з послугами, блогом і заявками. Розробка від $450.",
+          "Багатосторінковий корпоративний сайт з послугами, блогом і заявками. Розробка від $500.",
         description:
           "Розробка багатосторінкових корпоративних сайтів з блогом, портфоліо та сторінками послуг. Сучасний дизайн та зручна навігація.",
         features: [
@@ -680,17 +680,17 @@ export const translations: Record<Language, Translations> = {
             "Збільшити кількість заявок",
           ],
         },
-        price: "від $450",
+        price: "від $500",
         cta: "Замовити корпоративний сайт",
       },
       landing: {
         title: "Лендінги та сайти-візитки",
         headline: "Розробка лендінгу та сайту-візитки",
-        metaTitle: "Розробка лендінгу та сайту-візитки від $320 | webzona",
+        metaTitle: "Розробка лендінгу від $100 та сайту-візитки від $150 | webzona",
         metaDescription:
-          "Лендінг або сайт-візитка до 5 сторінок для малого бізнесу. Запуск за 2–3 тижні, від $320.",
+          "Лендінг від $100 або сайт-візитка від $150 для малого бізнесу. Запуск за 2–3 тижні.",
         description:
-          "Створюємо ефективні лендінги та сайти-візитки для малого бізнесу. Фокус на конверсії та швидкості завантаження.",
+          "Лендінг від $100, сайт-візитка від $150. Фокус на конверсії та швидкості завантаження.",
         features: [
           "Односторінковий лендінг або сайт-візитка",
           "До 5 сторінок",
@@ -709,7 +709,7 @@ export const translations: Record<Language, Translations> = {
             "Отримати більше лідів",
           ],
         },
-        price: "від $320",
+        price: "від $100",
         cta: "Замовити лендінг",
       },
       platform: {
@@ -897,10 +897,10 @@ export const translations: Record<Language, Translations> = {
     },
     hero: {
       badge: "Разработка сайтов и онлайн‑платформ",
-      title: "Современная разработка",
-      titleHighlight: "сайтов, интернет‑магазинов, обучающих платформ",
+      title: "Разработка сайтов,",
+      titleHighlight: "интернет-магазинов, лендингов и платформ",
       description:
-        "Создаём быстрые, адаптивные и удобные веб‑решения для бизнеса: корпоративные сайты, интернет‑магазины и обучающие платформы. Помогаем превратить идею в работающий онлайн‑проект.",
+        "Создаём быстрые, адаптивные и удобные веб‑решения для бизнеса: корпоративные сайты, интернет‑магазины и обучающие платформы. Также настраиваем таргетированную рекламу.",
       stats: {
         projects: "реализованных веб‑проектов",
         ux: "фокус на удобстве и конверсии",
@@ -986,7 +986,7 @@ export const translations: Record<Language, Translations> = {
       plans: {
         start: {
           name: "Старт",
-          price: "$320",
+          price: "от $100",
           description: "Оптимальный для небольшого сайта‑визитки или лендинга",
           features: [
             "Анализ ниши и структуры будущего сайта",
@@ -999,7 +999,7 @@ export const translations: Record<Language, Translations> = {
         },
         business: {
           name: "Бизнес",
-          price: "$450",
+          price: "от $500",
           description: "Для малого и среднего бизнеса",
           badge: "Популярный",
           features: [
@@ -1013,7 +1013,7 @@ export const translations: Record<Language, Translations> = {
         },
         platform: {
           name: "Платформа",
-          price: "$720",
+          price: "от $500",
           description: "Для масштабных магазинов или обучающих платформ",
           features: [
             "Все пункты из тарифа «Бизнес»",
@@ -1186,7 +1186,7 @@ export const translations: Record<Language, Translations> = {
             "Улучшить опыт покупок",
           ],
         },
-        price: "от $720",
+        price: "от $500",
         cta: "Заказать интернет-магазин",
       },
       corporate: {
@@ -1211,13 +1211,13 @@ export const translations: Record<Language, Translations> = {
             "Увеличить количество заявок",
           ],
         },
-        price: "от $450",
+        price: "от $500",
         cta: "Заказать корпоративный сайт",
       },
       landing: {
         title: "Лендинги и сайты-визитки",
         description:
-          "Создаём эффективные лендинги и сайты-визитки для малого бизнеса. Фокус на конверсии и скорости загрузки.",
+          "Лендинг от $100, сайт-визитка от $150. Фокус на конверсии и скорости загрузки.",
         features: [
           "Одностраничный лендинг или сайт-визитка",
           "До 5 страниц",
@@ -1236,7 +1236,7 @@ export const translations: Record<Language, Translations> = {
             "Получить больше лидов",
           ],
         },
-        price: "от $320",
+        price: "от $100",
         cta: "Заказать лендинг",
       },
       platform: {
@@ -1404,10 +1404,10 @@ export const translations: Record<Language, Translations> = {
     },
     hero: {
       badge: "Website and online platform development",
-      title: "Modern development of",
-      titleHighlight: "websites, online stores, learning platforms",
+      title: "Website development:",
+      titleHighlight: "online stores, landing pages and platforms",
       description:
-        "We create fast, responsive and convenient web solutions for business: corporate websites, online stores and learning platforms. We help turn an idea into a working online project.",
+        "We create fast, responsive and convenient web solutions for business: corporate websites, online stores and learning platforms. We also set up targeted advertising.",
       stats: {
         projects: "completed web projects",
         ux: "focus on convenience and conversion",
@@ -1493,7 +1493,7 @@ export const translations: Record<Language, Translations> = {
       plans: {
         start: {
           name: "Start",
-          price: "$320",
+          price: "from $100",
           description: "Optimal for a small business card website or landing page",
           features: [
             "Niche and future website structure analysis",
@@ -1506,7 +1506,7 @@ export const translations: Record<Language, Translations> = {
         },
         business: {
           name: "Business",
-          price: "$450",
+          price: "from $500",
           description: "For small and medium businesses",
           badge: "Popular",
           features: [
@@ -1520,7 +1520,7 @@ export const translations: Record<Language, Translations> = {
         },
         platform: {
           name: "Platform",
-          price: "$720",
+          price: "from $500",
           description: "For large stores or learning platforms",
           features: [
             "All items from «Business» plan",
@@ -1693,7 +1693,7 @@ export const translations: Record<Language, Translations> = {
             "Improve shopping experience",
           ],
         },
-        price: "from $720",
+        price: "from $500",
         cta: "Order online store",
       },
       corporate: {
@@ -1718,13 +1718,13 @@ export const translations: Record<Language, Translations> = {
             "Increase number of inquiries",
           ],
         },
-        price: "from $450",
+        price: "from $500",
         cta: "Order corporate website",
       },
       landing: {
         title: "Landing Pages & Business Cards",
         description:
-          "We create effective landing pages and business card websites for small businesses. Focus on conversion and loading speed.",
+          "Landing page from $100, business card site from $150. Focus on conversion and loading speed.",
         features: [
           "Single-page landing or business card website",
           "Up to 5 pages",
@@ -1743,7 +1743,7 @@ export const translations: Record<Language, Translations> = {
             "Get more leads",
           ],
         },
-        price: "from $320",
+        price: "from $100",
         cta: "Order landing page",
       },
       platform: {

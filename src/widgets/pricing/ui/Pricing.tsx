@@ -101,15 +101,15 @@ export default function Pricing() {
             <Link href={`/${language}/landing`} className="hover:text-sky-600">
               {t.pricing.priceList.landing}
             </Link>
-            <span className="text-right text-slate-700">від $320</span>
+            <span className="text-right text-slate-700">{t.categories.landing.price}</span>
             <Link href={`/${language}/corporate`} className="hover:text-sky-600">
               {t.pricing.priceList.corporate}
             </Link>
-            <span className="text-right text-slate-700">від $450</span>
+            <span className="text-right text-slate-700">{t.categories.corporate.price}</span>
             <Link href={`/${language}/e-commerce`} className="hover:text-sky-600">
               {t.pricing.priceList.shop}
             </Link>
-            <span className="text-right text-slate-700">від $720</span>
+            <span className="text-right text-slate-700">{t.categories["e-commerce"].price}</span>
             <Link href={`/${language}/platform`} className="hover:text-sky-600">
               {t.pricing.priceList.platform}
             </Link>
