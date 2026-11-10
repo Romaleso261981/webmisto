@@ -11,6 +11,7 @@ export interface Translations {
     };
     cta: string;
     ctaAdvertising: string;
+    tagline: string;
   };
   hero: {
     badge: string;
@@ -352,14 +353,15 @@ export const translations: Record<Language, Translations> = {
       },
       cta: "Замовити розробку",
       ctaAdvertising: "Отримати консультацію",
+      tagline: "веб-студія, працюємо по всій країні",
     },
     hero: {
       badge: "Розробка сайтів та онлайн‑платформ",
       title: "Розробка сайтів,",
       titleHighlight: "інтернет-магазинів, лендінгів та платформ",
-      metaTitle: "Розробка сайтів у Львові | webzona",
+      metaTitle: "Розробка сайтів | webzona",
       metaDescription:
-        "Розробка сайтів, інтернет-магазинів, лендінгів і навчальних платформ у Львові. Лендінг від $100, корпоративний сайт від $500, магазин від $500.",
+        "Розробка сайтів, інтернет-магазинів, лендінгів і навчальних платформ. Лендінг від $100, корпоративний сайт від $500, магазин від $500.",
       description:
         "Створюємо швидкі, адаптивні та зручні веб‑рішення для бізнесу: корпоративні сайти, інтернет‑магазини та навчальні платформи. Також налаштовуємо таргетовану рекламу.",
       stats: {
@@ -556,8 +558,8 @@ export const translations: Record<Language, Translations> = {
     },
     contacts: {
       title: "Контакти",
-      company: "webzona — веб‑студія у Львові",
-      location: "Львів, Україна (працюємо онлайн по всій країні та за кордоном)",
+      company: "webzona, веб-студія, працюємо по всій країні",
+      location: "Україна",
       phone: "Телефон",
       email: "Email",
       schedule: "Графік роботи",
@@ -628,7 +630,7 @@ export const translations: Record<Language, Translations> = {
       "e-commerce": {
         title: "Інтернет-магазини",
         headline: "Розробка інтернет-магазину під ключ",
-        metaTitle: "Розробка інтернет-магазину під ключ у Львові | webzona",
+        metaTitle: "Розробка інтернет-магазину під ключ | webzona",
         metaDescription:
           "Інтернет-магазин з каталогом, кошиком, оплатою і доставкою. Розробка під ключ від $500.",
         description:
@@ -657,7 +659,7 @@ export const translations: Record<Language, Translations> = {
       corporate: {
         title: "Корпоративні сайти",
         headline: "Розробка корпоративного сайту",
-        metaTitle: "Розробка корпоративного сайту у Львові | webzona",
+        metaTitle: "Розробка корпоративного сайту | webzona",
         metaDescription:
           "Багатосторінковий корпоративний сайт з послугами, блогом і заявками. Розробка від $500.",
         description:
@@ -894,6 +896,7 @@ export const translations: Record<Language, Translations> = {
       },
       cta: "Заказать разработку",
       ctaAdvertising: "Получить консультацию",
+      tagline: "веб-студия, работаем по всей стране",
     },
     hero: {
       badge: "Разработка сайтов и онлайн‑платформ",
@@ -1095,8 +1098,8 @@ export const translations: Record<Language, Translations> = {
     },
     contacts: {
       title: "Контакты",
-      company: "webzona — веб‑студия во Львове",
-      location: "Львов, Украина (работаем онлайн по всей стране и за границей)",
+      company: "webzona, веб-студия, работаем по всей стране",
+      location: "Украина",
       phone: "Телефон",
       email: "Email",
       schedule: "График работы",
@@ -1401,6 +1404,7 @@ export const translations: Record<Language, Translations> = {
       },
       cta: "Order development",
       ctaAdvertising: "Get a consultation",
+      tagline: "web studio, we work across the country",
     },
     hero: {
       badge: "Website and online platform development",
@@ -1602,8 +1606,8 @@ export const translations: Record<Language, Translations> = {
     },
     contacts: {
       title: "Contacts",
-      company: "webzona — web studio in Lviv",
-      location: "Lviv, Ukraine (we work online throughout the country and abroad)",
+      company: "webzona, web studio, we work across the country",
+      location: "Ukraine",
       phone: "Phone",
       email: "Email",
       schedule: "Working hours",

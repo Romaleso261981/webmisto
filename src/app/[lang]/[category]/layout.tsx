@@ -43,7 +43,7 @@ export async function generateMetadata({
     keywords: [
       categoryData.title,
       "веб-розробка",
-      "веб-студія Львів",
+      "веб-студія",
       validLang === "uk" ? "розробка сайтів" : validLang === "ru" ? "разработка сайтов" : "website development",
     ],
     openGraph: {

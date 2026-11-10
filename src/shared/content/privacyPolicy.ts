@@ -23,12 +23,12 @@ export const privacyPolicy: Record<Language, PrivacyDocument> = {
     title: "Політика конфіденційності",
     updated: "Оновлено 17 жовтня 2026 року",
     intro:
-      "webzona — веб-студія у Львові. Ця сторінка пояснює, які дані ви залишаєте на сайті https://www.webzona.site і навіщо ми їх використовуємо.",
+      "webzona, веб-студія, працюємо по всій країні. Ця сторінка пояснює, які дані ви залишаєте на сайті https://www.webzona.site і навіщо ми їх використовуємо.",
     sections: [
       {
         heading: "Хто обробляє дані",
         paragraphs: [
-          "Заявки приймає webzona, Львів, Україна. Ми працюємо онлайн по Україні та за її межами.",
+          "Заявки приймає webzona. Ми працюємо по всій країні.",
           `З питань даних пишіть на ${CONTACT_EMAIL} або телефонуйте +38 (068) 947 87 23.`,
         ],
       },
@@ -77,12 +77,12 @@ export const privacyPolicy: Record<Language, PrivacyDocument> = {
     title: "Политика конфиденциальности",
     updated: "Обновлено 17 октября 2026 года",
     intro:
-      "webzona — веб-студия во Львове. Эта страница объясняет, какие данные вы оставляете на сайте https://www.webzona.site и зачем мы их используем.",
+      "webzona, веб-студия, работаем по всей стране. Эта страница объясняет, какие данные вы оставляете на сайте https://www.webzona.site и зачем мы их используем.",
     sections: [
       {
         heading: "Кто обрабатывает данные",
         paragraphs: [
-          "Заявки принимает webzona, Львов, Украина. Мы работаем онлайн по Украине и за её пределами.",
+          "Заявки принимает webzona. Мы работаем по всей стране.",
           `По вопросам данных пишите на ${CONTACT_EMAIL} или звоните +38 (068) 947 87 23.`,
         ],
       },
@@ -131,12 +131,12 @@ export const privacyPolicy: Record<Language, PrivacyDocument> = {
     title: "Privacy policy",
     updated: "Updated 17 October 2026",
     intro:
-      "webzona is a web studio in Lviv. This page explains what you submit on https://www.webzona.site and why we use it.",
+      "webzona, web studio, we work across the country. This page explains what you submit on https://www.webzona.site and why we use it.",
     sections: [
       {
         heading: "Who handles the data",
         paragraphs: [
-          "Enquiries are handled by webzona, Lviv, Ukraine. We work online across Ukraine and abroad.",
+          "Enquiries are handled by webzona. We work across the country.",
           `For data requests email ${CONTACT_EMAIL} or call +38 (068) 947 87 23.`,
         ],
       },

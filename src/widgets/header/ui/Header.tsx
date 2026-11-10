@@ -110,7 +110,7 @@ export default function Header() {
               webzona
             </span>
             <span className="text-xs text-slate-500">
-              Веб студія у Львові
+              {t.header.tagline}
             </span>
           </div>
         </Link>

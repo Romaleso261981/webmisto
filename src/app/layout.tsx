@@ -17,14 +17,14 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || "https://www.webzona.site"),
   title: {
-    default: "webzona - Веб студія у Львові | Розробка сайтів та інтернет-магазинів",
+    default: "webzona — веб-студія, працюємо по всій країні",
     template: "%s | webzona",
   },
-  description: "Професійна розробка сайтів, інтернет-магазинів та навчальних платформ у Львові. Сучасні веб-рішення для вашого бізнесу.",
+  description: "Професійна розробка сайтів, інтернет-магазинів та навчальних платформ. webzona — веб-студія, працюємо по всій країні.",
   keywords: [
     "розробка сайтів",
     "інтернет-магазини",
-    "веб-студія Львів",
+    "веб-студія",
     "створення сайтів",
     "landing page",
     "корпоративні сайти",
@@ -45,20 +45,20 @@ export const metadata: Metadata = {
     alternateLocale: ["ru_RU", "en_US"],
     url: process.env.NEXT_PUBLIC_SITE_URL || "https://www.webzona.site",
     siteName: "webzona",
-    title: "webzona - Веб студія у Львові | Розробка сайтів та інтернет-магазинів",
-    description: "Професійна розробка сайтів, інтернет-магазинів та навчальних платформ у Львові. Сучасні веб-рішення для вашого бізнесу.",
+    title: "webzona — веб-студія, працюємо по всій країні",
+    description: "Професійна розробка сайтів, інтернет-магазинів та навчальних платформ. webzona — веб-студія, працюємо по всій країні.",
     images: [
       {
         url: "/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: "webzona - Веб студія у Львові",
+        alt: "webzona — веб-студія",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "webzona - Веб студія у Львові",
+    title: "webzona — веб-студія",
     description: "Професійна розробка сайтів, інтернет-магазинів та навчальних платформ",
     images: ["/og-image.jpg"],
   },
