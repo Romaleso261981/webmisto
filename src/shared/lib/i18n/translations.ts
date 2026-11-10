@@ -791,7 +791,7 @@ export const translations: Record<Language, Translations> = {
           description:
             "Для показу оголошень використовуються релевантні ключові слова. Коли користувач вводить запит, що містить ці ключові слова, реклама відображається в результатах пошуку або на сайтах партнерів Google. Ви сплачуєте лише за кліки (pay per click), що робить цей вид реклами ефективним та економічним.",
         },
-        price: "Індивідуально",
+        price: "від $100",
         cta: "Отримати консультацію",
       },
       targeting: {
@@ -820,7 +820,7 @@ export const translations: Record<Language, Translations> = {
             "Стимулювати повторні покупки",
           ],
         },
-        price: "Індивідуально",
+        price: "від $100",
         cta: "Отримати консультацію",
       },
       seo: {
@@ -849,7 +849,7 @@ export const translations: Record<Language, Translations> = {
             "Покращити впізнаваність бренду",
           ],
         },
-        price: "Індивідуально",
+        price: "від $100",
         cta: "Отримати консультацію",
       },
       smm: {
@@ -878,7 +878,7 @@ export const translations: Record<Language, Translations> = {
             "Покращити взаємодію з аудиторією",
           ],
         },
-        price: "Індивідуально",
+        price: "від $100",
         cta: "Отримати консультацію",
       },
     },
@@ -1310,7 +1310,7 @@ export const translations: Record<Language, Translations> = {
           description:
             "Для показа объявлений используются релевантные ключевые слова. Когда пользователь вводит запрос, содержащий эти ключевые слова, реклама отображается в результатах поиска или на сайтах партнёров Google. Вы платите только за клики (pay per click), что делает этот вид рекламы эффективным и экономичным.",
         },
-        price: "Индивидуально",
+        price: "от $100",
         cta: "Получить консультацию",
       },
       targeting: {
@@ -1335,7 +1335,7 @@ export const translations: Record<Language, Translations> = {
             "Стимулировать повторные покупки",
           ],
         },
-        price: "Индивидуально",
+        price: "от $100",
         cta: "Получить консультацию",
       },
       seo: {
@@ -1360,7 +1360,7 @@ export const translations: Record<Language, Translations> = {
             "Улучшить узнаваемость бренда",
           ],
         },
-        price: "Индивидуально",
+        price: "от $100",
         cta: "Получить консультацию",
       },
       smm: {
@@ -1385,7 +1385,7 @@ export const translations: Record<Language, Translations> = {
             "Улучшить взаимодействие с аудиторией",
           ],
         },
-        price: "Индивидуально",
+        price: "от $100",
         cta: "Получить консультацию",
       },
     },
@@ -1817,7 +1817,7 @@ export const translations: Record<Language, Translations> = {
           description:
             "Relevant keywords are used to display ads. When a user enters a query containing these keywords, the ad appears in search results or on Google partner sites. You pay only for clicks (pay per click), making this type of advertising effective and economical.",
         },
-        price: "Individual",
+        price: "from $100",
         cta: "Get consultation",
       },
       targeting: {
@@ -1842,7 +1842,7 @@ export const translations: Record<Language, Translations> = {
             "Stimulate repeat purchases",
           ],
         },
-        price: "Individual",
+        price: "from $100",
         cta: "Get consultation",
       },
       seo: {
@@ -1867,7 +1867,7 @@ export const translations: Record<Language, Translations> = {
             "Improve brand recognition",
           ],
         },
-        price: "Individual",
+        price: "from $100",
         cta: "Get consultation",
       },
       smm: {
@@ -1892,7 +1892,7 @@ export const translations: Record<Language, Translations> = {
             "Improve audience engagement",
           ],
         },
-        price: "Individual",
+        price: "from $100",
         cta: "Get consultation",
       },
     },
