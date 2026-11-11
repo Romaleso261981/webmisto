@@ -5,7 +5,7 @@ import { Footer } from "@/widgets/footer/ui";
 import { Language } from "@/shared/lib/i18n/translations";
 import { privacyPolicy } from "@/shared/content/privacyPolicy";
 
-const languages: Language[] = ["uk", "ru", "en"];
+const languages: Language[] = ["uk", "ru"];
 
 function resolveLanguage(lang: string): Language | null {
   return languages.includes(lang as Language) ? (lang as Language) : null;
@@ -34,7 +34,6 @@ export async function generateMetadata({
       languages: {
         "uk-UA": `${baseUrl}/uk/privacy`,
         "ru-RU": `${baseUrl}/ru/privacy`,
-        "en-US": `${baseUrl}/en/privacy`,
       },
     },
     openGraph: {

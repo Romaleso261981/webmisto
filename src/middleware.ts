@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
 
-const supportedLanguages = ["uk", "ru", "en"];
+const supportedLanguages = ["uk", "ru"];
 const defaultLanguage = "uk";
 
 export function middleware(request: NextRequest) {
@@ -20,6 +20,13 @@ export function middleware(request: NextRequest) {
     pathname.includes(".")
   ) {
     return NextResponse.next();
+  }
+
+  // Англійську версію тимчасово закрито: /en веде на українську.
+  if (pathname === "/en" || pathname.startsWith("/en/")) {
+    const newUrl = request.nextUrl.clone();
+    newUrl.pathname = `/uk${pathname.slice(3)}`;
+    return NextResponse.redirect(newUrl);
   }
 
   // Перевіряємо, чи вже є мова в URL
@@ -46,9 +53,6 @@ export function middleware(request: NextRequest) {
           break;
         } else if (lang.startsWith("ru") || lang.startsWith("ru-")) {
           detectedLanguage = "ru";
-          break;
-        } else if (lang.startsWith("en") || lang.startsWith("en-")) {
-          detectedLanguage = "en";
           break;
         }
       }

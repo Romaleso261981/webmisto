@@ -2,7 +2,7 @@ import { MetadataRoute } from "next";
 
 const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://www.webzona.site";
 
-const languages = ["uk", "ru", "en"];
+const languages = ["uk", "ru"];
 const categories = [
   "e-commerce",
   "corporate",

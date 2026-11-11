@@ -86,14 +86,28 @@ export default function Home() {
       <StructuredData data={websiteSchema} />
       <StructuredData data={serviceSchema} />
       <Header />
-      <main className="mx-auto max-w-6xl px-4 pb-16 pt-10 md:px-6 md:pb-24 md:pt-16">
-        <Hero />
-        <Categories />
-        <Advantages />
-        <Pricing />
-        <FAQ />
-        <WordPressBlock />
-        <LeadFormSection />
+      <main className="mx-auto flex max-w-6xl flex-col px-4 pb-16 pt-10 md:px-6 md:pb-24 md:pt-16">
+        <div className="order-1">
+          <Hero />
+        </div>
+        <div className="order-2 lg:order-8">
+          <LeadFormSection className="max-lg:pb-8 max-lg:pt-0" />
+        </div>
+        <div className="order-3 lg:order-2">
+          <Categories />
+        </div>
+        <div className="order-4 lg:order-3">
+          <Advantages />
+        </div>
+        <div className="order-5 lg:order-4">
+          <Pricing />
+        </div>
+        <div className="order-6 lg:order-5">
+          <FAQ />
+        </div>
+        <div className="order-7 lg:order-6">
+          <WordPressBlock />
+        </div>
       </main>
       <Footer />
     </div>

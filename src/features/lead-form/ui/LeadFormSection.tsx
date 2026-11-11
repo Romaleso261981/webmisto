@@ -5,14 +5,14 @@ import { Contacts } from "@/widgets/contacts/ui";
 import { useLeadForm } from "../model/useLeadForm";
 import { NotificationPopup } from "@/shared/ui/NotificationPopup";
 
-export default function LeadFormSection() {
+export default function LeadFormSection({ className = "" }: { className?: string }) {
   const formHook = useLeadForm();
 
   return (
     <>
       <section
         id="lead-form"
-        className="grid gap-10 py-14 md:grid-cols-[minmax(0,1.1fr)_minmax(0,1fr)] md:py-20"
+        className={`grid gap-10 py-14 md:grid-cols-[minmax(0,1.1fr)_minmax(0,1fr)] md:py-20 ${className}`}
       >
         <LeadForm hook={formHook} />
         <Contacts />

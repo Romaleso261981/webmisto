@@ -7,7 +7,6 @@ import { Language } from "@/shared/lib/i18n/translations";
 const languages: { code: Language; label: string; flag: string }[] = [
   { code: "uk", label: "УКР", flag: "🇺🇦" },
   { code: "ru", label: "РУС", flag: "🇷🇺" },
-  { code: "en", label: "ENG", flag: "🇬🇧" },
 ];
 
 export default function LanguageSwitcherDropdown() {

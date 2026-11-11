@@ -25,14 +25,13 @@ export async function generateMetadata({
       description,
       url,
       locale: validLang === "uk" ? "uk_UA" : validLang === "ru" ? "ru_RU" : "en_US",
-      alternateLocale: ["uk_UA", "ru_RU", "en_US"],
+      alternateLocale: ["uk_UA", "ru_RU"],
     },
     alternates: {
       canonical: url,
       languages: {
         "uk-UA": `${baseUrl}/uk`,
         "ru-RU": `${baseUrl}/ru`,
-        "en-US": `${baseUrl}/en`,
       },
     },
   };

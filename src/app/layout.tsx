@@ -81,7 +81,6 @@ export const metadata: Metadata = {
     languages: {
       "uk-UA": "/uk",
       "ru-RU": "/ru",
-      "en-US": "/en",
     },
   },
 };
