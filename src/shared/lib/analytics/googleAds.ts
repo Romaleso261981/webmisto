@@ -19,7 +19,7 @@ const PASTED_GOOGLE_ADS_CONVERSION_LABEL = "N8ZyCJG57p8dEP__sftE";
 const PASTED_GOOGLE_ADS_CALL_CONVERSION_LABEL = "7pKsCL_Xxq8dEP__sftE";
 
 /** Literal measurement id from the pasted Google Analytics tag. Env overrides it when set. */
-const PASTED_GOOGLE_ANALYTICS_ID = "G-CKLMPDZNRL";
+const PASTED_GOOGLE_ANALYTICS_ID = "G-WC1V5BNF4W";
 
 export function getGoogleAdsId(): string {
   const fromEnv = process.env.NEXT_PUBLIC_GOOGLE_ADS_ID?.trim();
