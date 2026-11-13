@@ -18,6 +18,12 @@ const PASTED_GOOGLE_ADS_CONVERSION_LABEL = "N8ZyCJG57p8dEP__sftE";
 /** Label from the "Клік по номеру телефону (сайт)" event snippet (AW-18512379903/7pKsCL_Xxq8dEP__sftE). */
 const PASTED_GOOGLE_ADS_CALL_CONVERSION_LABEL = "7pKsCL_Xxq8dEP__sftE";
 
+/** Label from the "Клік Telegram (сайт)" event snippet (AW-18512379903/O-UnCP252bcdEP__sftE). */
+const PASTED_GOOGLE_ADS_TELEGRAM_CONVERSION_LABEL = "O-UnCP252bcdEP__sftE";
+
+/** Label from the "Клік Viber (сайт)" event snippet (AW-18512379903/UsH_CNK72bcdEP__sftE). */
+const PASTED_GOOGLE_ADS_VIBER_CONVERSION_LABEL = "UsH_CNK72bcdEP__sftE";
+
 /** Literal measurement id from the pasted Google Analytics tag. Env overrides it when set. */
 const PASTED_GOOGLE_ANALYTICS_ID = "G-WC1V5BNF4W";
 
@@ -74,4 +80,12 @@ export function trackLeadConversion(): boolean {
 
 export function trackCallConversion(): boolean {
   return sendConversion(`${getGoogleAdsId()}/${PASTED_GOOGLE_ADS_CALL_CONVERSION_LABEL}`);
+}
+
+export function trackTelegramConversion(): boolean {
+  return sendConversion(`${getGoogleAdsId()}/${PASTED_GOOGLE_ADS_TELEGRAM_CONVERSION_LABEL}`);
+}
+
+export function trackViberConversion(): boolean {
+  return sendConversion(`${getGoogleAdsId()}/${PASTED_GOOGLE_ADS_VIBER_CONVERSION_LABEL}`);
 }

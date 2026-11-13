@@ -1,6 +1,10 @@
 "use client";
 
-import { trackCallConversion } from "@/shared/lib/analytics/googleAds";
+import {
+  trackCallConversion,
+  trackTelegramConversion,
+  trackViberConversion,
+} from "@/shared/lib/analytics/googleAds";
 
 const PHONE_TEL = "+380689478723";
 const TELEGRAM_URL = `https://t.me/${PHONE_TEL}`;
@@ -23,7 +27,10 @@ export default function MobileContactIcons() {
       <a
         href={VIBER_URL}
         aria-label="Viber"
-        onClick={() => trackContact("viber")}
+        onClick={() => {
+          trackContact("viber");
+          trackViberConversion();
+        }}
         className={`${base} bg-[#7360F2] shadow-[#7360F2]/30`}
       >
         <svg viewBox="0 0 24 24" className="h-6 w-6" fill="currentColor" aria-hidden="true">
@@ -35,7 +42,10 @@ export default function MobileContactIcons() {
         target="_blank"
         rel="noopener noreferrer"
         aria-label="Telegram"
-        onClick={() => trackContact("telegram")}
+        onClick={() => {
+          trackContact("telegram");
+          trackTelegramConversion();
+        }}
         className={`${base} bg-[#229ED9] shadow-[#229ED9]/30`}
       >
         <svg viewBox="0 0 24 24" className="h-6 w-6 -translate-x-px" fill="currentColor" aria-hidden="true">
