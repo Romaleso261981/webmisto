@@ -110,7 +110,7 @@ export default function Hero() {
             <div className="rounded-2xl bg-slate-50 p-3">
               <p className="text-slate-500">{t.hero.analytics.projects}</p>
               <p className="mt-1 text-sm font-semibold text-slate-900">
-                486
+                30+
               </p>
               <p className="mt-1 text-[11px] text-emerald-600">
                 {t.hero.analytics.projectsNote}

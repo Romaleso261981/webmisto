@@ -1,6 +1,7 @@
 import { I18nProvider } from "@/shared/lib/i18n/I18nProvider";
 import { Language, translations } from "@/shared/lib/i18n/translations";
 import type { Metadata } from "next";
+import { MobileContactIcons } from "@/widgets/mobile-contacts/ui";
 
 export async function generateMetadata({
   params,
@@ -49,5 +50,10 @@ export default async function LangLayout({
   // Валідація мови
   const validLang: Language = ["uk", "ru", "en"].includes(lang) ? (lang as Language) : "uk";
 
-  return <I18nProvider initialLanguage={validLang}>{children}</I18nProvider>;
+  return (
+    <I18nProvider initialLanguage={validLang}>
+      {children}
+      <MobileContactIcons />
+    </I18nProvider>
+  );
 }
