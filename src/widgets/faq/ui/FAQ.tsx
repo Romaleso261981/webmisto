@@ -5,6 +5,12 @@ import { StructuredData } from "@/app/components/StructuredData";
 
 export default function FAQ() {
   const { t, language } = useI18n();
+  const ctaText =
+    language === "ru"
+      ? "Не нашли ответ? Оставьте заявку — проконсультируем бесплатно →"
+      : language === "en"
+        ? "Didn't find your answer? Leave a request — free consultation →"
+        : "Не знайшли відповідь? Залиште заявку — проконсультуємо безкоштовно →";
   const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://www.webzona.site";
 
   const faqSchema = {
@@ -98,6 +104,15 @@ export default function FAQ() {
           </p>
         </div>
       </div>
+
+      <p className="mt-6 text-center">
+        <a
+          href="#lead-form"
+          className="text-sm font-medium text-sky-600 hover:text-sky-700 md:text-base"
+        >
+          {ctaText}
+        </a>
+      </p>
     </section>
   );
 }

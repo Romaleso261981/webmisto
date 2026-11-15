@@ -82,7 +82,10 @@ export default function Hero() {
 
       <div className="relative overflow-x-clip">
         <div className="absolute inset-x-0 -inset-y-8 -z-10 bg-gradient-to-tr from-sky-200 via-cyan-100 to-transparent blur-3xl lg:-inset-8" />
-        <div className="rounded-3xl border border-slate-200 bg-white p-5 shadow-2xl shadow-sky-100 backdrop-blur">
+        <a
+          href="#lead-form"
+          className="block cursor-pointer rounded-3xl border border-slate-200 bg-white p-5 shadow-2xl shadow-sky-100 backdrop-blur transition hover:border-sky-300 hover:shadow-sky-200"
+        >
           <div className="mb-4 flex items-center justify-between">
             <div>
               <p className="text-xs uppercase tracking-[0.2em] text-slate-500">
@@ -135,7 +138,7 @@ export default function Hero() {
               {t.hero.analytics.testimonialAuthor}
             </p>
           </div>
-        </div>
+        </a>
       </div>
     </section>
   );
