@@ -357,7 +357,7 @@ export const translations: Record<Language, Translations> = {
     },
     hero: {
       badge: "Розробка сайтів та онлайн‑платформ",
-      title: "Розробка сайтів,",
+      title: "Розробка сайтів для Юлі,",
       titleHighlight: "інтернет-магазинів, лендінгів та платформ",
       metaTitle: "Розробка сайтів | webzona",
       metaDescription:
