@@ -76,13 +76,6 @@ export const metadata: Metadata = {
   verification: {
     google: "OBZZDX9-lpQTJicdiKAjgaJoJczptyRbgGkoJuYexpQ",
   },
-  alternates: {
-    canonical: "/",
-    languages: {
-      "uk-UA": "/uk",
-      "ru-RU": "/ru",
-    },
-  },
 };
 
 export default function RootLayout({

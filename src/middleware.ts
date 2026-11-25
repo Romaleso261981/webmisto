@@ -58,10 +58,14 @@ export function middleware(request: NextRequest) {
       }
     }
 
-    // Робимо редирект на URL з мовою
+    // Робимо редирект на URL з мовою.
+    // Для мови за замовчуванням (uk) — постійний редирект 308: так Google вважає
+    // /uk головною сторінкою, а не дублем кореневої адреси. Googlebot не надсилає
+    // Accept-Language з ru, тому завжди отримує 308 на /uk.
+    // Для ru — тимчасовий 307, бо він залежить від мови браузера.
     const newUrl = request.nextUrl.clone();
     newUrl.pathname = `/${detectedLanguage}${pathname === "/" ? "" : pathname}`;
-    return NextResponse.redirect(newUrl);
+    return NextResponse.redirect(newUrl, detectedLanguage === defaultLanguage ? 308 : 307);
   }
 
   return NextResponse.next();

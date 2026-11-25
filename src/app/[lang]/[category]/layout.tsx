@@ -58,6 +58,7 @@ export async function generateMetadata({
       languages: {
         "uk-UA": `${baseUrl}/uk/${category}`,
         "ru-RU": `${baseUrl}/ru/${category}`,
+        "x-default": `${baseUrl}/uk/${category}`,
       },
     },
   };
