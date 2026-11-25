@@ -1,4 +1,5 @@
 import { MetadataRoute } from "next";
+import { blogPosts } from "@/shared/content/blog";
 
 const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://www.webzona.site";
 
@@ -17,13 +18,7 @@ const categories = [
 export default function sitemap(): MetadataRoute.Sitemap {
   const routes: MetadataRoute.Sitemap = [];
 
-  // Root page (will redirect to /uk)
-  routes.push({
-    url: baseUrl,
-    lastModified: new Date(),
-    changeFrequency: "daily",
-    priority: 1,
-  });
+  // Кореневу адресу не додаємо: вона робить редирект на /uk, а в sitemap мають бути лише кінцеві сторінки.
 
   // Home pages for each language
   languages.forEach((lang) => {
@@ -50,6 +45,22 @@ export default function sitemap(): MetadataRoute.Sitemap {
         changeFrequency: "monthly",
         priority: 0.8,
       });
+    });
+  });
+
+  // Блог (лише українською)
+  routes.push({
+    url: `${baseUrl}/uk/blog`,
+    lastModified: new Date(),
+    changeFrequency: "weekly",
+    priority: 0.7,
+  });
+  blogPosts.forEach((post) => {
+    routes.push({
+      url: `${baseUrl}/uk/blog/${post.slug}`,
+      lastModified: new Date(post.date),
+      changeFrequency: "monthly",
+      priority: 0.6,
     });
   });
 

@@ -24,6 +24,11 @@ export default function Footer() {
               </Link>
             );
           })}
+          {language === "uk" && (
+            <Link href="/uk/blog" className="hover:text-sky-600">
+              Блог
+            </Link>
+          )}
           <Link href={`/${language}/privacy`} className="underline hover:text-sky-600">
             {t.footer.privacy}
           </Link>

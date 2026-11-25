@@ -359,7 +359,7 @@ export const translations: Record<Language, Translations> = {
       badge: "Розробка сайтів та онлайн‑платформ",
       title: "Розробка сайтів,",
       titleHighlight: "інтернет-магазинів, лендінгів та платформ",
-      metaTitle: "Розробка сайтів | webzona",
+      metaTitle: "Створення сайтів під ключ від $100 — веб-студія webzona",
       metaDescription:
         "Розробка сайтів, інтернет-магазинів, лендінгів і навчальних платформ. Лендінг від $100, корпоративний сайт від $500, магазин від $500.",
       description:
@@ -630,7 +630,7 @@ export const translations: Record<Language, Translations> = {
       "e-commerce": {
         title: "Інтернет-магазини",
         headline: "Розробка інтернет-магазину під ключ",
-        metaTitle: "Розробка інтернет-магазину під ключ | webzona",
+        metaTitle: "Створення інтернет-магазину під ключ від $500 | webzona",
         metaDescription:
           "Інтернет-магазин з каталогом, кошиком, оплатою і доставкою. Розробка під ключ від $500.",
         description:
@@ -659,7 +659,7 @@ export const translations: Record<Language, Translations> = {
       corporate: {
         title: "Корпоративні сайти",
         headline: "Розробка корпоративного сайту",
-        metaTitle: "Розробка корпоративного сайту | webzona",
+        metaTitle: "Створення корпоративного сайту від $500 | webzona",
         metaDescription:
           "Багатосторінковий корпоративний сайт з послугами, блогом і заявками. Розробка від $500.",
         description:
@@ -900,6 +900,9 @@ export const translations: Record<Language, Translations> = {
     },
     hero: {
       badge: "Разработка сайтов и онлайн‑платформ",
+      metaTitle: "Создание сайтов под ключ от $100 — веб-студия webzona",
+      metaDescription:
+        "Разработка сайтов, интернет-магазинов, лендингов и обучающих платформ. Лендинг от $100, корпоративный сайт от $500, магазин от $500.",
       title: "Разработка сайтов,",
       titleHighlight: "интернет-магазинов, лендингов и платформ",
       description:
