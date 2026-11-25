@@ -33,6 +33,7 @@ export async function generateMetadata({
       languages: {
         "uk-UA": `${baseUrl}/uk`,
         "ru-RU": `${baseUrl}/ru`,
+        "x-default": `${baseUrl}/uk`,
       },
     },
   };
